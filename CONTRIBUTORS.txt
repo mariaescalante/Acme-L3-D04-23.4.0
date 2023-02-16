@@ -8,4 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-- Rafael Corchuelo (corchu@us.es)
+- Joaquín Arregui Díaz (joaarrdia@alum.us.es)
+- Francisco Antonio Campos Campos (fracamcam@alum.us.es)
+- José Luis Cobo Ariza (joscobari@alum.us.es)
+- Daniel Diáñez Suárez (dandiasua@alum.us.es)
+- María Escalante Ramos (marescram3@alum.us.es)
+
