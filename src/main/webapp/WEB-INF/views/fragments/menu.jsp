@@ -20,6 +20,7 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S5" action="https://www.realbetisbalompie.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S3" action="http://www.lichess.org/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S4" action="http://games.crossfit.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S1" action="http://www.wuxiaworld.com/"/>
