@@ -21,28 +21,28 @@ public class Practicum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
-	private String				code;
+	protected String				code;
 
 	@NotBlank
 	@Length(max = 75)
-	private String				title;
+	protected String				title;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				abstractText;
+	protected String				abstractText;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				goals;
+	protected String				goals;
 	//faltan los @
-	private int					estimatedTotalTime;
+	protected int					estimatedTotalTime;
 	//falta los @
-	private List<Session>		sessions			= new ArrayList<>();
+	protected List<Session>		sessions			= new ArrayList<>();
 
 }
