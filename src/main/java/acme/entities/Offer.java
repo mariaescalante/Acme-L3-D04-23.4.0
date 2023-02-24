@@ -28,7 +28,7 @@ public class Offer extends AbstractEntity {
 	protected Date				instantiationMoment;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			heading;
 
 	@NotBlank
