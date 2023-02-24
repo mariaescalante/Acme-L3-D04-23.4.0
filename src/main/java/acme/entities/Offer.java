@@ -24,6 +24,7 @@ public class Offer extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				instantiationMoment;
 
@@ -35,6 +36,11 @@ public class Offer extends AbstractEntity {
 	@Length(max = 100)
 	protected String			summary;
 
+	/*
+	 * FALTA POR HACER:
+	 * Restriccion:
+	 * at least one day after the offer is instantiated and must last for at least one week
+	 */
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				availabilityPeriod;
 
