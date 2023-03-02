@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -23,7 +23,7 @@ public class Banner extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@PastOrPresent
+	@Past
 	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				instantiationMoment;
 
