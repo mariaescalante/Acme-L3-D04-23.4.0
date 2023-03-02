@@ -42,5 +42,4 @@ public class Banner extends AbstractEntity {
 
 	@URL
 	protected String			url;
-
 }
