@@ -44,6 +44,6 @@ public class Session extends AbstractEntity {
 	@URL
 	protected String			furtherInformationLink;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Practicum			practicum;
 }

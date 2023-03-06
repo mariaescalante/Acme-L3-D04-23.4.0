@@ -2,6 +2,7 @@
 package acme.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.xml.datatype.Duration;
@@ -9,6 +10,7 @@ import javax.xml.datatype.Duration;
 import org.hibernate.validator.constraints.Length;
 
 import acme.framework.data.AbstractEntity;
+import acme.roles.Company;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,5 +42,8 @@ public class Practicum extends AbstractEntity {
 	protected String			goals;
 
 	protected Duration			estimatedTotalTime;
+
+	@ManyToOne(optional = false)
+	protected Company			company;
 
 }
