@@ -3,7 +3,6 @@ package acme.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -34,8 +33,7 @@ public class Enrolment extends AbstractEntity {
 
 	protected Integer			workTime;
 
-	@OneToOne(mappedBy = "enrolment")
-	protected Workbook			workbook;
+	protected String			workbook;
 
 	@ManyToOne()
 	protected Student			student;

@@ -35,5 +35,6 @@ public class Activity extends AbstractEntity {
 	protected String			link;
 
 	@ManyToOne()
-	protected Workbook			workbook;
+	protected Enrolment			enrolment;
+
 }
