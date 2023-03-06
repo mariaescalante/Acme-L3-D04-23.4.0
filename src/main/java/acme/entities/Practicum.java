@@ -1,12 +1,10 @@
 
 package acme.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.xml.datatype.Duration;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -27,22 +25,20 @@ public class Practicum extends AbstractEntity {
 
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
-	protected String				code;
+	protected String			code;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String				title;
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String				abstractText;
+	protected String			abstractText;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String				goals;
-	//faltan los @
-	protected int					estimatedTotalTime;
-	//falta los @
-	protected List<Session>		sessions			= new ArrayList<>();
+	protected String			goals;
+
+	protected Duration			estimatedTotalTime;
 
 }

@@ -4,9 +4,13 @@ package acme.entities;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.FutureOrPresent;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
@@ -24,20 +28,22 @@ public class Session extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Size(max = 75)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Size(max = 100)
+	@Length(max = 100)
 	protected String			abstractText;
 
-	@FutureOrPresent
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected LocalDate			startDate;
 
-	@FutureOrPresent
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected LocalDate			endDate;
-	//faltan los @
+
+	@URL
 	protected String			furtherInformationLink;
-	//faltan los @
+
+	@ManyToOne
 	protected Practicum			practicum;
 }
