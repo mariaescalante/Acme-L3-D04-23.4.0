@@ -44,7 +44,6 @@ public class Offer extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				availabilityPeriod;
 
-	//FALTA POR HACER UNA VALIDATION
 	protected Money				price;
 
 	@URL
