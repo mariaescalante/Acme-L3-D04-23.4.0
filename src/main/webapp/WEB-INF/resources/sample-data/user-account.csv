@@ -1,0 +1,3 @@
+key,enabled,identity,password,username
+user-account-company-01,true,"UserIdentity{name:'Dani',surname:'Dianez',email:'dandiasua@alum.us.es'}",company1,company1
+user-account-company-02,true,"UserIdentity{name:'Macarena',surname:'Navarro',email:'d@alum.us.es'}",company2,company2
