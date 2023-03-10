@@ -1,7 +1,7 @@
 
 package acme.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -25,13 +25,13 @@ public class Banner extends AbstractEntity {
 
 	@Past
 	@Temporal(value = TemporalType.TIMESTAMP)
-	protected LocalDate			instantiationMoment;
+	protected Date				instantiationMoment;
 
 	@Temporal(value = TemporalType.TIMESTAMP)
-	protected LocalDate			start;
+	protected Date				start;
 
 	@Temporal(value = TemporalType.TIMESTAMP)
-	protected LocalDate			end;
+	protected Date				end;
 
 	@URL
 	protected String			picture;
