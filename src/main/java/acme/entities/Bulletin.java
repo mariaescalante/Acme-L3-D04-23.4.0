@@ -1,6 +1,8 @@
 
 package acme.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +28,7 @@ public class Bulletin extends AbstractEntity {
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date			instantiationMoment;
+	protected Date				instantiationMoment;
 
 	@NotBlank
 	@Length(min = 1, max = 75)
