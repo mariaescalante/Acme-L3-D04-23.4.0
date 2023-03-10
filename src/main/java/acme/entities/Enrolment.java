@@ -31,7 +31,8 @@ public class Enrolment extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected Integer			workTime;
+	// Computado de las horas de las actividades
+	// protected Integer			workTime;
 
 	protected String			workbook;
 
