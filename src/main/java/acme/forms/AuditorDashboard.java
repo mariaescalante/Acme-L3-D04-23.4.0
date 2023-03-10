@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.forms;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class DashboardAuditing extends AbstractForm {
+public class AuditorDashboard extends AbstractForm {
 	/*-id: Long {NotBlank, Unique}	
 	-total_number_of_audits: Integer
 	-average_number: Double
