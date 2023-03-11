@@ -1,4 +1,6 @@
 key,enabled,identity,password,username
+user-account-student-01,true,"UserIdentity{name: 'Jose Luis', surname: 'Cobo', email: 'joseluis@acme.com'}",student1,student1
+user-account-student-02,true,"UserIdentity{name: 'Daniel', surname: 'Dianez', email: 'daniel@acme.com'}",student2,student2
 user-account-assistant-01,true,"UserIdentity{name: 'Maria', surname: 'Escalante', email: 'marescram@acme.com'}",assistant1,assistant1
 user-account-assistant-02,true,"UserIdentity{name: 'Francisco', surname: 'Campos', email: 'francamcam@acme.com'}",assistant2,assistant2
 user-account-administrator-02,true,"UserIdentity{name: 'Administrator', surname: '1', email: 'administrator1@acme.com'}",administrator1,administrator1

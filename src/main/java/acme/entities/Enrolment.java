@@ -39,4 +39,7 @@ public class Enrolment extends AbstractEntity {
 	@ManyToOne()
 	protected Student			student;
 
+	// @ManyToOne()
+	// protected Course			course;
+
 }
