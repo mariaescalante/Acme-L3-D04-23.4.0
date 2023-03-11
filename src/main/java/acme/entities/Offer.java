@@ -38,11 +38,13 @@ public class Offer extends AbstractEntity {
 
 	/*
 	 * FALTA POR HACER:
-	 * Restriccion:
 	 * at least one day after the offer is instantiated and must last for at least one week
 	 */
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				availabilityPeriod;
+	protected Date				startTime;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				endTime;
 
 	protected Money				price;
 
