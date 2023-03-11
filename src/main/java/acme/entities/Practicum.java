@@ -4,9 +4,10 @@ package acme.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.xml.datatype.Duration;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -43,9 +44,15 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected Duration			estimatedTotalTime;
+	@Digits(integer = 3, fraction = 2)
+	protected Double			estimatedTotalTime;
 
+	@NotNull
 	@ManyToOne(optional = false)
 	protected Company			company;
+
+	@NotNull
+	@ManyToOne(optional = false)
+	protected Course			course;
 
 }
