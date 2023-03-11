@@ -1,4 +1,6 @@
 key,enabled,identity,password,username
+user-account-assistant-01,true,"UserIdentity{name: 'Maria', surname: 'Escalante', email: 'marescram@acme.com'}",assistant1,assistant1
+user-account-assistant-02,true,"UserIdentity{name: 'Francisco', surname: 'Campos', email: 'francamcam@acme.com'}",assistant2,assistant2
 user-account-administrator-02,true,"UserIdentity{name: 'Administrator', surname: '1', email: 'administrator1@acme.com'}",administrator1,administrator1
 user-account-administrator-03,true,"UserIdentity{name: 'Administrator', surname: '2', email: 'administrator2@acme.com'}",administrator2,administrator2
 user-account-auditor-01,true,"UserIdentity{name: 'Auditor', surname: '1', email: 'auditor1@acme.com'}",auditor1,auditor1
