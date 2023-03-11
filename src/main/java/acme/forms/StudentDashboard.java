@@ -1,9 +1,9 @@
 
-package acme.roles;
+package acme.forms;
 
 import java.util.Map;
 
-import acme.entities.ActivityType;
+import acme.datatypes.ActivityType;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;

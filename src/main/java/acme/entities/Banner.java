@@ -12,7 +12,6 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,34 +19,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Offer extends AbstractEntity {
+public class Banner extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@Past
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				instantiationMoment;
+
+	@Temporal(value = TemporalType.TIMESTAMP)
+	protected Date				start;
+
+	@Temporal(value = TemporalType.TIMESTAMP)
+	protected Date				end;
+
+	@URL
+	protected String			picture;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			heading;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			summary;
-
-	/*
-	 * FALTA POR HACER:
-	 * at least one day after the offer is instantiated and must last for at least one week
-	 */
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				startTime;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				endTime;
-
-	protected Money				price;
+	protected String			slogan;
 
 	@URL
-	protected String			optionalLink;
+	protected String			url;
 }
