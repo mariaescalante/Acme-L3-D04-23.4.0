@@ -8,11 +8,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +24,7 @@ public class Offer extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				instantiationMoment;
 
@@ -35,11 +36,17 @@ public class Offer extends AbstractEntity {
 	@Length(max = 100)
 	protected String			summary;
 
+	/*
+	 * FALTA POR HACER:
+	 * at least one day after the offer is instantiated and must last for at least one week
+	 */
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				availabilityPeriod;
+	protected Date				startTime;
 
-	@PositiveOrZero
-	protected Double			price;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				endTime;
+
+	protected Money				price;
 
 	@URL
 	protected String			optionalLink;
