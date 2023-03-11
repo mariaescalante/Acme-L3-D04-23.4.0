@@ -30,7 +30,7 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			heading;
+	protected String			title;
 
 	/*
 	 * FALTA POR HACER::
