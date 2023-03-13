@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>240</y>
+      <w>264</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Dashboard Auditing
+--
+-id: Long {NotBlank, Unique}	
+-total_number_of_audits: Integer
+-average_number: Double
+-deviation_number: Double
+-maxium_number: Integer
+-minium_number: Integer
+-average_time: Double
+-deviation_time: Double
+-maxium_time: Integer
+-minium_time: Integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>32</x>
+      <y>448</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Auditor
+--
+-id: Long {NotBlank, Unique}
+-firm: String {NotBlank, Length(1,75)}
+-professional_id: String {NotBlank, Length(1,25)}
+-certifications: String {NotBlank, Length(1,100)}
+-link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>32</x>
+      <y>16</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Audit
+--
+-id: Long {NotBlank, Unique}
+-code: String {NotBlank,Unique,Pattern}
+-conclusion: String {NotBlank, Length(1,100)}
+-strong points: String {NotBlank, Length(1,100)}
+-weak points: String {NotBlank, Length(1,100)}
+-mark: Enum {Transient}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>32</x>
+      <y>232</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Auditing records
+--
+-id: Long {NotBlank, Unique}	
+-subject: String {NotBlank, Length(1,75)}
+-assessment: String {NotBlank, Length(1,100)}
+-period: Double
+-mark: Enum
+-link: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>136</y>
+      <w>32</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>1
+
+
+
+
+1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>72</y>
+      <w>48</w>
+      <h>464</h>
+    </coordinates>
+    <panel_attributes>1..*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0;10.0;560.0;40.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>16</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Course
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>72</y>
+      <w>128</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>1..*          		           1
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+</diagram>

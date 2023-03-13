@@ -1,0 +1,3 @@
+key,key:userAccount,firm,professionalId,certifications,link
+auditor-01,user-account-auditor-01,firm auditor1,1,certifications auditor 1, null
+auditor-02,user-account-auditor-02,firm auditor2,2,certifications auditor 2, null
