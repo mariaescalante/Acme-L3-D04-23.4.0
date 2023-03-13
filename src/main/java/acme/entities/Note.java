@@ -32,13 +32,7 @@ public class Note extends AbstractEntity {
 	@Length(max = 75)
 	protected String			title;
 
-	/*
-	 * FALTA POR HACER::
-	 * Que el autor se compute como:
-	 * “〈username〉 - 〈surname, name〉”, where “〈user-name〉”
-	 * denotes the username of the principal who has posted the
-	 * note and “〈surname, name〉” denotes his or her full name.
-	 */
+	//El autor se debe computar como “〈username〉 - 〈surname, name〉”
 	@NotBlank
 	@Length(max = 75)
 	protected String			author;
