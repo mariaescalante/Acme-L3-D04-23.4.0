@@ -32,7 +32,7 @@ public class Tutorial extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			$abstract;
+	protected String			abstract$;
 
 	@NotBlank
 	@Length(max = 100)
