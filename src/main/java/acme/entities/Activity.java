@@ -1,8 +1,12 @@
 
 package acme.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -26,11 +30,15 @@ public class Activity extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			abstract$;
 
-	protected ActivityType		type;
+	protected ActivityType		indication;
 
-	protected Double			duration;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				startDate;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				endDate;
 
 	@URL
 	protected String			link;
