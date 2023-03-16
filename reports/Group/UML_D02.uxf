@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>4</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>70</y>
-      <w>300</w>
-      <h>160</h>
+      <x>280</x>
+      <y>8</y>
+      <w>120</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Peep
@@ -24,10 +24,10 @@ Peep
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>240</y>
-      <w>300</w>
-      <h>150</h>
+      <x>280</x>
+      <y>76</y>
+      <w>120</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Bulletin
@@ -43,10 +43,10 @@ Bulletin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>420</y>
-      <w>350</w>
-      <h>180</h>
+      <x>428</x>
+      <y>148</y>
+      <w>140</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Offer
@@ -64,10 +64,10 @@ Offer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>70</y>
-      <w>350</w>
-      <h>160</h>
+      <x>428</x>
+      <y>8</y>
+      <w>140</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Note
@@ -84,10 +84,10 @@ Note
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>240</y>
-      <w>350</w>
-      <h>160</h>
+      <x>428</x>
+      <y>76</y>
+      <w>140</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Banner
@@ -102,24 +102,12 @@ Banner
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>1190</x>
-      <y>370</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Use case 2
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>410</y>
-      <w>300</w>
-      <h>260</h>
+      <x>280</x>
+      <y>144</y>
+      <w>120</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Dashboard
