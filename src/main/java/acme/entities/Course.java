@@ -4,6 +4,7 @@ package acme.entities;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -32,7 +33,7 @@ public class Course extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			abstrac;
+	protected String			abstract$;
 
 	protected Boolean			theoretical;
 
@@ -41,6 +42,7 @@ public class Course extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	@NotNull
 	@ManyToOne(optional = false)
 	protected Lecturer			lecturer;
 
