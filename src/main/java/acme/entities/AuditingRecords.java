@@ -2,7 +2,7 @@
 package acme.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -24,8 +24,8 @@ public class AuditingRecords extends AbstractEntity {
 	/*-id: Long {NotBlank, Unique}	
 	-subject: String {NotBlank, Length(1,75)}
 	-assessment: String {NotBlank, Length(1,100)}
-	-period: Duration
-	-mark: String
+	-period: Double
+	-mark: Mark
 	-link: String {URL}*/
 
 	// Serialisation identifier -----------------------------------------------
@@ -53,7 +53,7 @@ public class AuditingRecords extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	protected Audit				audit;
 
 }
