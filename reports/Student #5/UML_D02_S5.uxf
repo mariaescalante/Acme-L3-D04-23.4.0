@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
+      <x>408</x>
       <y>240</y>
       <w>264</w>
       <h>168</h>
@@ -13,7 +13,7 @@
 Dashboard Auditing
 --
 -id: Long {NotBlank, Unique}	
--total_number_of_audits: Integer
+-total_number_of_audits: Map&lt;Enum,Integer&gt;
 -average_number: Double
 -deviation_number: Double
 -maxium_number: Integer
@@ -27,7 +27,7 @@ Dashboard Auditing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>32</x>
+      <x>40</x>
       <y>448</y>
       <w>264</w>
       <h>128</h>
@@ -45,7 +45,7 @@ Auditor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>32</x>
+      <x>40</x>
       <y>16</y>
       <w>264</w>
       <h>128</h>
@@ -58,13 +58,13 @@ Audit
 -conclusion: String {NotBlank, Length(1,100)}
 -strong points: String {NotBlank, Length(1,100)}
 -weak points: String {NotBlank, Length(1,100)}
--mark: Enum {Transient}</panel_attributes>
+- /mark: String {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>32</x>
+      <x>40</x>
       <y>232</y>
       <w>264</w>
       <h>128</h>
@@ -76,30 +76,30 @@ Auditing records
 -subject: String {NotBlank, Length(1,75)}
 -assessment: String {NotBlank, Length(1,100)}
 -period: Double
--mark: Enum
+-mark: Mark
 -link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
+      <x>160</x>
       <y>136</y>
-      <w>32</w>
+      <w>48</w>
       <h>112</h>
     </coordinates>
-    <panel_attributes>1
+    <panel_attributes>1 
 
 
 
 
-1</panel_attributes>
+1 .. *</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>0</x>
+      <x>8</x>
       <y>72</y>
       <w>48</w>
       <h>464</h>
@@ -142,7 +142,7 @@ Auditing records
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
+      <x>408</x>
       <y>16</y>
       <w>264</w>
       <h>128</h>
@@ -156,7 +156,7 @@ Course
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
+      <x>296</x>
       <y>72</y>
       <w>128</w>
       <h>88</h>
