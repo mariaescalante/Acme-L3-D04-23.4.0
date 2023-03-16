@@ -28,7 +28,7 @@ public class Practicum extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}[0-9]{3}")
 	@Column(unique = true)
 	protected String			code;
 
@@ -38,7 +38,7 @@ public class Practicum extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			abstractText;
+	protected String			abstract$;
 
 	@NotBlank
 	@Length(max = 100)
