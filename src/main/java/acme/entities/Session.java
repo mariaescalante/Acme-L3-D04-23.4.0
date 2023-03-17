@@ -30,10 +30,8 @@ public class Session extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			abstract$;
 
-	@NotBlank
-	@Length(max = 100)
 	protected SessionType		indication;
 
 	// at least one day ahead, from one up to five hour long

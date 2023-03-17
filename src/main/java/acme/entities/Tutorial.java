@@ -32,7 +32,7 @@ public class Tutorial extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			abstract$;
 
 	@NotBlank
 	@Length(max = 100)
@@ -43,6 +43,6 @@ public class Tutorial extends AbstractEntity {
 	@ManyToOne
 	protected Assistant			assistant;
 
-	// @ManyToOne
-	// protected Course			course;
+	@ManyToOne
+	protected Course			course;
 }
