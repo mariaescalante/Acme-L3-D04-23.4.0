@@ -1,0 +1,11 @@
+any.course.list.label.code = Code
+any.course.list.label.title = Title
+any.course.list.label.abstract$ = Abstract
+any.course.list.label.price = Price
+
+any.course.form.label.code = Reference:
+any.course.form.label.title = Title:
+any.course.form.label.abstract$ = Abstract:
+any.course.form.label.theoreticalOrHandsOn = Course type:
+any.course.form.label.price = Price:
+any.course.form.label.link = Link: (Optional)

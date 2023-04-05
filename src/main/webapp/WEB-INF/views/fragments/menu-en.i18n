@@ -38,6 +38,7 @@ master.menu.administrator.shut-down = Shut down
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
+master.menu.any.list-course = List all Courses
 
 # master.menu.provider ########################################################
 

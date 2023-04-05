@@ -34,10 +34,15 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+# master.menu.any #######################################################
+
+
+
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.money-exchange = Cambio de dinero
+master.menu.any.list-course = Listar todos los cursos
 
 # master.menu.provider ########################################################
 
