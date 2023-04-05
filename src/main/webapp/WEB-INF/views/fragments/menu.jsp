@@ -48,6 +48,17 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
+				
+			<acme:menu-suboption code="master.menu.lecturer.course.list-all" action="/lecturer/course/list-all"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.lecturer.course.list-mine" action="/lecturer/course/list-mine"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.lecturer.lecture.list-all" action="/lecturer/lecturer/list-all"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.lecturer.lecture.list-mine" action="/lecturer/lecture/list-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

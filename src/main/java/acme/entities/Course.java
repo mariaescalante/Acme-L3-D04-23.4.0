@@ -35,7 +35,7 @@ public class Course extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstract$;
 
-	protected Boolean			theoretical;
+	protected CourseType		theoreticalOrHandsOn;
 
 	protected Money				price;
 
@@ -46,4 +46,5 @@ public class Course extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Lecturer			lecturer;
 
+	protected Boolean			draftMode;
 }

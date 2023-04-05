@@ -49,6 +49,14 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Conferenciante
+master.menu.lecturer.lecture.list-all = Conferencias
+master.menu.lecturer.lecture.list-mine = Mis conferencias
+master.menu.lecturer.course.list-all = Cursos
+master.menu.lecturer.course.list-mine = Mis cursos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

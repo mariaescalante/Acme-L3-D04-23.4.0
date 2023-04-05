@@ -15,4 +15,3 @@ authenticated.lecturer.form.label.link = Link for more information:
 
 authenticated.lecturer.form.button.create = Register
 authenticated.lecturer.form.button.update = Update
-authenticated.lecturer.form.button.contractors = Contractors
