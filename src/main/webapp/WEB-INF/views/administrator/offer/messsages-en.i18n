@@ -9,3 +9,5 @@ authenticated.offer.form.label.startDate = Start date
 authenticated.offer.form.label.endDate = End date
 authenticated.offer.form.label.price = Price
 authenticated.offer.form.label.optionalLink = Link with further information
+
+administrator.offer.create = Create offer

@@ -9,3 +9,9 @@ authenticated.offer.form.label.startDate = Fecha de inicio
 authenticated.offer.form.label.endDate = Fecha de fin
 authenticated.offer.form.label.price = Precio
 authenticated.offer.form.label.optionalLink = Link con informacion adicional
+
+administrator.offer.form.button.create = Crear
+administrator.offer.form.button.update = Actualizar
+administrator.offer.form.button.delete = Borrar
+
+administrator.offer.create = Crear oferta
