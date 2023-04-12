@@ -1,3 +1,3 @@
-key,code,title,abstract$,goals,estimatedTotalTime,key:company,key:course
-practicum-01,PRT001,Title 1,Abstract 1.,Goal 1.,35.1,company-01,course-01
-practicum-02,PRT002,Title 2,Abstract 2.,Goal 2.,25.1,company-02,course-02
+key,code,title,abstract$,goals,estimatedTotalTime,draftMode,key:company,key:course
+practicum-01,PRT001,Title 1,Abstract 1.,Goal 1.,35.1,false,company-01,course-01
+practicum-02,PRT002,Title 2,Abstract 2.,Goal 2.,25.1,true,company-02,course-02

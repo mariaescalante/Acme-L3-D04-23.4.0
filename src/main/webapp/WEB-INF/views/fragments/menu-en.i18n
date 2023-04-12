@@ -58,6 +58,11 @@ master.menu.lecturer.course.list-mine = My courses
 master.menu.lecturer.lecture.list-all = Lectures
 master.menu.lecturer.lecture.list-mine = My lectures
 
+# master.menu.company ##########################################################
+
+master.menu.company = Company
+master.menu.company.practicum.list = Practicum
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

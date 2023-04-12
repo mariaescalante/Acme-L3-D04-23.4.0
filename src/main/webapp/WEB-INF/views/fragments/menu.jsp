@@ -61,6 +61,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.lecturer.lecture.list-mine" action="/lecturer/lecture/list-mine"/>
 		</acme:menu-option>
+	
+		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
+			<acme:menu-suboption code="master.menu.company.practicum.list" action="/company/practicum/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
