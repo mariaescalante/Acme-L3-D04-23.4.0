@@ -10,7 +10,7 @@ import acme.entities.Offer;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedOfferRepository extends AbstractRepository {
+public interface AdministratorOfferRepository extends AbstractRepository {
 
 	@Query("select o from Offer o where o.id = :id")
 	Offer findOneOfferById(int id);

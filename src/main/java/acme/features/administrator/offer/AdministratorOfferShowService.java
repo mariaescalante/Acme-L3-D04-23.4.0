@@ -7,13 +7,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.Offer;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AuthenticatedOfferShowService extends AbstractService<Administrator, Offer> {
+public class AdministratorOfferShowService extends AbstractService<Administrator, Offer> {
 
 	@Autowired
-	protected AuthenticatedOfferRepository repository;
+	protected AdministratorOfferRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -44,11 +45,11 @@ public class AuthenticatedOfferShowService extends AbstractService<Administrator
 	public void unbind(final Offer object) {
 		assert object != null;
 
+		final boolean readonly = MomentHelper.getCurrentMoment().after(object.getStartDate());
 		Tuple tuple;
 
 		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "startD", "endDate", "price", "optionalLink");
-		tuple.put("confirmation", false);
-		tuple.put("readonly", true);
+		tuple.put("readonly", readonly);
 
 		super.getResponse().setData(tuple);
 	}
