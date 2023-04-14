@@ -7,6 +7,4 @@
 	<acme:list-column code="authenticated.offer.list.label.heading" path="heading"  width="30%"/>
 	<acme:list-column code="authenticated.offer.list.label.summary" path="summary" width="50%" />
 	<acme:list-column code="authenticated.offer.list.label.price" path="price" width="20%" />
-
-
 </acme:list>
