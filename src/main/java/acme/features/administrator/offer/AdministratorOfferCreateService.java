@@ -4,6 +4,7 @@ package acme.features.administrator.offer;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.Offer;
 import acme.framework.components.accounts.Administrator;
@@ -11,6 +12,7 @@ import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
+@Service
 public class AdministratorOfferCreateService extends AbstractService<Administrator, Offer> {
 
 	// Internal state ---------------------------------------------------------
