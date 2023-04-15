@@ -39,12 +39,10 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		boolean status;
 		int masterId;
 		Enrolment enrolment;
-		Student student;
 
 		masterId = super.getRequest().getData("id", int.class);
 		enrolment = this.repository.findOneEnrolmentById(masterId);
-		student = enrolment == null ? null : enrolment.getStudent();
-		status = super.getRequest().getPrincipal().hasRole(student) || enrolment != null && !enrolment.isDraftMode();
+		status = enrolment != null && super.getRequest().getPrincipal().getAccountId() == enrolment.getStudent().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}

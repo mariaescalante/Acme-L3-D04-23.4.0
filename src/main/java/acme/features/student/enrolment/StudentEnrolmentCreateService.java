@@ -63,6 +63,13 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	@Override
 	public void validate(final Enrolment object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Enrolment existing;
+
+			existing = this.repository.findOneEnrolmentByCode(object.getCode());
+			super.state(existing == null, "code", "student.enrolment.form.error.duplicated");
+		}
 	}
 
 	@Override

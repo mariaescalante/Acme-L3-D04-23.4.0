@@ -21,3 +21,8 @@ student.activity.form.label.link = Link:
 
 student.activity.list.button.create = Create
 student.activity.form.button.create = Create
+student.activity.form.button.delete = Delete
+student.activity.form.button.update = Update
+
+student.activity.form.error.endDate = End Date must be after end date
+student.activity.form.error.startDate = Start Date must be before end date

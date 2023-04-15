@@ -19,11 +19,15 @@
 	<acme:input-textbox code="student.activity.form.label.title" path="title"/>
 	<acme:input-textarea code="student.activity.form.label.abstract" path="abstract$"/>
 	<acme:input-select code="student.activity.form.label.indication" path="indication" choices="${indications}"/>
-	<acme:input-textbox code="student.activity.form.label.startDate" path="startDate"/>
-	<acme:input-textbox code="student.activity.form.label.endDate" path="endDate"/>
-	<acme:input-textarea code="student.activity.form.label.link" path="link"/>
+	<acme:input-moment code="student.activity.form.label.startDate" path="startDate"/>
+	<acme:input-moment code="student.activity.form.label.endDate" path="endDate"/>
+	<acme:input-textbox code="student.activity.form.label.link" path="link"/>
 	
 	<jstl:choose>	 
+		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish')}">
+			<acme:submit code="student.activity.form.button.update" action="/student/activity/update"/>
+			<acme:submit code="student.activity.form.button.delete" action="/student/activity/delete"/>
+		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="student.activity.form.button.create" action="/student/activity/create?masterId=${masterId}"/>
 		</jstl:when>		

@@ -28,3 +28,4 @@ student.enrolment.form.button.create = Crear
 student.enrolment.list.button.create = Crear
 
 student.enrolment.form.error.bad-credit-card = Tarjeta de crédito inválida
+student.enrolment.form.error.duplicated = Código duplicado

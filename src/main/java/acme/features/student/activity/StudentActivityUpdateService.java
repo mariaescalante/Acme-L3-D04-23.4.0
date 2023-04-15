@@ -4,16 +4,16 @@ package acme.features.student.activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
 import acme.entities.Activity;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class StudentActivityShowService extends AbstractService<Student, Activity> {
+public class StudentActivityUpdateService extends AbstractService<Student, Activity> {
 
+	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected StudentActivityRepository repository;
 
@@ -21,7 +21,9 @@ public class StudentActivityShowService extends AbstractService<Student, Activit
 	@Override
 	public void check() {
 		boolean status;
+
 		status = super.getRequest().hasData("id", int.class);
+
 		super.getResponse().setChecked(status);
 	}
 
@@ -42,9 +44,35 @@ public class StudentActivityShowService extends AbstractService<Student, Activit
 	public void load() {
 		Activity object;
 		int id;
+
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneActivityById(id);
+
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Activity object) {
+		assert object != null;
+
+		super.bind(object, "title", "abstract$", "indication", "startDate", "endDate", "link");
+
+	}
+
+	@Override
+	public void validate(final Activity object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "student.activity.form.error.startDate");
+		super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
+	}
+
+	@Override
+	public void perform(final Activity object) {
+		assert object != null;
+
+		this.repository.save(object);
 	}
 
 	@Override
@@ -52,15 +80,10 @@ public class StudentActivityShowService extends AbstractService<Student, Activit
 		assert object != null;
 
 		Tuple tuple;
-		SelectChoices choices;
 
-		choices = SelectChoices.from(ActivityType.class, object.getIndication());
-
-		tuple = super.unbind(object, "title", "abstract$", "startDate", "endDate", "link");
-		tuple.put("indication", choices.getSelected().getKey());
-		tuple.put("indications", choices);
-		tuple.put("masterId", object.getEnrolment().getId());
+		tuple = super.unbind(object, "title", "abstract$", "indication", "startDate", "endDate", "link");
 
 		super.getResponse().setData(tuple);
 	}
+
 }

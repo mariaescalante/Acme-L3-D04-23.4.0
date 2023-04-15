@@ -9,6 +9,7 @@ import acme.entities.Activity;
 import acme.entities.Enrolment;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -52,7 +53,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 		object = new Activity();
 		object.setTitle("");
 		object.setAbstract$("");
-		object.setIndication(null);
+		object.setIndication(ActivityType.THEORY);
 		object.setStartDate(null);
 		object.setEndDate(null);
 		object.setLink("");
@@ -70,6 +71,10 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "student.activity.form.error.startDate");
+		super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
 	}
 
 	@Override

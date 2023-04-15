@@ -16,13 +16,19 @@ public class StudentActivityController extends AbstractController<Student, Activ
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected StudentActivityListService		listService;
+	protected StudentActivityListService	listService;
 
 	@Autowired
-	protected StudentActivityShowService		showService;
+	protected StudentActivityShowService	showService;
 
 	@Autowired
 	protected StudentActivityCreateService	createService;
+
+	@Autowired
+	protected StudentActivityDeleteService	deleteService;
+
+	@Autowired
+	protected StudentActivityUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -32,6 +38,8 @@ public class StudentActivityController extends AbstractController<Student, Activ
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("delete", this.deleteService);
+		super.addBasicCommand("update", this.updateService);
 
 	}
 }
