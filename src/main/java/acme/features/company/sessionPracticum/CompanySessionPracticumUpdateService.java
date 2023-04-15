@@ -1,6 +1,9 @@
 
 package acme.features.company.sessionPracticum;
 
+import java.time.Instant;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,8 +63,20 @@ public class CompanySessionPracticumUpdateService extends AbstractService<Compan
 
 	@Override
 	public void validate(final SessionPracticum object) {
+		Date date;
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
 
+		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+			date = CompanySessionPracticumCreateService.sumarDiasAFecha(Date.from(Instant.now()), 7);
+			super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
+			date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
+			super.state(object.getEndDate().after(date) || object.getStartDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
+		}
 	}
 
 	@Override

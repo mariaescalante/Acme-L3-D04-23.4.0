@@ -1,0 +1,24 @@
+
+company.session-practicum.list.label.title = Titulo
+company.session-practicum.list.label.start-date = Fecha inicio
+company.session-practicum.list.label.end-date = Fecha fin
+
+company.session-practicum.list.button.create = Crear
+company.session-practicum.list.button.create-exceptional = Crear sesión excepcional
+
+company.session-practicum.form.label.title = Titulo:
+company.session-practicum.form.label.abstract-text = Resumen:
+company.session-practicum.form.label.start-date = Fecha inicio:
+company.session-practicum.form.label.end-date = Fecha fin:
+company.session-practicum.form.label.further-information-link = Más información: (Opcional)
+company.session-practicum.form.label.confirmation = Confirmar sesión práctica excepcional
+
+company.session-practicum.form.button.create = Crear
+company.session-practicum.form.button.create-exceptional = Crear sesión exepcional
+company.session-practicum.form.button.update = Actualizar
+company.session-practicum.form.button.delete = Eliminar
+
+
+company.practicum.form.error.start-before-end = La fecha de fin debe ser posterior a la fecha de inicio
+company.practicum.form.error.least-one-week-ahead = La sesión debe agendarse al menos una semana antes
+company.practicum.form.error.least-one-week-long = La sesion debe durar al menos una semana

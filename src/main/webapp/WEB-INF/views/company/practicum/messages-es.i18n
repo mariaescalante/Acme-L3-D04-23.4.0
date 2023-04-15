@@ -15,6 +15,7 @@ company.practicum.form.button.update = Actualizar
 company.practicum.form.button.delete = Eliminar
 company.practicum.form.button.publish = Publicar
 company.practicum.form.button.create = Crear
+company.practicum.form.button.session-practicum.list = Listar todas las sesiones
 
 company.practicum.form.error.duplicated = El codigo ya está en uso
 company.practicum.form.error.negative-estimatedTotalTime = El tiempo estimado debe ser positivo
