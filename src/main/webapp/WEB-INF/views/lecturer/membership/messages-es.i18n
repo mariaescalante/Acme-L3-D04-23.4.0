@@ -1,0 +1,9 @@
+lecturer.membership.form.button.create = Crear
+lecturer.membership.form.button.delete = Eliminar
+lecturer.membership.form.label.lecture = Conferencia:
+lecturer.membership.form.label.course = Curso:
+
+lecturer.membership.list.button.create = Crear
+
+lecturer.membership.list.label.lecture = Conferencia
+lecturer.membership.list.label.course = Curso

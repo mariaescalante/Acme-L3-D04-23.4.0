@@ -12,7 +12,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.datatypes.Mark;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Auditor;
 import lombok.Getter;

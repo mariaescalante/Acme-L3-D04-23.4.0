@@ -12,12 +12,15 @@
 
 package acme.features.lecturer.course;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
 import acme.entities.CourseType;
-import acme.framework.components.jsp.SelectChoices;
+import acme.entities.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -52,7 +55,7 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		masterId = super.getRequest().getData("id", int.class);
 		course = this.repository.findOneCourseById(masterId);
 		lecturer = course == null ? null : course.getLecturer();
-		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.getDraftMode();
+		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -71,18 +74,15 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 	@Override
 	public void unbind(final Course object) {
 		assert object != null;
-
-		SelectChoices choices;
 		Tuple tuple;
 
-		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
-
-		tuple = super.unbind(object, "code", "title", "abstract$", "theoreticalOrHandsOn", "price", "link");
-		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
-		tuple.put("theoreticalOrHandsOn2", choices);
+		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
+		final List<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId()).stream().collect(Collectors.toList());
+		final CourseType theoreticalOrHandsOn = object.theoreticalOrHandsOn(lectures);
+		tuple.put("theoreticalOrHandsOn", theoreticalOrHandsOn);
 
 		super.getResponse().setData(tuple);
-		tuple.put("draftMode", object.getDraftMode());
+		tuple.put("draftMode", object.isDraftMode());
 	}
 
 }

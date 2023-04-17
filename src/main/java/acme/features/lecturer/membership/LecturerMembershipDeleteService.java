@@ -1,5 +1,5 @@
 /*
- * EmployerJobDeleteService.java
+ * LecturerLectureDeleteService.java
  *
  * Copyright (C) 2012-2023 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.lecturer.course;
+package acme.features.lecturer.membership;
 
 import java.util.Collection;
 
@@ -18,18 +18,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
+import acme.entities.Lecture;
 import acme.entities.Membership;
+import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseDeleteService extends AbstractService<Lecturer, Course> {
+public class LecturerMembershipDeleteService extends AbstractService<Lecturer, Membership> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected LecturerMembershipRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -51,55 +54,63 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		Lecturer lecturer;
 
 		masterId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(masterId);
+		course = this.repository.findOneCourseByMembershipId(masterId);
 		lecturer = course == null ? null : course.getLecturer();
-		status = course != null && course.isDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer);
+		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		Course object;
+		Lecture object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
+		object = this.repository.findOneLectureById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void bind(final Course object) {
+	public void bind(final Membership object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "abstract$", "price", "link");
+		super.bind(object, "lecture", "course");
 	}
 
 	@Override
-	public void validate(final Course object) {
+	public void validate(final Membership object) {
 		assert object != null;
 	}
 
 	@Override
-	public void perform(final Course object) {
+	public void perform(final Membership object) {
 		assert object != null;
 
-		Collection<Membership> membership;
-
-		membership = this.repository.findMembershipByCourseId(object.getId());
-		this.repository.deleteAll(membership);
 		this.repository.delete(object);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Membership object) {
 		assert object != null;
+		Principal principal;
+		final Tuple tuple;
+		Collection<Course> courses;
+		final SelectChoices choices;
+		Collection<Lecture> lectures;
+		final SelectChoices choices2;
 
-		Tuple tuple;
-
-		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
-		tuple.put("draftMode", object.isDraftMode());
+		principal = super.getRequest().getPrincipal();
+		courses = this.repository.findManyCoursesByLecturerId(principal.getActiveRoleId());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+		lectures = this.repository.findManyLectures();
+		choices2 = SelectChoices.from(lectures, "title", object.getLecture());
+		tuple = super.unbind(object, "lecture", "course");
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
+		tuple.put("lecture", choices2.getSelected().getKey());
+		tuple.put("lectures", choices2);
 
 		super.getResponse().setData(tuple);
 	}

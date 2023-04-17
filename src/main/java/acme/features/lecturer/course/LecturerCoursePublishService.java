@@ -12,12 +12,14 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
 import acme.entities.CourseType;
-import acme.framework.components.jsp.SelectChoices;
+import acme.entities.Lecture;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -52,7 +54,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		courseId = super.getRequest().getData("id", int.class);
 		course = this.repository.findOneCourseById(courseId);
 		lecturer = course == null ? null : course.getLecturer();
-		status = course != null && course.getDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer);
+		status = course != null && course.isDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -72,23 +74,25 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "reference", "title", "deadline", "salary", "score", "moreInfo", "description");
+		super.bind(object, "code", "title", "abstract$", "price", "link");
 
 	}
 
 	@Override
 	public void validate(final Course object) {
 		assert object != null;
+		boolean purelyTheoretical;
+		Collection<Lecture> lectures;
+		Collection<Lecture> notPublished;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Course existing;
-
-			existing = this.repository.findOneCourseByCode(object.getCode());
-			super.state(existing == null || existing.equals(object), "code", "lecturer.course.form.error.duplicated");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("salary"))
+		lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		notPublished = this.repository.findNotPublishedLecturesByCourseId(object.getId());
+		purelyTheoretical = object.purelyTheoretical(lectures);
+		if (!super.getBuffer().getErrors().hasErrors("price"))
 			super.state(object.getPrice().getAmount() > 0, "price", "lecturer.course.form.error.negative-price");
+		if (!super.getBuffer().getErrors().hasErrors("theoreticalOrHandsOn"))
+			super.state(!purelyTheoretical, "theoreticalOrHandsOn", "lecturer.course.form.error.purely-theoretical");
+		super.state(notPublished.isEmpty(), "code", "lecturer.course.form.error.lectures-not-published");
 	}
 
 	@Override
@@ -103,17 +107,17 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 	public void unbind(final Course object) {
 		assert object != null;
 
-		SelectChoices choices;
+		Collection<Lecture> lectures;
+		CourseType theoreticalOrHandsOn;
 		Tuple tuple;
 
-		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
-
-		tuple = super.unbind(object, "code", "title", "abstract$", "theoreticalOrHandsOn", "price", "link", "draftMode");
-		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
-		tuple.put("theoreticalOrHandsOn2", choices);
+		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
+		lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		theoreticalOrHandsOn = object.theoreticalOrHandsOn(lectures);
+		tuple.put("theoreticalOrHandsOn", theoreticalOrHandsOn);
+		tuple.put("draftMode", object.isDraftMode());
 
 		super.getResponse().setData(tuple);
-		tuple.put("draftMode", object.getDraftMode());
 	}
 
 }

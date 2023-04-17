@@ -61,6 +61,7 @@ master.menu.lecturer.lecture.list-all = Conferencias
 master.menu.lecturer.lecture.list-mine = Mis conferencias
 master.menu.lecturer.course.list-all = Cursos
 master.menu.lecturer.course.list-mine = Mis cursos
+master.menu.lecturer.membership.list-mine = Mis membresia
 
 # master.menu.user-account ####################################################
 

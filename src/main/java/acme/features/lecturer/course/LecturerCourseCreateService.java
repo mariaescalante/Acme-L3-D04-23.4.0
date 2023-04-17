@@ -16,8 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
-import acme.entities.CourseType;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -60,7 +58,7 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "abstract$", "theoreticalOrHandsOn", "price", "link");
+		super.bind(object, "code", "title", "abstract$", "price", "link");
 	}
 
 	@Override
@@ -88,14 +86,9 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 	@Override
 	public void unbind(final Course object) {
 		assert object != null;
-		SelectChoices choices;
 		Tuple tuple;
 
-		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
-
-		tuple = super.unbind(object, "code", "title", "abstract$", "theoreticalOrHandsOn", "price", "link", "draftMode");
-		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
-		tuple.put("theoreticalOrHandsOn2", choices);
+		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
 
 		super.getResponse().setData(tuple);
 	}

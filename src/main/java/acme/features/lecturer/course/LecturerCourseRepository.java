@@ -18,7 +18,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Course;
+import acme.entities.CourseType;
 import acme.entities.Lecture;
+import acme.entities.Membership;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Lecturer;
 
@@ -34,6 +36,9 @@ public interface LecturerCourseRepository extends AbstractRepository {
 	@Query("select l from Lecturer l where l.id = :id")
 	Lecturer findOneLecturerById(int id);
 
+	@Query("select l from Lecture l where l.id = :id")
+	Lecturer findOneLectureById(int id);
+
 	@Query("select c from Course c where c.lecturer.id = :lecturerId")
 	Collection<Course> findManyCoursesByLecturerId(int lecturerId);
 
@@ -43,4 +48,15 @@ public interface LecturerCourseRepository extends AbstractRepository {
 	@Query("select m.lecture from Membership m where m.course.id = :courseId")
 	Collection<Lecture> findManyLecturesByCourseId(int courseId);
 
+	@Query("select m from Membership m where m.course.id = :courseId")
+	Collection<Membership> findMembershipByCourseId(int courseId);
+
+	@Query("select count(m.lecture) from Membership m where m.course.id = :courseId")
+	Integer countLecturesByCourseId(int courseId);
+
+	@Query("select count(m.lecture) from Membership m where m.course.id = :courseId and m.lecture.theoreticalOrHandsOn = :type")
+	Integer countTheoreticalLecturesByCourseId(int courseId, CourseType type);
+
+	@Query("select m.lecture from Membership m where m.course.id = :courseId and m.lecture.draftMode = true")
+	Collection<Lecture> findNotPublishedLecturesByCourseId(int courseId);
 }

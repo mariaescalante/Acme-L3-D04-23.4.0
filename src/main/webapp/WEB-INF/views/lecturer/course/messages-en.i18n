@@ -20,3 +20,5 @@ lecturer.course.form.button.create = Create
 
 lecturer.course.form.error.duplicated = This code is taken
 lecturer.course.form.error.negative-price = The price must be positive
+lecturer.course.form.error.purely-theoretical = Courses must have hands-on lectures
+lecturer.course.form.error.lectures-not-published = All lectures must be published

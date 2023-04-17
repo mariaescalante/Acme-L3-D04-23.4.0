@@ -20,4 +20,6 @@ lecturer.course.form.button.create = Crear
 
 lecturer.course.form.error.duplicated = Este codigo no está linre
 lecturer.course.form.error.negative-price = El precio debe ser positivo
+lecturer.course.form.error.purely-theoretical = Los cursos deben tener conferencias practicas
+lecturer.course.form.error.lectures-not-published = Todas las conferencias deben estar publicadas
 

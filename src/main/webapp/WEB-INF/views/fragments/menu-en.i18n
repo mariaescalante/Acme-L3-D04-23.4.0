@@ -57,6 +57,7 @@ master.menu.lecturer.course.list-all = Courses
 master.menu.lecturer.course.list-mine = My courses
 master.menu.lecturer.lecture.list-all = Lectures
 master.menu.lecturer.lecture.list-mine = My lectures
+master.menu.lecturer.membership.list-mine = My membership
 
 # master.menu.user-account ####################################################
 

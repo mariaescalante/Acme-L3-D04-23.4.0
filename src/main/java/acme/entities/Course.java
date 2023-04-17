@@ -1,6 +1,8 @@
 
 package acme.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
@@ -35,8 +37,6 @@ public class Course extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstract$;
 
-	protected CourseType		theoreticalOrHandsOn;
-
 	protected Money				price;
 
 	@URL
@@ -46,5 +46,38 @@ public class Course extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Lecturer			lecturer;
 
-	protected Boolean			draftMode;
+	protected boolean			draftMode;
+
+
+	public CourseType theoreticalOrHandsOn(final Collection<Lecture> lectures) {
+		CourseType res = CourseType.HANDSON;
+		double total = 0.;
+		int theoretical = 0;
+		if (!lectures.isEmpty()) {
+			for (final Lecture lecture : lectures) {
+				total = total + 1;
+				if (lecture.getTheoreticalOrHandsOn().equals(CourseType.THEORETICAL))
+					theoretical = theoretical + 1;
+			}
+			if (theoretical > total / 2)
+				res = CourseType.THEORETICAL;
+		}
+		return res;
+	}
+	public boolean purelyTheoretical(final Collection<Lecture> lectures) {
+		boolean res = false;
+		double total = 0.;
+		int theoretical = 0;
+		if (!lectures.isEmpty()) {
+			for (final Lecture lecture : lectures) {
+				total = total + 1;
+				if (lecture.getTheoreticalOrHandsOn().equals(CourseType.THEORETICAL))
+					theoretical = theoretical + 1;
+			}
+			if (theoretical == total)
+				res = true;
+		}
+		return res;
+	}
+
 }

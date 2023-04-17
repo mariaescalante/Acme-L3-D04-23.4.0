@@ -19,16 +19,16 @@
 	<acme:input-textbox code="lecturer.course.form.label.code" path="code"/>	
 	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textarea code="lecturer.course.form.label.abstract$" path="abstract$"/>
-	<acme:input-select code="lecturer.course.form.label.theoreticalOrHandsOn" path="theoreticalOrHandsOn" choices="${theoreticalOrHandsOn2}"/>
+	<acme:input-textbox code="lecturer.course.form.label.theoreticalOrHandsOn" path="theoreticalOrHandsOn" readonly="true"/>
 	<acme:input-money code="lecturer.course.form.label.price" path="price"/>
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
 
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="lecturer.course.form.button.lectures" action="/lecturer/lecture/list?masterId=${id}"/>			
+			<acme:button code="lecturer.course.form.button.lectures" action="/lecturer/lecture/list-course?masterId=${id}"/>			
 		</jstl:when>
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == true}">
-			<acme:button code="lecturer.course.form.button.lectures" action="/lecturer/lecture/list?masterId=${id}"/>
+			<acme:button code="lecturer.course.form.button.lectures" action="/lecturer/lecture/list-course?masterId=${id}"/>
 			<acme:submit code="lecturer.course.form.button.update" action="/lecturer/course/update"/>
 			<acme:submit code="lecturer.course.form.button.delete" action="/lecturer/course/delete"/>
 			<acme:submit code="lecturer.course.form.button.publish" action="/lecturer/course/publish"/>

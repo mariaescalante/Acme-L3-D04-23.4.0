@@ -1,0 +1,17 @@
+lecturer.lecture.form.button.create = Crear
+lecturer.lecture.form.button.update = Actualizar
+lecturer.lecture.form.button.delete = Eliminar
+lecturer.lecture.form.button.publish = Publicar
+lecturer.lecture.form.label.title = Titulo:
+lecturer.lecture.form.label.abstract = Resumen:
+lecturer.lecture.form.label.time = Duración de la conferencia:
+lecturer.lecture.form.label.body = Seccion principal:
+lecturer.lecture.form.label.link = Enlace para más información:
+lecturer.lecture.form.label.theoreticalOrHandsOn = Tipo de conferencia:
+lecturer.lecture.form.label.draftMode = Modo borrador:
+
+lecturer.lecture.list.button.create = Crear
+
+lecturer.lecture.list.label.abstract = Resumen
+lecturer.lecture.list.label.theoreticalOrHandsOn = Tipo de conferencia
+lecturer.lecture.list.label.title = Titulo

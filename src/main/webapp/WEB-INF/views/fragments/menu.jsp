@@ -57,9 +57,11 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.lecturer.course.list-mine" action="/lecturer/course/list-mine"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.lecturer.lecture.list-all" action="/lecturer/lecturer/list-all"/>
+			<acme:menu-suboption code="master.menu.lecturer.lecture.list-all" action="/lecturer/lecture/list-all"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.lecturer.lecture.list-mine" action="/lecturer/lecture/list-mine"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.lecturer.membership.list-mine" action="/lecturer/membership/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

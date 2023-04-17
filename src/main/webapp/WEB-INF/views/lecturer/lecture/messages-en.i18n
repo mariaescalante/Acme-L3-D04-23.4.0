@@ -1,0 +1,18 @@
+lecturer.lecture.form.button.create = Create
+lecturer.lecture.form.button.update = Update
+lecturer.lecture.form.button.delete = Delete
+lecturer.lecture.form.button.publish = Publish
+lecturer.lecture.form.label.title = Tittle:
+lecturer.lecture.form.label.abstract = Abstract:
+lecturer.lecture.form.label.time = Duration of the lecture:
+lecturer.lecture.form.label.body = Body:
+lecturer.lecture.form.label.link = Link for more information:
+lecturer.lecture.form.label.theoreticalOrHandsOn = Lecture type:
+lecturer.lecture.form.label.draftMode = Draft Mode:
+
+
+lecturer.lecture.list.button.create = Create
+
+lecturer.lecture.list.label.abstract = Abstract
+lecturer.lecture.list.label.theoreticalOrHandsOn = Lecture type
+lecturer.lecture.list.label.title = Title
