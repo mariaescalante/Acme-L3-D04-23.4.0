@@ -39,6 +39,8 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
             <acme:menu-suboption code="master.menu.authenticated.money-exchange" action="/authenticated/money-exchange/perform"/>
+            <acme:menu-separator/>
+            <acme:menu-suboption code="master.menu.any.list-peep" action="/any/peep/list"/>
         </acme:menu-option>
         
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
