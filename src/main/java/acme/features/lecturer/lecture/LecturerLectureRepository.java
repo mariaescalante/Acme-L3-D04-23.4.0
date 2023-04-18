@@ -23,6 +23,9 @@ public interface LecturerLectureRepository extends AbstractRepository {
 	@Query("select c from Course c where c.lecturer.id = :lecturerId")
 	Collection<Course> findManyCoursesByLecturerId(int lecturerId);
 
+	@Query("select c from Course c")
+	Collection<Course> findManyCourses();
+
 	@Query("select m from Membership m where m.lecture.id = :lectureId")
 	Collection<Membership> findMembershipByLectureId(int lectureId);
 

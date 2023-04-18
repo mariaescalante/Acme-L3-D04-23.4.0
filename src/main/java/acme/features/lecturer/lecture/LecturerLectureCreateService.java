@@ -23,6 +23,7 @@ import acme.entities.Course;
 import acme.entities.CourseType;
 import acme.entities.Lecture;
 import acme.entities.Membership;
+import acme.features.lecturer.membership.LecturerMembershipRepository;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -35,7 +36,10 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected LecturerLectureRepository repository;
+	protected LecturerLectureRepository		repository;
+
+	@Autowired
+	protected LecturerMembershipRepository	MemRepository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -69,15 +73,9 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	@Override
 	public void bind(final Lecture object) {
 		assert object != null;
-		int courseId;
-		Course course;
 		CourseType theoreticalOrHandsOn;
-		final Membership membership = new Membership();
-		courseId = super.getRequest().getData("course", int.class);
 		theoreticalOrHandsOn = super.getRequest().getData("theoreticalOrHandsOn", CourseType.class);
-		course = this.repository.findOneCourseById(courseId);
-		membership.setCourse(course);
-		membership.setLecture(object);
+
 		object.setTheoreticalOrHandsOn(theoreticalOrHandsOn);
 		super.bind(object, "title", "abstract$", "time", "body", "link");
 	}
@@ -91,7 +89,16 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	public void perform(final Lecture object) {
 		assert object != null;
 
+		final String courseId;
+		final Course course;
+		final Membership membership = new Membership();
+		System.out.println(super.getRequest().toString());
+		courseId = super.getRequest().getData("course", String.class);
+		course = this.repository.findOneCourseById(Integer.parseInt(courseId));
+		membership.setCourse(course);
+		membership.setLecture(object);
 		this.repository.save(object);
+		this.MemRepository.save(membership);
 	}
 
 	@Override
@@ -116,6 +123,7 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
 
 		tuple = super.unbind(object, "title", "abstract$", "time", "body", "link");
+
 		tuple.put("course", choices2.getSelected().getKey());
 		tuple.put("courses", choices2);
 		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
