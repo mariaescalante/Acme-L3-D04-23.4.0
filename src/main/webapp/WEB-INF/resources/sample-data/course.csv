@@ -1,5 +1,6 @@
-key,code,title,abstract$,price,theoreticalOrHandsOn,link,key:lecturer
-course-01,CRS 001,Title 1,Abstract 1,EUR 12345.99,HANDSON,http://www.example.com,lecturer-01
-course-02,CRS 002,Title 2,Abstract 2,EUR 54321.01,THEORETICAL,http://www.example.com,lecturer-02
-course-03,CRS 003,Title 3,Abstract 3,EUR 743.99,HANDSON,http://www.example.com,lecturer-01
-course-04,CRS 004,Title 4,Abstract 4,EUR 999.99,HANDSON,http://www.example.com,lecturer-02
+key,code,title,abstract$,price,theoreticalOrHandsOn,link,key:lecturer,draftMode
+course-01,CRS 001,Title 1,Abstract 1,EUR 12345.99,HANDSON,http://www.example.com,lecturer-01,false
+course-02,CRS 002,Title 2,Abstract 2,EUR 54321.01,THEORETICAL,http://www.example.com,lecturer-02,false
+course-03,CRS 003,Title 3,Abstract 3,EUR 743.99,HANDSON,http://www.example.com,lecturer-01,false
+course-04,CRS 004,Title 4,Abstract 4,EUR 999.99,HANDSON,http://www.example.com,lecturer-02,false
+course-05,CRS 005,Title 5,Abstract 5,EUR 543.56,THEORETICAL,http://www.example.com,lecturer-01,true

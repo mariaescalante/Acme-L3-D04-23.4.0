@@ -21,7 +21,7 @@
 	<acme:input-select code="student.activity.form.label.indication" path="indication" choices="${indications}"/>
 	<acme:input-moment code="student.activity.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="student.activity.form.label.endDate" path="endDate"/>
-	<acme:input-textbox code="student.activity.form.label.link" path="link"/>
+	<acme:input-url code="student.activity.form.label.link" path="link"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish')}">

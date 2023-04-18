@@ -16,12 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.student.form.label.statement" path="statement"/>
-	<acme:input-textbox code="authenticated.student.form.label.strongFeatures" path="strongFeatures"/>
-	<acme:input-textbox code="authenticated.student.form.label.weakFeatures" path="weakFeatures"/>
-	<acme:input-textbox code="authenticated.student.form.label.link" path="link"/>
-	
-	
-	<acme:submit test="${_command == 'create'}" code="authenticated.student.form.button.create" action="/authenticated/student/create"/>
-	<acme:submit test="${_command == 'update'}" code="authenticated.student.form.button.update" action="/authenticated/student/update"/>
+	<acme:input-textbox code="student.lecture.form.label.title" path="title"/>
+	<acme:input-textarea code="student.lecture.form.label.abstract" path="abstract$"/>
+	<acme:input-integer code="student.lecture.form.label.time" path="time"/>
+	<acme:input-textarea code="student.lecture.form.label.body" path="body"/>
+	<acme:input-url code="student.lecture.form.label.link" path="link"/>
+	<acme:input-select code="student.lecture.form.label.theoreticalOrHandsOn" path="theoreticalOrHandsOn" choices="${theoreticalOrHandsOn2}"/>
 </acme:form>
