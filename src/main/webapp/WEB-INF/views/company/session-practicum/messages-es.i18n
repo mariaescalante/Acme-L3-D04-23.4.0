@@ -2,6 +2,7 @@
 company.session-practicum.list.label.title = Titulo
 company.session-practicum.list.label.start-date = Fecha inicio
 company.session-practicum.list.label.end-date = Fecha fin
+company.session-practicum.list.label.exceptional= Excepcional
 
 company.session-practicum.list.button.create = Crear
 company.session-practicum.list.button.create-exceptional = Crear sesión excepcional

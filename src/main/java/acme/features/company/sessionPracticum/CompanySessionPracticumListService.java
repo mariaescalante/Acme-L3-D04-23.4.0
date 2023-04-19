@@ -58,7 +58,7 @@ public class CompanySessionPracticumListService extends AbstractService<Company,
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "startDate", "endDate");
+		tuple = super.unbind(object, "title", "startDate", "endDate", "correction");
 
 		super.getResponse().setData(tuple);
 	}

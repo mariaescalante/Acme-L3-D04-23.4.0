@@ -16,10 +16,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="company.session-practicum.list.label.title" path="title" width="60%"/>	
+	<acme:list-column code="company.session-practicum.list.label.exceptional" path="correction" width="10%"/>
+	<acme:list-column code="company.session-practicum.list.label.title" path="title" width="50%"/>	
 	<acme:list-column code="company.session-practicum.list.label.start-date" path="startDate" width="20%"/>
 	<acme:list-column code="company.session-practicum.list.label.end-date" path="endDate" width="20%"/>
 </acme:list>
 
 <acme:button test="${showCreate && exceptional}" code="company.session-practicum.list.button.create" action="/company/session-practicum/create?masterId=${id}"/>
-<acme:button test="${showCreate && !exceptional}" code="company.session-practicum.list.button.create-exceptional" action="/company/session-practicum/create?masterId=${id}"/>
+<acme:button test="${showCreate && !exceptional}" code="company.session-practicum.list.button.create-exceptional" action="/company/session-practicum/create-correction?masterId=${id}"/>

@@ -2,7 +2,6 @@
 package acme.features.company.sessionPracticum;
 
 import java.time.Instant;
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class CompanySessionPracticumCreateService extends AbstractService<Company, SessionPracticum> {
+public class CompanySessionPracticumCreateCorrectionService extends AbstractService<Company, SessionPracticum> {
 
 	@Autowired
 	protected CompanySessionPracticumRepository repository;
@@ -33,11 +32,11 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 	@Override
 	public void authorise() {
 		boolean status;
-		int practicumId;
+		int practicumingRecordId;
 		Practicum practicum;
 
-		practicumId = super.getRequest().getData("masterId", int.class);
-		practicum = this.repository.findPracticumById(practicumId);
+		practicumingRecordId = super.getRequest().getData("masterId", int.class);
+		practicum = this.repository.findPracticumById(practicumingRecordId);
 		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany());
 
 		super.getResponse().setAuthorised(status);
@@ -91,7 +90,7 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 	@Override
 	public void perform(final SessionPracticum object) {
 		assert object != null;
-		object.setCorrection(false);
+		object.setCorrection(true);
 		this.repository.save(object);
 	}
 
@@ -107,16 +106,6 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 		tuple.put("confirmation", false);
 
 		super.getResponse().setData(tuple);
-		tuple.put("confirmation", false);
-	}
-
-	public static Date sumarDiasAFecha(final Date fecha, final int dias) {
-		if (dias == 0)
-			return fecha;
-		final Calendar calendar = Calendar.getInstance();
-		calendar.setTime(fecha);
-		calendar.add(Calendar.DAY_OF_YEAR, dias);
-		return calendar.getTime();
 	}
 
 }

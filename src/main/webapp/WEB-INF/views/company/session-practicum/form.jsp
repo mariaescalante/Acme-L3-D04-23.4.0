@@ -30,9 +30,9 @@
 		<jstl:when test="${_command == 'create' && draftMode == true}">
 			<acme:submit code="company.session-practicum.form.button.create" action="/company/session-practicum/create?masterId=${masterId}"/>
 		</jstl:when>
-		<jstl:when test="${_command == 'create' && draftMode == false}">
+		<jstl:when test="${_command == 'create-correction' && draftMode == false}">
 			<acme:input-checkbox code="company.session-practicum.form.label.confirmation" path="confirmation"/>
-			<acme:submit code="company.session-practicum.form.button.create-exceptional" action="/company/session-practicum/create?masterId=${masterId}"/>
+			<acme:submit code="company.session-practicum.form.button.create-exceptional" action="/company/session-practicum/create-correction?masterId=${masterId}"/>
 		</jstl:when>		
 	</jstl:choose>		
 </acme:form>

@@ -14,19 +14,22 @@ import acme.roles.Company;
 public class CompanySessionPracticumController extends AbstractController<Company, SessionPracticum> {
 
 	@Autowired
-	protected CompanySessionPracticumListService	listService;
+	protected CompanySessionPracticumListService				listService;
 
 	@Autowired
-	protected CompanySessionPracticumShowService	showService;
+	protected CompanySessionPracticumShowService				showService;
 
 	@Autowired
-	protected CompanySessionPracticumCreateService	createService;
+	protected CompanySessionPracticumCreateService				createService;
 
 	@Autowired
-	protected CompanySessionPracticumUpdateService	updateService;
+	protected CompanySessionPracticumCreateCorrectionService	createCorrectionService;
 
 	@Autowired
-	protected CompanySessionPracticumDeleteService	deleteService;
+	protected CompanySessionPracticumUpdateService				updateService;
+
+	@Autowired
+	protected CompanySessionPracticumDeleteService				deleteService;
 
 
 	@PostConstruct
@@ -34,6 +37,7 @@ public class CompanySessionPracticumController extends AbstractController<Compan
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
+		super.addCustomCommand("create-correction", "create", this.createCorrectionService);
 		super.addBasicCommand("delete", this.deleteService);
 
 		super.addBasicCommand("update", this.updateService);
