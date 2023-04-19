@@ -22,8 +22,7 @@
 	<acme:input-textbox code="student.enrolment.form.label.workbook" path="workbook"/>
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-textbox code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
-	<acme:input-textbox code="student.enrolment.form.label.creditCard" path="creditCard"/>
-	
+	<acme:input-textbox code="student.enrolment.form.label.creditCard" path="creditCard"/>	
 
 	<jstl:choose>	 
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == false}">
