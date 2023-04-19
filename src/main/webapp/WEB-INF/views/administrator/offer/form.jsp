@@ -4,13 +4,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-moment code="authenticated.offer.form.label.instantiationMoment" path="instantiationMoment" readonly="true"/>	
-	<acme:input-textbox code="authenticated.offer.form.label.heading" path="heading"/>
-	<acme:input-textbox code="authenticated.offer.form.label.summary" path="summary"/>
-	<acme:input-moment code="authenticated.offer.form.label.startDate" path="startDate"/>
-	<acme:input-moment code="authenticated.offer.form.label.endDate" path="endDate"/>
-	<acme:input-money code="authenticated.offer.form.label.price" path="price"/>
-	<acme:input-url code="authenticated.offer.form.label.optionalLink" path="optionalLink"/>
+	<acme:input-moment code="administrator.offer.form.label.instantiationMoment" path="instantiationMoment"/>	
+	<acme:input-textarea code="administrator.offer.form.label.heading" path="heading"/>
+	<acme:input-textarea code="administrator.offer.form.label.summary" path="summary"/>
+	<acme:input-moment code="administrator.offer.form.label.startDate" path="startDate"/>
+	<acme:input-moment code="administrator.offer.form.label.endDate" path="endDate"/>
+	<acme:input-money code="administrator.offer.form.label.price" path="price"/>
+	<acme:input-url code="administrator.offer.form.label.optionalLink" path="optionalLink"/>
 
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">

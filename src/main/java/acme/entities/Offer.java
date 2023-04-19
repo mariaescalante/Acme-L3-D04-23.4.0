@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
@@ -24,6 +25,7 @@ public class Offer extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				instantiationMoment;
@@ -36,12 +38,11 @@ public class Offer extends AbstractEntity {
 	@Length(max = 100)
 	protected String			summary;
 
-	/*
-	 * at least one day after the offer is instantiated and must last for at least one week
-	 */
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				startDate;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				endDate;
 

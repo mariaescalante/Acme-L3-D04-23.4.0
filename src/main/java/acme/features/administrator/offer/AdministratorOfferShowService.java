@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.Offer;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -45,11 +44,9 @@ public class AdministratorOfferShowService extends AbstractService<Administrator
 	public void unbind(final Offer object) {
 		assert object != null;
 
-		final boolean readonly = MomentHelper.getCurrentMoment().after(object.getStartDate());
 		Tuple tuple;
 
-		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "startD", "endDate", "price", "optionalLink");
-		tuple.put("readonly", readonly);
+		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "startDate", "endDate", "price", "optionalLink");
 
 		super.getResponse().setData(tuple);
 	}
