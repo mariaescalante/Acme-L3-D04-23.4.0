@@ -38,6 +38,8 @@ master.menu.administrator.shut-down = Parar el sistema
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.money-exchange = Cambio de dinero
+master.menu.any.list-tutorial = Listar los tutoriales
+
 
 # master.menu.provider ########################################################
 
