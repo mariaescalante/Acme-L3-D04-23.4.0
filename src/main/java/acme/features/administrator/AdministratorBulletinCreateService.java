@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.Bulletin;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -43,7 +44,7 @@ public class AdministratorBulletinCreateService extends AbstractService<Administ
 	public void bind(final Bulletin object) {
 		assert object != null;
 
-		super.bind(object, "instantiationMoment", "title", "message", "flag", "url");
+		super.bind(object, "title", "message", "flag", "url");
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class AdministratorBulletinCreateService extends AbstractService<Administ
 	@Override
 	public void perform(final Bulletin object) {
 		assert object != null;
-
+		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 
