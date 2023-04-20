@@ -1,0 +1,21 @@
+assistant.session.list.label.title = Title
+assistant.session.list.label.abstract = Abstract
+assistant.session.list.label.indication = Session type
+
+assistant.session.list.button.create = Create
+
+assistant.session.form.label.title = Title
+assistant.session.form.label.abstract = Abstract
+assistant.session.form.label.indication = Session type
+assistant.session.form.label.startTime = Start time
+assistant.session.form.label.endTime = End time
+assistant.session.form.label.link = Link
+
+assistant.session.form.button.create = Create
+assistant.session.form.button.update = Update
+assistant.session.form.button.delete = Delete
+
+assistant.session.form.error.startTime = The start date must be before the end date
+assistant.session.form.error.endTime = The end date must be after the start date
+assistant.session.form.error.duration = Session must be one to five hours long
+assistant.session.form.error.unDia = The session must start at least one day after the current date
