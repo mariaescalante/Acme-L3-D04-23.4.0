@@ -79,19 +79,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 	@Override
 	public void unbind(final Activity object) {
-
 		assert object != null;
-
-		//		SelectChoices choices;
-		//		Tuple tuple;
-		//
-		//		choices = SelectChoices.from(ActivityType.class, object.getIndication());
-		//
-		//		tuple = super.unbind(object, "title", "abstract$", "indication", "startDate", "endDate", "link");
-		//		tuple.put("indication", choices.getSelected().getKey());
-		//		tuple.put("indications", choices);
-		//
-		//		super.getResponse().setData(tuple);
 
 		SelectChoices choices;
 		Tuple tuple;
@@ -99,7 +87,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 		choices = SelectChoices.from(ActivityType.class, object.getIndication());
 
 		tuple = super.unbind(object, "title", "abstract$", "indication", "startDate", "endDate", "link");
-		tuple.put("indicationn", choices.getSelected().getKey());
+		tuple.put("indication", choices.getSelected().getKey());
 		tuple.put("indications", choices);
 
 		super.getResponse().setData(tuple);
