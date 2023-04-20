@@ -17,3 +17,5 @@ assistant.session.form.button.delete = Delete
 
 assistant.session.form.error.startTime = The start date must be before the end date
 assistant.session.form.error.endTime = The end date must be after the start date
+assistant.session.form.error.duration = Session must be one to five hours long
+assistant.session.form.error.unDia = The session must start at least one day after the current date
