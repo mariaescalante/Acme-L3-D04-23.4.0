@@ -42,12 +42,9 @@ public class AnyBannerShowService extends AbstractService<Any, Banner> {
 		int random;
 		banners = this.repository.findAvailableBanners(MomentHelper.getCurrentMoment());
 		ls = new ArrayList<>(banners);
-		if (!ls.isEmpty()) {
-			random = (int) Math.round(Math.random() * (ls.size() - 1));
-			id = ls.get(random);
-			object = this.repository.findOneBannerById(id);
-		} else
-			object = new Banner();
+		random = (int) Math.round(Math.random() * (ls.size() - 1));
+		id = ls.get(random);
+		object = this.repository.findOneBannerById(id);
 		super.getBuffer().setData(object);
 	}
 
@@ -60,10 +57,6 @@ public class AnyBannerShowService extends AbstractService<Any, Banner> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "instantiationMoment", "start", "end", "picture", "slogan", "url");
-		if (banners.size() == 0)
-			tuple.put("hay", false);
-		else
-			tuple.put("hay", true);
 		super.getResponse().setData(tuple);
 	}
 }
