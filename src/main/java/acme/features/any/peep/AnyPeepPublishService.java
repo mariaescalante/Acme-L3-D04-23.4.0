@@ -1,7 +1,6 @@
 
 package acme.features.any.peep;
 
-import java.time.Instant;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,10 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Peep;
 import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Principal;
+import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -36,11 +38,17 @@ public class AnyPeepPublishService extends AbstractService<Any, Peep> {
 	@Override
 	public void load() {
 		Peep object;
+		final Principal principal = super.getRequest().getPrincipal();
+		final Date actualDate = MomentHelper.getCurrentMoment();
 		object = new Peep();
-		object.setInstantiationMoment(Date.from(Instant.now()));
+		object.setInstantiationMoment(actualDate);
 		object.setTitle("");
 		object.setEmail("");
-		object.setNickname("");
+		if (principal.isAuthenticated()) {
+			final int userId = principal.getAccountId();
+			final UserAccount user = this.repository.findAccountById(userId);
+			object.setNickname(user.getIdentity().getFullName());
+		}
 		object.setUrl("");
 		object.setMessage("");
 

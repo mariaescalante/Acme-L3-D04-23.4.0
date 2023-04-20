@@ -5,7 +5,8 @@
 
 <acme:form>
 
-	<acme:input-moment code="any.peep.form.label.moment" path="instantiationMoment"/>
+
+	<acme:input-moment code="any.peep.form.label.moment" path="instantiationMoment" readonly= "true"/>
 	<acme:input-textbox code="any.peep.form.label.title" path="title"/>
 	<acme:input-textbox code="any.peep.form.label.nickname" path="nickname"/>	
 	<acme:input-textarea code="any.peep.form.label.message" path="message"/>
