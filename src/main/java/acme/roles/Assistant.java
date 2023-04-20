@@ -28,7 +28,7 @@ public class Assistant extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			summary;
+	protected String			resume;
 
 	@URL
 	protected String			link;

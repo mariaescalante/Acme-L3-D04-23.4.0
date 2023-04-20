@@ -1,0 +1,21 @@
+assistant.session.list.label.title = Titulo
+assistant.session.list.label.abstract = Resumen
+assistant.session.list.label.indication = Tipo de sesion
+
+assistant.session.list.button.create = Crear
+
+assistant.session.form.label.title = Titulo
+assistant.session.form.label.abstract = Resumen
+assistant.session.form.label.indication = Tipo de sesion
+assistant.session.form.label.startTime = Fecha de inicio
+assistant.session.form.label.endTime = Fecha de fin
+assistant.session.form.label.link = Link
+
+assistant.session.form.button.create = Crear
+assistant.session.form.button.update = Actualizar
+assistant.session.form.button.delete = Borrar
+
+assistant.session.form.error.startTime = La fecha de inicio debe ser anterior a la fecha de fin
+assistant.session.form.error.endTime = La fecha de fin debe ser posterior a la fecha de inicio
+assistant.session.form.error.duration = La sesión debe tener de una a cinco horas de duración
+assistant.session.form.error.unDia = La sesión debe comenzar al menos un dia despues a la fecha actual

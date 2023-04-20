@@ -1,0 +1,6 @@
+key,title,abstract$,indication,startTime,endTime,link,key:tutorial
+session-01,Sesion 1,Resumen sesion 1,THEORY,2022/01/01 12:32,2022/01/01 13:40,null,tutorial-01
+session-02,Sesion 2,Resumen sesion 2,HANDS_ON,2022/01/02 17:30,2022/01/02 18:00,null,tutorial-03
+session-03,Sesion 3,Resumen sesion 3,THEORY,2022/01/03 14:00,2022/01/03 15:30,null,tutorial-01
+session-04,Sesion 4,Resumen sesion 4,HANDS_ON,2022/01/04 17:00,2022/01/04 18:15,null,tutorial-03
+session-05,Sesion 5,Resumen sesion 5,THEORY,2022/01/05 10:30,2022/01/05 11:45,null,tutorial-03
