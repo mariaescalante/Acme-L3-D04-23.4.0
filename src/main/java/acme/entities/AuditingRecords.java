@@ -1,6 +1,9 @@
 
 package acme.entities;
 
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -42,9 +45,13 @@ public class AuditingRecords extends AbstractEntity {
 	@Length(min = 1, max = 100)
 	protected String			assessment;
 
-	protected Double			period;
+	protected Date				startDate;
+
+	protected Date				endDate;
 
 	protected Mark				mark;
+
+	protected boolean			correction;
 
 	@URL
 	protected String			link;
@@ -56,4 +63,14 @@ public class AuditingRecords extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Audit				audit;
 
+
+	public Double period() {
+		double res;
+		final Date start = this.startDate;
+		final Date end = this.endDate;
+		final Long st = TimeUnit.MILLISECONDS.toMinutes(start.getTime());
+		final Long et = TimeUnit.MILLISECONDS.toMinutes(end.getTime());
+		res = Double.parseDouble(et.toString()) / 60 - Double.parseDouble(st.toString()) / 60;
+		return res;
+	}
 }

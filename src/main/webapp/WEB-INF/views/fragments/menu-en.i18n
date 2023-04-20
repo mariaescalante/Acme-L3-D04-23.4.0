@@ -40,10 +40,12 @@ master.menu.administrator.list.offer = List offers
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
+
+master.menu.any.list-course = List all Courses
+master.menu.any.list-bulletin = List all Bulletins
+
 master.menu.any.list-peep = List All peeps
 master.menu.any.list-tutorial = List tutorials
-
-
 
 # master.menu.provider ########################################################
 
@@ -54,6 +56,12 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audit.list = Audit
 
 # master.menu.student ##########################################################
 
@@ -66,6 +74,7 @@ master.menu.student.course.list  = Courses
 master.menu.assistant.tutorial.list = My tutorials
 master.menu.assistant = Assistant
 
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -75,9 +84,14 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become a auditor
+
 master.menu.user-account.student = Student data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 
 master.menu.authenticated.list.offer = List offers
+
