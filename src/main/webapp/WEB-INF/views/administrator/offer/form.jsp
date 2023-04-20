@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-moment code="administrator.offer.form.label.instantiationMoment" path="instantiationMoment"/>	
+	<acme:input-moment code="administrator.offer.form.label.instantiationMoment" path="instantiationMoment" readonly="true"/>	
 	<acme:input-textarea code="administrator.offer.form.label.heading" path="heading"/>
 	<acme:input-textarea code="administrator.offer.form.label.summary" path="summary"/>
 	<acme:input-moment code="administrator.offer.form.label.startDate" path="startDate"/>
