@@ -45,7 +45,7 @@ public class AuthenticatedOfferListAllService extends AbstractService<Authentica
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "startDate", "endDate", "price", "optionalLink");
+		tuple = super.unbind(object, "heading", "summary", "price");
 
 		super.getResponse().setData(tuple);
 	}
