@@ -48,6 +48,7 @@ public class Course extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Lecturer			lecturer;
 
+
 	protected boolean			draftMode;
 
 }

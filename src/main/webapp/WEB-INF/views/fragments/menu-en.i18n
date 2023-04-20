@@ -40,6 +40,7 @@ master.menu.administrator.list.offer = List offers
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
+master.menu.any.list-course = List all Courses
 
 master.menu.any.list-course = List all Courses
 master.menu.any.list-bulletin = List all Bulletins
@@ -56,6 +57,20 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.course.list-all = Courses
+master.menu.lecturer.course.list-mine = My courses
+master.menu.lecturer.lecture.list-all = Lectures
+master.menu.lecturer.lecture.list-mine = My lectures
+
+# master.menu.company ##########################################################
+
+master.menu.company = Company
+master.menu.company.practicum.list = Practicum
 
 
 # master.menu.auditor ##########################################################
@@ -83,6 +98,9 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.company = Company data
+master.menu.user-account.become-company = Become a company
 
 
 master.menu.user-account.auditor = Auditor data

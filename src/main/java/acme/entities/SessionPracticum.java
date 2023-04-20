@@ -48,4 +48,6 @@ public class SessionPracticum extends AbstractEntity {
 	@ManyToOne(optional = false)
 	@NotNull
 	protected Practicum			practicum;
+
+	protected boolean			correction;
 }

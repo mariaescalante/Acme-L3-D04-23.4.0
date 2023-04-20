@@ -8,4 +8,7 @@ any.course.form.label.title = Title:
 any.course.form.label.abstract$ = Abstract:
 any.course.form.label.theoreticalOrHandsOn = Course type:
 any.course.form.label.price = Price:
-any.course.form.label.link = Link: (Optional)	
+any.course.form.label.link = Link: (Optional)
+any.course.form.button.practicum= List all practicums
+any.course.form.button.audit = List all audit
+
