@@ -39,7 +39,9 @@ master.menu.administrator.list.offer = List offers
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
+master.menu.any.list-peep = List All peeps
 master.menu.any.list-tutorial = List tutorials
+
 
 
 # master.menu.provider ########################################################

@@ -25,7 +25,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S3" action="http://www.lichess.org/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S4" action="http://games.crossfit.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.S1" action="http://www.wuxiaworld.com/"/>
-			
+            <acme:menu-suboption code="master.menu.any.list-peep" action="/any/peep/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -41,10 +41,11 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
             <acme:menu-suboption code="master.menu.authenticated.money-exchange" action="/authenticated/money-exchange/perform"/>
+            <acme:menu-separator/>
+            <acme:menu-suboption code="master.menu.any.list-peep" action="/any/peep/list"/>
         	<acme:menu-suboption code="master.menu.authenticated.list.offer" action="/authenticated/offer/list" access="isAuthenticated()"/>
         	<acme:menu-separator/>
             <acme:menu-suboption code="master.menu.any.list-tutorial" action="/any/tutorial/list"/>
-        
         </acme:menu-option>
         
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
