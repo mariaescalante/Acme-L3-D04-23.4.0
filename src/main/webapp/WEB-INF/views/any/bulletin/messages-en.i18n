@@ -1,0 +1,10 @@
+any.bulletin.list.label.instantiationMoment = Instantiation Moment
+any.bulletin.list.label.title = Title
+any.bulletin.list.label.message = Message
+
+
+any.bulletin.form.label.instantiationMoment = Instantiation Moment:
+any.bulletin.form.label.title = Title:
+any.bulletin.form.label.message = Message:
+any.bulletin.form.label.flag = Flag:
+any.bulletin.form.label.url = Url:

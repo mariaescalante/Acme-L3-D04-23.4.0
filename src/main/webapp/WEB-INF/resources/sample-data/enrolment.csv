@@ -1,0 +1,5 @@
+key,code,motivation,goals,workbook,key:student,key:course,draftMode,creditCard
+enrolment-01,ENR 001,motivation 1,goals 1,workbook 1,student-01,course-02,false,1111222233334444
+enrolment-02,ENR 002,motivation 2,goals 2,workbook 2,student-02,course-02,false,2222333344445555
+enrolment-03,ENR 003,motivation 3,goals 3,workbook 3,student-01,course-01,false,3333444455556666
+enrolment-04,ENR 004,motivation 4,goals 4,workbook 4,student-01,course-03,true,null

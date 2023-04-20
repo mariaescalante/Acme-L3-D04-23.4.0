@@ -42,7 +42,9 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		masterId = super.getRequest().getData("id", int.class);
 		course = this.repository.findOneCourseById(masterId);
 		lecturer = course == null ? null : course.getLecturer();
-		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.getDraftMode();
+
+		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
+
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -70,9 +72,11 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		tuple = super.unbind(object, "code", "title", "abstract$", "theoreticalOrHandsOn", "price", "link");
 		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
 		tuple.put("theoreticalOrHandsOn2", choices);
+		
 
 		super.getResponse().setData(tuple);
-		tuple.put("draftMode", object.getDraftMode());
+		tuple.put("draftMode", object.isDraftMode());
+
 	}
 
 }

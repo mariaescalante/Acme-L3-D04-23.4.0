@@ -1,0 +1,23 @@
+auditor.audit.list.label.code = Code
+auditor.audit.list.label.conclusion = Conclusion
+auditor.audit.list.label.strongPoints = Strong Points
+
+auditor.audit.list.button.create = Create
+
+auditor.audit.form.label.code = Reference:
+auditor.audit.form.label.conclusion = Conclusion:
+auditor.audit.form.label.strongPoints = Strong Points:
+auditor.audit.form.label.weakPoints = Weak Points:
+auditor.audit.form.label.mark = Mark:
+auditor.audit.form.label.course = Course:
+
+auditor.audit.form.button.update = Update
+auditor.audit.form.button.delete = Delete
+auditor.audit.form.button.publish = Publish
+auditor.audit.form.button.create = Create
+auditor.audit.form.button.auditing-records.list = List all auditing records
+
+auditor.audit.form.error.start-before-end = The date is invalid
+
+auditor.audit.form.error.duplicated = This code is taken
+auditor.audit.form.error.negative-estimatedTotalTime = The estimated time must be positive
