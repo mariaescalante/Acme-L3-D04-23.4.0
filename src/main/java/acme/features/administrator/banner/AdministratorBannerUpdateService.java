@@ -1,8 +1,6 @@
 
 package acme.features.administrator.banner;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.Banner;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -75,7 +74,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void perform(final Banner object) {
 		assert object != null;
 
-		object.setInstantiationMoment(Date.from(Instant.now().minus(1, ChronoUnit.MINUTES)));
+		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 

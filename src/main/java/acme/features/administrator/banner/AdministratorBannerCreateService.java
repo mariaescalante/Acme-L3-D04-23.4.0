@@ -1,7 +1,6 @@
 
 package acme.features.administrator.banner;
 
-import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.Banner;
 import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -54,7 +54,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 		Date date;
-		final Date InstantationMoment = Date.from(Instant.now());
+		final Date InstantationMoment = MomentHelper.getCurrentMoment();
 		if (!super.getBuffer().getErrors().hasErrors("end"))
 			super.state(object.getStart().before(object.getEnd()), "end", "company.practicum.form.error.start-before-end");
 
@@ -70,7 +70,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	@Override
 	public void perform(final Banner object) {
 		assert object != null;
-		object.setInstantiationMoment(Date.from(Instant.now()));
+		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 
