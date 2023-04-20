@@ -1,7 +1,6 @@
 
 package acme.features.company.sessionPracticum;
 
-import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.Practicum;
 import acme.entities.SessionPracticum;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -78,7 +78,7 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 			super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
-			date = CompanySessionPracticumCreateService.sumarDiasAFecha(Date.from(Instant.now()), 7);
+			date = CompanySessionPracticumCreateService.sumarDiasAFecha(MomentHelper.getCurrentMoment(), 7);
 			super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
 		}
 

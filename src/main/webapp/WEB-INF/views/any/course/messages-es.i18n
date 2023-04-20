@@ -9,3 +9,4 @@ any.course.form.label.abstract$ = Resumen:
 any.course.form.label.theoreticalOrHandsOn = Tipo de curso:
 any.course.form.label.price = Precio:
 any.course.form.label.link = Enlace: (Optional)
+any.course.form.button.practicum= Listar todas las practicas
