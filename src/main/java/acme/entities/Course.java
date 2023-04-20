@@ -42,6 +42,8 @@ public class Course extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	protected Boolean			draftMode;
+
 	@NotNull
 	@ManyToOne(optional = false)
 	protected Lecturer			lecturer;

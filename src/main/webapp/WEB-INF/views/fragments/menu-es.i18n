@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -28,11 +28,13 @@ master.menu.anonymous.favourite-link.S1 = 17473982P: Arregui Diaz, Joaquin
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.bulletin-create= Crear un boletin
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.list.offer = Listar ofertas
 
 r.menu.any #######################################################
 
@@ -40,8 +42,14 @@ r.menu.any #######################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.money-exchange = Cambio de dinero
+
 master.menu.any.list-course = Listar todos los cursos
 master.menu.any.list-bulletin = Listar todos los boletines
+
+master.menu.any.list-peep = Listar todos los peeps
+master.menu.any.list-tutorial = Listar los tutoriales
+
+
 
 # master.menu.provider ########################################################
 
@@ -53,10 +61,23 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.audit.list = Auditoria
+
+# master.menu.student ##########################################################
+
+master.menu.student = Estudiante
+master.menu.student.enrolment.list = Mis matrículas
+master.menu.student.course.list  = Cursos
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant.tutorial.list = Mis tutoriales
+master.menu.assistant = Asistente
+
 
 # master.menu.user-account ####################################################
 
@@ -67,5 +88,15 @@ master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 
+
 master.menu.user-account.auditor = Datos de auditor
 master.menu.user-account.become-auditor = Hazte auditor
+
+master.menu.authenticated.list.offer = Listar ofertas
+
+master.menu.user-account.student = Datos de estudiante
+master.menu.user-account.become-student = Hazte estudiante
+master.menu.user-account.assistant = Datos de asistente
+master.menu.user-account.become-assistant = Hazte asistente
+master.menu.authenticated.list.offer = Listar ofertas
+
