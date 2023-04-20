@@ -92,7 +92,6 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 		final String courseId;
 		final Course course;
 		final Membership membership = new Membership();
-		System.out.println(super.getRequest().toString());
 		courseId = super.getRequest().getData("course", String.class);
 		course = this.repository.findOneCourseById(Integer.parseInt(courseId));
 		membership.setCourse(course);

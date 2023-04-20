@@ -1,6 +1,6 @@
-key,title,abstract$,time,body,theoreticalOrHandsOn,link,draftMode
-lecture-01,Title 1,Abstract 1.,1,Body 1.,THEORETICAL,http://www.example.com,true
-lecture-02,Title 2,Abstract 2.,2,Body 2.,THEORETICAL,http://www.example.com,false
-lecture-03,Title 3,Abstract 3.,3,Body 3.,HANDSON,http://www.example.com,false
-lecture-04,Title 4,Abstract 4.,4,Body 4.,HANDSON,http://www.example.com,false
-lecture-05,Title 5,Abstract 5.,5,Body 5.,THEORETICAL,http://www.example.com,false
+key,title,abstract$,time,body,theoreticalOrHandsOn,link,draftMode,course
+lecture-01,Title 1,Abstract 1.,1,Body 1.,THEORETICAL,http://www.example.com,true,null
+lecture-02,Title 2,Abstract 2.,2,Body 2.,THEORETICAL,http://www.example.com,false,null
+lecture-03,Title 3,Abstract 3.,3,Body 3.,HANDSON,http://www.example.com,false,null
+lecture-04,Title 4,Abstract 4.,4,Body 4.,HANDSON,http://www.example.com,false,null
+lecture-05,Title 5,Abstract 5.,5,Body 5.,THEORETICAL,http://www.example.com,false,null
