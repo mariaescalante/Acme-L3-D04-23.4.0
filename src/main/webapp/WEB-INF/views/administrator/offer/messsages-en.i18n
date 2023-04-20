@@ -1,0 +1,22 @@
+administrator.offer.list.label.heading = Heading
+administrator.offer.list.label.summary = Summary
+administrator.offer.list.label.price = Price
+
+administrator.offer.form.label.instantiationMoment = Instantation moment
+administrator.offer.form.label.heading = Heading
+administrator.offer.form.label.summary = Summary
+administrator.offer.form.label.startDate = Start date
+administrator.offer.form.label.endDate = End date
+administrator.offer.form.label.price = Price
+administrator.offer.form.label.optionalLink = Link with further information
+
+administrator.offer.form.button.update = Update
+administrator.offer.form.button.delete = Delete
+administrator.offer.form.button.create = Create 
+administrator.offer.create = Create offer
+
+administrator.offer.form.error.startDate = The start date must be before the end date
+administrator.offer.form.error.endDate = The end date must be after the start date
+administrator.offer.form.error.oneWeek = The offer must last for at least one week
+administrator.offer.form.error.instantiationMoment = The instantiation moment must be at least one day before the start date
+administrator.offer.form.error.startInstantiation = The start date must be at least one day after the instantiation moment
