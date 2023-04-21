@@ -1,26 +1,25 @@
 
-package acme.features.any.course;
+package acme.features.lecturer.lecture;
 
 import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Course;
 import acme.entities.CourseType;
 import acme.entities.Lecture;
-import acme.framework.components.accounts.Any;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class AnyCourseShowService extends AbstractService<Any, Course> {
+public class LecturerLectureShowService extends AbstractService<Lecturer, Lecture> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyCourseRepository repository;
+	protected LecturerLectureRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -37,43 +36,43 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		Course course;
+		int id;
+		Lecture lecture;
 		Lecturer lecturer;
 
-		masterId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(masterId);
-		lecturer = course == null ? null : course.getLecturer();
-		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
+		id = super.getRequest().getData("id", int.class);
+		lecture = this.repository.findOneLectureById(id);
+		lecturer = this.repository.findOneLecturerByLectureId(id);
+		status = lecture != null && (!lecture.isDraftMode() || lecturer.getId() == super.getRequest().getPrincipal().getActiveRoleId());
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Course object;
+		Lecture object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
+		object = this.repository.findOneLectureById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Lecture object) {
 		assert object != null;
-
-		Collection<Lecture> lectures;
-		CourseType theoreticalOrHandsOn;
+		SelectChoices choices;
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
-		lectures = this.repository.findManyLecturesByCourseId(object.getId());
-		theoreticalOrHandsOn = object.theoreticalOrHandsOn(lectures);
-		tuple.put("theoreticalOrHandsOn", theoreticalOrHandsOn);
+		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
+
+		tuple = super.unbind(object, "title", "abstract$", "time", "body", "theoreticalOrHandsOn", "link");
+		tuple.put("draftMode", object.isDraftMode());
+		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
+		tuple.put("theoreticalOrHandsOn2", choices);
 
 		super.getResponse().setData(tuple);
-		tuple.put("draftMode", object.isDraftMode());
 	}
 
 }

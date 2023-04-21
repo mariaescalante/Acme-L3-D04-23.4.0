@@ -29,7 +29,7 @@ Dashboard
     <id>UMLClass</id>
     <coordinates>
       <x>300</x>
-      <y>540</y>
+      <y>560</y>
       <w>330</w>
       <h>160</h>
     </coordinates>
@@ -102,7 +102,7 @@ Lecture
       <x>260</x>
       <y>70</y>
       <w>60</w>
-      <h>580</h>
+      <h>600</h>
     </coordinates>
     <panel_attributes>1..*
 
@@ -136,8 +136,9 @@ Lecture
 
 
 
+
 1</panel_attributes>
-    <additional_attributes>40.0;10.0;10.0;10.0;10.0;560.0;40.0;560.0</additional_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0;10.0;580.0;40.0;580.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -156,6 +157,19 @@ Membership</panel_attributes>
     <coordinates>
       <x>450</x>
       <y>270</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>1..*
+
+1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>490</y>
       <w>50</w>
       <h>90</h>
     </coordinates>

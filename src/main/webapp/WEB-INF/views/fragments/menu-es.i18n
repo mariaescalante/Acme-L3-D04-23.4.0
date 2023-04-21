@@ -37,11 +37,14 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.list.offer = Listar ofertas
 
-r.menu.any #######################################################
-
 # master.menu.any #######################################################
 
 
+
+# master.menu.any #######################################################
+
+master.menu.any = Todos
+master.menu.any.list-course = Listar todos los cursos
 
 # master.menu.authenticated #######################################################
 
@@ -66,6 +69,13 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Conferenciante
+master.menu.lecturer.lecture.list-mine = Mis conferencias
+master.menu.lecturer.course.list-all = Cursos
+master.menu.lecturer.course.list-mine = Mis cursos
+master.menu.lecturer.membership.list-mine = Mis membresias
 
 # master.menu.lecturer ##########################################################
 
@@ -97,7 +107,6 @@ master.menu.student.course.list  = Cursos
 master.menu.assistant.tutorial.list = Mis tutoriales
 master.menu.assistant = Asistente
 
-
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -106,11 +115,11 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.lecturer = Datos de conferenciante
+master.menu.user-account.become-lecturer = Hazte conferenciante
 
 master.menu.user-account.company = Datos de la compañia
 master.menu.user-account.become-company = Conviertete en una empresa
-
-
 
 master.menu.user-account.auditor = Datos de auditor
 master.menu.user-account.become-auditor = Hazte auditor

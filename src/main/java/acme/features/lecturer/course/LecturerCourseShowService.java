@@ -1,26 +1,37 @@
+/*
+ * LecturerCourseShowService.java
+ *
+ * Copyright (C) 2012-2023 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
-package acme.features.any.course;
+package acme.features.lecturer.course;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
 import acme.entities.CourseType;
 import acme.entities.Lecture;
-import acme.framework.components.accounts.Any;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class AnyCourseShowService extends AbstractService<Any, Course> {
+public class LecturerCourseShowService extends AbstractService<Lecturer, Course> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyCourseRepository repository;
+	protected LecturerCourseRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -45,6 +56,7 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 		course = this.repository.findOneCourseById(masterId);
 		lecturer = course == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
+
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -62,14 +74,11 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 	@Override
 	public void unbind(final Course object) {
 		assert object != null;
-
-		Collection<Lecture> lectures;
-		CourseType theoreticalOrHandsOn;
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "title", "abstract$", "price", "link");
-		lectures = this.repository.findManyLecturesByCourseId(object.getId());
-		theoreticalOrHandsOn = object.theoreticalOrHandsOn(lectures);
+		final List<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId()).stream().collect(Collectors.toList());
+		final CourseType theoreticalOrHandsOn = object.theoreticalOrHandsOn(lectures);
 		tuple.put("theoreticalOrHandsOn", theoreticalOrHandsOn);
 
 		super.getResponse().setData(tuple);
