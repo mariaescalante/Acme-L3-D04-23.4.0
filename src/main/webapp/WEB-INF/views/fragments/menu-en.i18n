@@ -41,6 +41,7 @@ master.menu.administrator.list.offer = List offers
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
+master.menu.any.show.banner = Banners
 master.menu.any.list-course = List all Courses
 
 master.menu.any.list-course = List all Courses

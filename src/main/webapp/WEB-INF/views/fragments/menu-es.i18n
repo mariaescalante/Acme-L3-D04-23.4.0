@@ -47,6 +47,7 @@ r.menu.any #######################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.money-exchange = Cambio de dinero
+master.menu.any.show.banner = Pancartas
 master.menu.any.list-course = Listar todos los cursos
 
 master.menu.any.list-course = Listar todos los cursos
@@ -54,8 +55,6 @@ master.menu.any.list-bulletin = Listar todos los boletines
 
 master.menu.any.list-peep = Listar todos los peeps
 master.menu.any.list-tutorial = Listar los tutoriales
-
-
 
 # master.menu.provider ########################################################
 
