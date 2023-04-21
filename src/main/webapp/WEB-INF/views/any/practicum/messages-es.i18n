@@ -1,0 +1,11 @@
+any.practicum.list.label.code = Codigo
+any.practicum.list.label.title = Titulo
+any.practicum.list.label.abstract$ = Resumen
+
+
+any.practicum.form.label.code = Codigo:
+any.practicum.form.label.title = Titulo:
+any.practicum.form.label.abstract$ = Resumen:
+any.practicum.form.label.goal = Objetivo:
+any.practicum.form.label.estimatedTotalTime = Tiempo estimado:
+any.practicum.form.label.company = Compañia: 

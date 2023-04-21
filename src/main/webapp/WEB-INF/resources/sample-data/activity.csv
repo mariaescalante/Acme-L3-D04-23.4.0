@@ -1,0 +1,3 @@
+key,title,abstract$,indication,startDate,endDate,link,key:enrolment
+activity-01,Activity 1,Abstract 1,THEORY,2022/01/01 17:30,2022/01/01 19:00,http://www.ev.us.es,enrolment-01
+activity-02,Activity 2,Abstract 2,HANDS_ON,2022/01/03 16:00,2022/01/03 18:00,http://www.ev.us.es,enrolment-01

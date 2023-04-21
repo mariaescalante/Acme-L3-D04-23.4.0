@@ -1,0 +1,26 @@
+auditor.audit.list.label.code = Codigo
+auditor.audit.list.label.conclusion = Conclusion
+auditor.audit.list.label.strongPoints = Puntos Fuertes
+
+auditor.audit.list.button.create = Crear
+
+auditor.audit.form.label.code = Referencia:
+auditor.audit.form.label.conclusion = Conclusion:
+auditor.audit.form.label.strongPoints = Puntos Fuertes:
+auditor.audit.form.label.weakPoints =  Puntos debiles:
+auditor.audit.form.label.mark = Marca:
+auditor.audit.form.label.course = Curso:
+
+auditor.auditing-records.form.label.startDate 
+
+auditor.audit.form.button.update = Actualizar
+auditor.audit.form.button.delete = Eliminar
+auditor.audit.form.button.publish = Publicar
+auditor.audit.form.button.create = Crear
+auditor.audit.form.button.auditing-records.list = Lista de todos los registros de auditoria
+
+auditor.audit.form.error.start-before-end = La fecha es invalida
+
+
+auditor.audit.form.error.duplicated = El codigo ya está en uso
+auditor.audit.form.error.negative-estimatedTotalTime = El tiempo estimado debe ser positivo

@@ -1,0 +1,28 @@
+auditor.auditing-records.list.label.subject = Subject
+auditor.auditing-records.list.label.assessment = Assessment
+auditor.auditing-records.list.label.period = Period
+auditor.auditing-records.list.label.correction = Correction
+
+auditor.auditing-records.list.button.create = Create
+auditor.auditing-records.list.button.create-exceptional = Create exceptional session
+
+auditor.auditing-records.form.label.subject = Subject:
+auditor.auditing-records.form.label.assessment = Assessment:
+auditor.auditing-records.form.label.period = Period:
+auditor.auditing-records.form.label.mark = Mark:
+auditor.auditing-records.form.label.link = Link:
+auditor.auditing-records.form.label.confirmation = Confirm exceptional auditing records
+
+auditor.auditing-records.form.error.start-future = The start date is in the future
+auditor.auditing-records.form.error.end-future = The end date is in the future
+auditor.auditing-records.form.error.at-least-an-hour = The period should be at least one hour
+auditor.auditing-records.form.error.start-before-end = The start date is after the end date
+auditor.auditing-records.form.label.startDate = Start date
+auditor.auditing-records.form.label.endDate = End date
+
+auditor.auditing-records.form.button.create = Create
+auditor.auditing-records.form.button.exceptional = Create exceptional records
+auditor.auditing-records.form.button.update = Update
+auditor.auditing-records.form.button.delete = Delete
+
+
