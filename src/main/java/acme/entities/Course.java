@@ -37,6 +37,8 @@ public class Course extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstract$;
 
+	protected CourseType		theoreticalOrHandsOn;
+  
 	protected Money				price;
 
 	@URL
@@ -47,7 +49,6 @@ public class Course extends AbstractEntity {
 	protected Lecturer			lecturer;
 
 	protected boolean			draftMode;
-
 
 	public CourseType theoreticalOrHandsOn(final Collection<Lecture> lectures) {
 		CourseType res = CourseType.HANDSON;
@@ -64,6 +65,7 @@ public class Course extends AbstractEntity {
 		}
 		return res;
 	}
+  
 	public boolean purelyTheoretical(final Collection<Lecture> lectures) {
 		boolean res = false;
 		double total = 0.;
@@ -79,5 +81,4 @@ public class Course extends AbstractEntity {
 		}
 		return res;
 	}
-
 }

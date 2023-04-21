@@ -1,0 +1,4 @@
+key,code,conclusion,strong-points,weak-points,mark,draftMode,key:course,key:auditor
+audit-01,AUD001,conclusion 1,strong points 1,weak point-01,a+,false,course-01,auditor-01
+audit-02,AUD002,conclusion 2,strong points 2,weak point02,b,true,course-02,auditor-02
+audit-03,AUD003,conclusion 3,strong points 3,weak point-03,f,true,course-01,auditor-01

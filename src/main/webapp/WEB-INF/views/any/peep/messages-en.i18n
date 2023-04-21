@@ -1,0 +1,13 @@
+
+any.peep.form.label.moment = Instantiation moment:
+any.peep.form.label.title = Title:
+any.peep.form.label.nickname = Nick:
+any.peep.form.label.message = Message:
+any.peep.form.label.email = Email:
+any.peep.form.label.url = Link:
+
+any.peep.list.moment = Instantiation moment
+any.peep.list.title = Title
+any.peep.list.nickname = Nick
+
+any.peep.button.publish = Publish

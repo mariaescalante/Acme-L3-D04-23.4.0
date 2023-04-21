@@ -1,0 +1,5 @@
+key,subject,assessment,start-date,end-date,mark,correction,link,key:audit
+auditing-record-01,SUB001,assessment 1,2020/11/10 10:30,2020/12/11 10:30,C,true,,audit-01
+auditing-record-02,SUB002,assessment 2,2020/11/11 10:30,2020/12/12 10:30,F,false,,audit-01
+auditing-record-03,SUB003,assessment 3,2020/11/12 10:30,2020/12/13 10:30,C,true,,audit-03
+auditing-record-04,SUB004,assessment 4,2020/11/13 10:30,2020/12/14 10:30,F,false,,audit-03

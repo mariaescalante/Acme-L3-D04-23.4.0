@@ -1,0 +1,21 @@
+assistant.tutorial.list.label.title = Titulo
+assistant.tutorial.list.label.goal = Objetivo
+assistant.tutorial.list.label.totalTime = Tiempo Total
+
+assistant.tutorial.list.button.create = Crear
+
+assistant.tutorial.form.label.code = Codigo
+assistant.tutorial.form.label.title = Titulo
+assistant.tutorial.form.label.abstract = Resumen
+assistant.tutorial.form.label.goal = Objetivo
+assistant.tutorial.form.label.totalTime = Tiempo Total
+assistant.tutorial.form.label.course = Curso
+
+assistant.tutorial.form.button.create = Crear
+assistant.tutorial.form.button.update = Actualizar
+assistant.tutorial.form.button.delete = Borrar
+assistant.tutorial.form.button.publish = Publicar
+
+assistant.tutorial.form.button.sessions = Sesiones
+
+lecturer.course.form.error.duplicated = Este codigo ya está en uso

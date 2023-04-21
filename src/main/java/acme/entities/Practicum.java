@@ -55,4 +55,6 @@ public class Practicum extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Course			course;
 
+	protected boolean			draftMode;
+
 }

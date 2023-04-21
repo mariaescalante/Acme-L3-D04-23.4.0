@@ -1,0 +1,12 @@
+any.tutorial.list.label.title = Titulo
+any.tutorial.list.label.goal = Objetivo
+any.tutorial.list.label.totalTime = Tiempo Total
+
+any.tutorial.form.label.code = Codigo
+any.tutorial.form.label.title = Titulo
+any.tutorial.form.label.abstract = Resumen
+any.tutorial.form.label.goal = Objetivo
+any.tutorial.form.label.totalTime = Tiempo Total
+any.tutorial.form.label.course = Curso
+any.tutorial.form.label.assistantSupervisor = Supervisor del asistente
+any.tutorial.form.label.assistantResume = Resumen del asistente

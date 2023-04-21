@@ -1,0 +1,10 @@
+any.audit.list.label.code = Codigo
+any.audit.list.label.conclusion = Conclusion
+any.audit.list.label.strongPoints = Puntos fuertes
+
+
+any.audit.form.label.code = Codigo:
+any.audit.form.label..conclusion = Conclusion:
+any.audit.form.label.strongPoints = Puntos fuertes:
+any.audit.form.label.weakPoints = Puntos debiles:
+any.audit.form.label.mark = Marca:

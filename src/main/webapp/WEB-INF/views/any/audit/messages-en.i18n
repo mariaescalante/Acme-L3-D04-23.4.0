@@ -1,0 +1,10 @@
+any.audit.list.label.code = Code
+any.audit.list.label.conclusion = Conclusion
+any.audit.list.label.strongPoints = Strong Points
+
+
+any.audit.form.label.code = Code:
+any.audit.form.label..conclusion = Conclusion:
+any.audit.form.label.strongPoints = Strong Points:
+any.audit.form.label.weakPoints = Weak Points:
+any.audit.form.label.mark = Mark:
