@@ -18,7 +18,7 @@ public class Membership extends AbstractEntity {
 
 	@NotNull
 	@ManyToOne(optional = false)
-	protected Lecture			course;
+	protected Course			course;
 
 	@NotNull
 	@ManyToOne(optional = false)

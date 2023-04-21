@@ -83,10 +83,11 @@
 	
 		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
 			<acme:menu-suboption code="master.menu.company.practicum.list" action="/company/practicum/list"/>
-
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.audit.list" action="/auditor/audit/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
 			<acme:menu-suboption code="master.menu.student.enrolment.list" action="/student/enrolment/list"/>

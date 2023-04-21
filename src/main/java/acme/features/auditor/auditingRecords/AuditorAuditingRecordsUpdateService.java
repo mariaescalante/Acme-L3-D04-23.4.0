@@ -63,7 +63,6 @@ public class AuditorAuditingRecordsUpdateService extends AbstractService<Auditor
 
 	@Override
 	public void validate(final AuditingRecords object) {
-		final Date date;
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate"))

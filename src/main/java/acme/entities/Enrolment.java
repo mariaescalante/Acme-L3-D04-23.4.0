@@ -57,7 +57,6 @@ public class Enrolment extends AbstractEntity {
 		if (!activities.isEmpty())
 			for (final Activity activity : activities) {
 				Double hours = 0.;
-				final double minutes = 0.;
 				final Date startDate = activity.getStartDate();
 				final Date endDate = activity.getEndDate();
 				hours = Math.abs(endDate.getTime() / 3600000. - startDate.getTime() / 3600000.);
