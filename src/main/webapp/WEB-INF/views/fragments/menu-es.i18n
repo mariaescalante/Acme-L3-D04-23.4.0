@@ -30,6 +30,7 @@ master.menu.anonymous.favourite-link.S1 = 17473982P: Arregui Diaz, Joaquin
 master.menu.administrator = Administrador
 master.menu.administrator.bulletin-create= Crear un boletin
 master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.banner = Listar pancartas
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)

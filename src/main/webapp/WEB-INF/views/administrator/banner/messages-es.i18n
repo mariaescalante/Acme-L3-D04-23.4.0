@@ -1,0 +1,16 @@
+administrator.banner.list.label.slogan = Eslogan
+administrator.banner.list.label.start = Inicio
+administrator.banner.list.label.end = Final
+
+administrator.banner.form.label.instantiationMoment = Momento de instantacion:
+administrator.banner.form.label.slogan = Eslogan:
+administrator.banner.form.label.start = Fecha de inicio:
+administrator.banner.form.label.end = Fecha de final:
+administrator.banner.form.label.picture = Url de la foto:
+administrator.banner.form.label.url = Url:
+
+administrator.banner.form.button.create = Crear
+administrator.banner.form.button.update = Actualizar
+administrator.banner.form.button.delete = Eliminar
+
+administrator.banner.list.button.create = Crear
