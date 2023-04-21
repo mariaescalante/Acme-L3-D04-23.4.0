@@ -12,19 +12,12 @@
 
 package acme.features.lecturer.lecture;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Course;
 import acme.entities.CourseType;
 import acme.entities.Lecture;
-import acme.entities.Membership;
 import acme.features.lecturer.membership.LecturerMembershipRepository;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -57,7 +50,9 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	@Override
 	public void load() {
 		Lecture object;
-
+		Integer lecturerId;
+		Lecturer lecturer;
+		lecturerId = super.getRequest().getPrincipal().getActiveRoleId();
 		object = new Lecture();
 		object.setTitle("");
 		object.setAbstract$("");
@@ -66,7 +61,8 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 		object.setTheoreticalOrHandsOn(CourseType.THEORETICAL);
 		object.setLink("");
 		object.setDraftMode(true);
-
+		lecturer = this.repository.findOneLecturerById(lecturerId);
+		object.setLecturer(lecturer);
 		super.getBuffer().setData(object);
 	}
 
@@ -88,43 +84,19 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 	@Override
 	public void perform(final Lecture object) {
 		assert object != null;
-
-		final String courseId;
-		final Course course;
-		final Membership membership = new Membership();
-		courseId = super.getRequest().getData("course", String.class);
-		course = this.repository.findOneCourseById(Integer.parseInt(courseId));
-		membership.setCourse(course);
-		membership.setLecture(object);
 		this.repository.save(object);
-		this.MemRepository.save(membership);
 	}
 
 	@Override
 	public void unbind(final Lecture object) {
 		assert object != null;
 		Tuple tuple;
-		Principal principal;
-		Collection<Course> courses;
 		final SelectChoices choices;
-		final SelectChoices choices2;
-		List<Course> courses2;
-		Membership m;
 
-		m = this.repository.findOneMembershipByLectureId(object.getId());
-		principal = super.getRequest().getPrincipal();
-		courses = this.repository.findManyCoursesByLecturerId(principal.getActiveRoleId());
-		if (m == null) {
-			courses2 = new ArrayList<>(courses);
-			choices2 = SelectChoices.from(courses, "code", courses2.get(0));
-		} else
-			choices2 = SelectChoices.from(courses, "code", m.getCourse());
 		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
 
 		tuple = super.unbind(object, "title", "abstract$", "time", "body", "link");
 
-		tuple.put("course", choices2.getSelected().getKey());
-		tuple.put("courses", choices2);
 		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
 		tuple.put("theoreticalOrHandsOn2", choices);
 		super.getResponse().setData(tuple);

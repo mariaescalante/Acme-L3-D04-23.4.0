@@ -34,6 +34,11 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
+# master.menu.any #######################################################
+
+master.menu.any = Any
+master.menu.any.list-course = List all courses
+
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
@@ -55,7 +60,6 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course.list-all = Courses
 master.menu.lecturer.course.list-mine = My courses
-master.menu.lecturer.lecture.list-all = Lectures
 master.menu.lecturer.lecture.list-mine = My lectures
 master.menu.lecturer.membership.list-mine = My membership
 

@@ -22,9 +22,6 @@ public class LecturerLectureController extends AbstractController<Lecturer, Lect
 	protected LecturerLectureListMineService	listMineService;
 
 	@Autowired
-	protected LecturerLectureListAllService		listAllService;
-
-	@Autowired
 	protected LecturerLectureShowService		showService;
 
 	@Autowired
@@ -51,7 +48,6 @@ public class LecturerLectureController extends AbstractController<Lecturer, Lect
 
 		super.addCustomCommand("list-course", "list", this.listCourseService);
 		super.addCustomCommand("list-mine", "list", this.listMineService);
-		super.addCustomCommand("list-all", "list", this.listAllService);
 		super.addCustomCommand("publish", "update", this.publishService);
 	}
 

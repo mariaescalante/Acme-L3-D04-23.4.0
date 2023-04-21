@@ -11,9 +11,6 @@
 	<acme:input-textarea code="lecturer.lecture.form.label.body" path="body"/>
 	<acme:input-url code="lecturer.lecture.form.label.link" path="link"/>
 	<acme:input-select code="lecturer.lecture.form.label.theoreticalOrHandsOn" path="theoreticalOrHandsOn" choices="${theoreticalOrHandsOn2}"/>
-	<jstl:if test="${_command == 'create'}">
-	<acme:input-select code="lecturer.lecture.form.label.course" path="course" choices="${courses}"/>
-	</jstl:if>
 	
 	<jstl:if test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == true}">
 		<acme:submit code="lecturer.lecture.form.button.update" action="/lecturer/lecture/update"/>

@@ -74,7 +74,7 @@ public class LecturerMembershipShowService extends AbstractService<Lecturer, Mem
 		principal = super.getRequest().getPrincipal();
 		courses = this.repository.findManyCoursesByLecturerId(principal.getActiveRoleId());
 		choices = SelectChoices.from(courses, "code", object.getCourse());
-		lectures = this.repository.findManyLectures();
+		lectures = this.repository.findManyLecturesByLecturerId(principal.getActiveRoleId());
 		choices2 = SelectChoices.from(lectures, "title", object.getLecture());
 		tuple = super.unbind(object, "lecture", "course");
 		tuple.put("course", choices.getSelected().getKey());

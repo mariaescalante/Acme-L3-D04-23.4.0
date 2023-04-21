@@ -10,6 +10,7 @@ import acme.entities.Course;
 import acme.entities.Lecture;
 import acme.entities.Membership;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Lecturer;
 
 @Repository
 public interface LecturerLectureRepository extends AbstractRepository {
@@ -20,11 +21,11 @@ public interface LecturerLectureRepository extends AbstractRepository {
 	@Query("select l from Lecture l where l.id = :id")
 	Lecture findOneLectureById(int id);
 
+	@Query("select l from Lecturer l where l.id = :id")
+	Lecturer findOneLecturerById(int id);
+
 	@Query("select c from Course c where c.lecturer.id = :lecturerId")
 	Collection<Course> findManyCoursesByLecturerId(int lecturerId);
-
-	@Query("select c from Course c")
-	Collection<Course> findManyCourses();
 
 	@Query("select m from Membership m where m.lecture.id = :lectureId")
 	Collection<Membership> findMembershipByLectureId(int lectureId);
@@ -35,12 +36,9 @@ public interface LecturerLectureRepository extends AbstractRepository {
 	@Query("select m.lecture from Membership m where m.course.id = :masterId and m.lecture.draftMode = false")
 	Collection<Lecture> findManyLecturesByMasterId(int masterId);
 
-	@Query("select m.lecture from Membership m where m.course.lecturer.id = :lecturerId")
+	@Query("select l from Lecture l where l.lecturer.id = :lecturerId")
 	Collection<Lecture> findManyLecturesByLecturerId(int lecturerId);
 
-	@Query("select l from Lecture l")
-	Collection<Lecture> findManyLectures();
-
-	@Query("select m.course.lecturer.id from Membership m where m.lecture.id = :lectureId")
-	Collection<Integer> findManyLecturersByLectureId(int lectureId);
+	@Query("select l.lecturer from Lecture l where l.lecturer.id = :lectureId")
+	Lecturer findOneLecturerByLectureId(int lectureId);
 }

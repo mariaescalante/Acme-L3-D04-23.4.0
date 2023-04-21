@@ -38,12 +38,12 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 		boolean status;
 		int id;
 		Lecture lecture;
-		Collection<Integer> lecturers;
+		Lecturer lecturer;
 
 		id = super.getRequest().getData("id", int.class);
 		lecture = this.repository.findOneLectureById(id);
-		lecturers = this.repository.findManyLecturersByLectureId(lecture.getId());
-		status = lecture != null && (!lecture.isDraftMode() || lecturers.contains(super.getRequest().getPrincipal().getActiveRoleId()));
+		lecturer = this.repository.findOneLecturerByLectureId(id);
+		status = lecture != null && (!lecture.isDraftMode() || lecturer.getId() == super.getRequest().getPrincipal().getActiveRoleId());
 
 		super.getResponse().setAuthorised(status);
 	}

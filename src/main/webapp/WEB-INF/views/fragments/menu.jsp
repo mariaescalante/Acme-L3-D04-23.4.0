@@ -43,6 +43,10 @@
             <acme:menu-suboption code="master.menu.any.list-course" action="/any/course/list"/>
         </acme:menu-option>
         
+        <acme:menu-option code="master.menu.any">
+            <acme:menu-suboption code="master.menu.any.list-course" action="/any/course/list"/>
+        </acme:menu-option>
+        
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
@@ -56,8 +60,6 @@
 			<acme:menu-suboption code="master.menu.lecturer.course.list-all" action="/lecturer/course/list-all"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.lecturer.course.list-mine" action="/lecturer/course/list-mine"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.lecturer.lecture.list-all" action="/lecturer/lecture/list-all"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.lecturer.lecture.list-mine" action="/lecturer/lecture/list-mine"/>
 			<acme:menu-separator/>
