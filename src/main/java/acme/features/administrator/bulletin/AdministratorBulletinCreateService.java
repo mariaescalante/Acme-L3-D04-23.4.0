@@ -1,23 +1,22 @@
 
-package acme.features.any.bulletin;
-
-import java.util.Collection;
+package acme.features.administrator.bulletin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Bulletin;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyBulletinListService extends AbstractService<Any, Bulletin> {
+public class AdministratorBulletinCreateService extends AbstractService<Administrator, Bulletin> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyBulletinRepository repository;
+	protected AdministratorBulletinRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -34,10 +33,30 @@ public class AnyBulletinListService extends AbstractService<Any, Bulletin> {
 
 	@Override
 	public void load() {
-		Collection<Bulletin> objects;
-		objects = this.repository.findManyBulletin();
+		Bulletin object;
 
-		super.getBuffer().setData(objects);
+		object = new Bulletin();
+
+		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Bulletin object) {
+		assert object != null;
+
+		super.bind(object, "title", "message", "flag", "url");
+	}
+
+	@Override
+	public void validate(final Bulletin object) {
+		assert object != null;
+	}
+
+	@Override
+	public void perform(final Bulletin object) {
+		assert object != null;
+		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
+		this.repository.save(object);
 	}
 
 	@Override
@@ -45,6 +64,7 @@ public class AnyBulletinListService extends AbstractService<Any, Bulletin> {
 		assert object != null;
 
 		Tuple tuple;
+
 		tuple = super.unbind(object, "instantiationMoment", "title", "message", "flag", "url");
 
 		super.getResponse().setData(tuple);

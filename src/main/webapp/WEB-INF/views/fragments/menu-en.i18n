@@ -41,16 +41,16 @@ master.menu.administrator.list.offer = List offers
 
 master.menu.any = Any
 master.menu.any.list-course = List all courses
+master.menu.any.list-peep = List All peeps
+master.menu.any.show.banner = Banners
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.money-exchange = Money exchange
-master.menu.any.list-course = List all Courses
-master.menu.any.show.banner = Banners
-master.menu.any.list-bulletin = List all Bulletins
+master.menu.authenticated.list-bulletin = List all Bulletins
 master.menu.any.list-peep = List All peeps
-master.menu.any.list-tutorial = List tutorials
+master.menu.authenticated.list-tutorial = List tutorials
 
 # master.menu.provider ########################################################
 
