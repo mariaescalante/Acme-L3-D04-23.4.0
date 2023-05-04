@@ -58,8 +58,6 @@
             <acme:menu-suboption code="master.menu.any.list-course" action="/any/course/list"/>
             <acme:menu-separator/>
             <acme:menu-suboption code="master.menu.any.list-peep" action="/any/peep/list"/>
-        	<acme:menu-separator/>
-        	<acme:menu-suboption code="master.menu.any.show.banner" action="/any/banner/show"/>
         </acme:menu-option>
         
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

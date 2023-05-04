@@ -17,4 +17,30 @@
 
 <div class="rounded" style="background: <acme:message code='master.banner.background'/>">
 	<img src="images/banner.png" alt="<acme:message code='master.banner.alt'/>" class="img-fluid rounded"/>
+	<center>
+		<jstl:choose>
+			<jstl:when test="${banner.url!=null}">
+				<a href="${banner.url}">
+					<jstl:choose>
+						<jstl:when test="${banner.picture!=null}">
+							<img src="${banner.picture}" alt="${banner.slogan}" class="img-fluid rounded" style="max-width: 300px;max-height: 120px;"/>
+						</jstl:when>
+						<jstl:when test="${banner.picture==null}">
+							<acme:print value="${banner.slogan}"/>
+						</jstl:when>
+					</jstl:choose>
+				</a>
+			</jstl:when>
+			<jstl:when test="${banner.url==null}">
+				<jstl:choose>
+					<jstl:when test="${banner.picture!=null}">
+						<img src="${banner.picture}" alt="${banner.slogan}" class="img-fluid rounded" style="max-width: 300px;max-height: 120px;"/>
+					</jstl:when>
+					<jstl:when test="${banner.picture==null}">
+						<acme:print value="${banner.slogan}"/>
+					</jstl:when>
+				</jstl:choose>
+			</jstl:when>
+		</jstl:choose>
+	</center>
 </div>
