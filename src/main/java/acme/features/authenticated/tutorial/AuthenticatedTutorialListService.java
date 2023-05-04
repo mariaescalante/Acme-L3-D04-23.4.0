@@ -1,5 +1,5 @@
 
-package acme.features.any.tutorial;
+package acme.features.authenticated.tutorial;
 
 import java.util.Collection;
 
@@ -14,10 +14,10 @@ import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyTutorialListService extends AbstractService<Any, Tutorial> {
+public class AuthenticatedTutorialListService extends AbstractService<Any, Tutorial> {
 
 	@Autowired
-	protected AnyTutorialRepository repository;
+	protected AuthenticatedTutorialRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 

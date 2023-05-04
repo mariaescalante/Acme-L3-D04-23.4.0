@@ -17,8 +17,16 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Activity;
+import acme.entities.Audit;
+import acme.entities.AuditingRecords;
 import acme.entities.Course;
+import acme.entities.Enrolment;
 import acme.entities.Membership;
+import acme.entities.Practicum;
+import acme.entities.Session;
+import acme.entities.SessionPracticum;
+import acme.entities.Tutorial;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -86,9 +94,40 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		assert object != null;
 
 		Collection<Membership> membership;
-
+		Collection<Practicum> practicums;
+		Collection<Audit> audits;
+		Collection<AuditingRecords> ar;
+		Collection<SessionPracticum> sp;
+		Collection<Enrolment> enrolments;
+		Collection<Tutorial> tutorials;
+		Collection<Activity> a;
+		Collection<Session> s;
 		membership = this.repository.findMembershipByCourseId(object.getId());
+		practicums = this.repository.findPracticumByCourseId(object.getId());
+		enrolments = this.repository.findEnrolmentByCourseId(object.getId());
+		tutorials = this.repository.findTutorialByCourseId(object.getId());
+		audits = this.repository.findAuditByCourseId(object.getId());
+		for (final Audit audit : audits) {
+			ar = this.repository.findAuditingRecordByAuditId(audit.getId());
+			this.repository.deleteAll(ar);
+		}
+		for (final Practicum practicum : practicums) {
+			sp = this.repository.findSessionPracticumByPracticumId(practicum.getId());
+			this.repository.deleteAll(sp);
+		}
+		for (final Enrolment enrolment : enrolments) {
+			a = this.repository.findActivityByEnrolmentId(enrolment.getId());
+			this.repository.deleteAll(a);
+		}
+		for (final Tutorial tutorial : tutorials) {
+			s = this.repository.findSessionByTutorialId(tutorial.getId());
+			this.repository.deleteAll(s);
+		}
 		this.repository.deleteAll(membership);
+		this.repository.deleteAll(audits);
+		this.repository.deleteAll(practicums);
+		this.repository.deleteAll(enrolments);
+		this.repository.deleteAll(tutorials);
 		this.repository.delete(object);
 	}
 

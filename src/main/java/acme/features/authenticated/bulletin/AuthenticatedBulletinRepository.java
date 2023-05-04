@@ -1,5 +1,5 @@
 
-package acme.features.any.bulletin;
+package acme.features.authenticated.bulletin;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.Bulletin;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnyBulletinRepository extends AbstractRepository {
+public interface AuthenticatedBulletinRepository extends AbstractRepository {
 
 	@Query("select p from Bulletin p where p.id = :id")
 	Bulletin findOneBulletinById(int id);

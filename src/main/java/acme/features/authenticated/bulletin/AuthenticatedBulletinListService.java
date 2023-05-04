@@ -1,5 +1,7 @@
 
-package acme.features.any.bulletin;
+package acme.features.authenticated.bulletin;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,59 +12,40 @@ import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyBulletinShowService extends AbstractService<Any, Bulletin> {
+public class AuthenticatedBulletinListService extends AbstractService<Any, Bulletin> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyBulletinRepository repository;
+	protected AuthenticatedBulletinRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
-		Bulletin bulletin;
-
-		masterId = super.getRequest().getData("id", int.class);
-		bulletin = this.repository.findOneBulletinById(masterId);
-		status = bulletin != null;
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
-		Bulletin object;
-		int id;
+		Collection<Bulletin> objects;
+		objects = this.repository.findManyBulletin();
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneBulletinById(id);
-
-		super.getBuffer().setData(object);
+		super.getBuffer().setData(objects);
 	}
 
 	@Override
 	public void unbind(final Bulletin object) {
 		assert object != null;
-		String bulletin;
+
 		Tuple tuple;
-
-		bulletin = object.getTitle();
-
 		tuple = super.unbind(object, "instantiationMoment", "title", "message", "flag", "url");
-		tuple.put("Bulletin", bulletin);
 
 		super.getResponse().setData(tuple);
 	}
