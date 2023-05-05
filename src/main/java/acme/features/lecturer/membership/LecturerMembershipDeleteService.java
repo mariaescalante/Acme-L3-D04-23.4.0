@@ -58,7 +58,7 @@ public class LecturerMembershipDeleteService extends AbstractService<Lecturer, M
 		lecturer = course == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer) || course != null && !course.isDraftMode();
 
-		super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

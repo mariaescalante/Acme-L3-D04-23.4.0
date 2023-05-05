@@ -47,7 +47,7 @@ public class LecturerMembershipShowService extends AbstractService<Lecturer, Mem
 		lecturer = course == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer);
 
-		super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

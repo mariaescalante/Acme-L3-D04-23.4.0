@@ -1,7 +1,7 @@
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
 	<acme:list-column code="auditor.auditing-records.list.label.correction" path="correction" width="20%"/>
