@@ -1,15 +1,13 @@
 
 package acme.features.auditor.auditingRecords;
 
-import java.time.Instant;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Audit;
 import acme.entities.AuditingRecords;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -67,17 +65,27 @@ public class AuditorAuditingRecordsCreateCorrectionService extends AbstractServi
 	@Override
 	public void validate(final AuditingRecords object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("startDate"))
-			super.state(object.getStartDate().before(object.getEndDate()), "endDate", "auditor.audit.form.error.start-before-end");
+		final boolean confirmation;
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate"))
-			super.state(object.getStartDate().before(Date.from(Instant.now())), "startDate", "auditor.audit.form.error.start-before-end");
+			if (object.getStartDate() != null && object.getEndDate() != null)
+				super.state(object.getStartDate().before(object.getEndDate()), "endDate", "auditor.audit.form.error.start-before-end");
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate"))
+			if (object.getStartDate() != null && object.getEndDate() != null)
+				super.state(object.getStartDate().after(MomentHelper.getCurrentMoment()), "startDate", "auditor.audit.form.error.start-before-moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(object.getEndDate().before(Date.from(Instant.now())), "endDate", "auditor.audit.form.error.start-before-end");
+			if (object.getStartDate() != null && object.getEndDate() != null)
+				super.state(object.getEndDate().after(MomentHelper.getCurrentMoment()), "endDate", "auditor.audit.form.error.end-before-moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(object.period() > 1.0, "startDate", "auditor.audit.form.error.least-one-week-ahead");
+			if (object.getStartDate() != null && object.getEndDate() != null)
+				super.state(object.period() >= 1.0, "endDate", "auditor.audit.form.error.least-one-hour-ahead");
+
+		confirmation = object.getAudit().isDraftMode() ? true : super.getRequest().getData("confirmation", boolean.class);
+		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+
 	}
 
 	@Override

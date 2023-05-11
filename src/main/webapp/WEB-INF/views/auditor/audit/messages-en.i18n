@@ -18,6 +18,9 @@ auditor.audit.form.button.create = Create
 auditor.audit.form.button.auditing-records.list = List all auditing records
 
 auditor.audit.form.error.start-before-end = The date is invalid
+auditor.audit.form.error.start-before-moment = The start date is before
+auditor.audit.form.error.end-before-moment = The end date is before
+auditor.audit.form.error.least-one-hour-ahead= It must at least one hour long
 
 auditor.audit.form.error.duplicated = This code is taken
 auditor.audit.form.error.negative-estimatedTotalTime = The estimated time must be positive

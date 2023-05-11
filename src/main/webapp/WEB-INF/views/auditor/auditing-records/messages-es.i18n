@@ -21,8 +21,8 @@ auditor.auditing-records.form.button.delete = Eliminar
 auditor.audit.form.error.start-before-end = La fecha es invalida
 
 auditor.auditing-records.form.error.start-before-end = La fecha final debe estar despues de la fecha inicial
-auditor.auditing-records.form.error.least-one-week-ahead = The session must be included at least one week before
-auditor.auditing-records.form.error.least-one-week-long = The session must last a week
+auditor.auditing-records.form.error.least-one-week-ahead = La sesion debe The session must be included at least one week before
+auditor.auditing-records.form.error.least-one-week-long = La sesion debe durar un dia
 
 
 

@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -45,8 +47,12 @@ public class AuditingRecords extends AbstractEntity {
 	@Length(min = 1, max = 100)
 	protected String			assessment;
 
+	@NotNull
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				startDate;
 
+	@NotNull
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				endDate;
 
 	protected Mark				mark;
