@@ -86,7 +86,8 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 			super.state(existing.getId() == object.getId(), "code", "lecturer.course.form.error.duplicated");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("price"))
-			super.state(object.getPrice().getAmount() > 0, "price", "lecturer.course.form.error.negative-price");
+			if (object.getPrice() != null)
+				super.state(object.getPrice().getAmount() > 0, "price", "lecturer.course.form.error.negative-price");
 	}
 
 	@Override

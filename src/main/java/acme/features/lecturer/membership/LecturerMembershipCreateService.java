@@ -67,10 +67,11 @@ public class LecturerMembershipCreateService extends AbstractService<Lecturer, M
 		Lecture lecture;
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
+		super.bind(object, "title");
 
 		lectureId = super.getRequest().getData("lecture", int.class);
 		lecture = this.repository.findOneLectureById(lectureId);
-		super.bind(object, "lecture", "course");
+
 		object.setCourse(course);
 		object.setLecture(lecture);
 	}
@@ -102,7 +103,7 @@ public class LecturerMembershipCreateService extends AbstractService<Lecturer, M
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 		lectures = this.repository.findManyLecturesByLecturerId(principal.getActiveRoleId());
 		choices2 = SelectChoices.from(lectures, "title", object.getLecture());
-		tuple = super.unbind(object, "lecture", "course");
+		tuple = super.unbind(object, "title");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		tuple.put("lecture", choices2.getSelected().getKey());

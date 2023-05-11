@@ -63,11 +63,11 @@ public class LecturerMembershipDeleteService extends AbstractService<Lecturer, M
 
 	@Override
 	public void load() {
-		Lecture object;
+		Membership object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneLectureById(id);
+		object = this.repository.findOneMembershipById(id);
 
 		super.getBuffer().setData(object);
 	}
@@ -76,7 +76,7 @@ public class LecturerMembershipDeleteService extends AbstractService<Lecturer, M
 	public void bind(final Membership object) {
 		assert object != null;
 
-		super.bind(object, "lecture", "course");
+		super.bind(object, "title");
 	}
 
 	@Override
@@ -106,7 +106,7 @@ public class LecturerMembershipDeleteService extends AbstractService<Lecturer, M
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 		lectures = this.repository.findManyLecturesByLecturerId(principal.getActiveRoleId());
 		choices2 = SelectChoices.from(lectures, "title", object.getLecture());
-		tuple = super.unbind(object, "lecture", "course");
+		tuple = super.unbind(object, "title");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		tuple.put("lecture", choices2.getSelected().getKey());

@@ -56,14 +56,16 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 		Date date;
 		final Date InstantationMoment = MomentHelper.getCurrentMoment();
 		if (!super.getBuffer().getErrors().hasErrors("end"))
-			super.state(object.getStart().before(object.getEnd()), "end", "company.practicum.form.error.start-before-end");
+			if (object.getStart() != null && object.getEnd() != null)
+				super.state(object.getStart().before(object.getEnd()), "end", "company.practicum.form.error.start-before-end");
 
 		if (!super.getBuffer().getErrors().hasErrors("start"))
-			super.state(object.getStart().after(InstantationMoment), "start", "company.practicum.form.error.start-future");
+			if (object.getStart() != null && object.getEnd() != null)
+				super.state(object.getStart().after(InstantationMoment), "start", "company.practicum.form.error.start-future");
 
 		if (!super.getBuffer().getErrors().hasErrors("end")) {
 			date = AdministratorBannerCreateService.sumarDiasAFecha(object.getStart(), 7);
-			super.state(object.getEnd().after(date) || object.getStart().equals(date), "end", "company.practicum.form.error.least-one-week-long");
+			super.state(object.getEnd().after(date) || object.getEnd().equals(date), "end", "company.practicum.form.error.least-one-week-long");
 		}
 	}
 

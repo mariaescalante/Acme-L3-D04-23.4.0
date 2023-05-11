@@ -16,6 +16,8 @@ public class Membership extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	protected String			title;
+
 	@NotNull
 	@ManyToOne(optional = false)
 	protected Course			course;
