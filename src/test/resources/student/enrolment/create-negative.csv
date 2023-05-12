@@ -1,7 +1,16 @@
 recordIndex,code,motivation,goals,workbook,course,creditCard
 0,null,motivation 14,goals 14,workbook 14,CRS 001,1178222223334444
-0,ENR 015, ,goals 15,workbook 15,CRS 002,1178222223334444
-0,ENR 016,motivation 16, ,workbook 16,CRS 001,1178222223334444
-0,ENR 017,motivation 17,goals 17, ,CRS 002,1178222223334444
+0,ENR 015,,goals 15,workbook 15,CRS 002,1178222223334444
+0,ENR 016,motivation 16,,workbook 16,CRS 001,1178222223334444
+0,ENR 017,motivation 17,goals 17,,CRS 002,1178222223334444
 0,ENR 018,motivation 18,goals 18,workbook 18,---,1178222223334444
 0,ENROLMENT 19,motivation 19,goals 19,workbook 19,CRS 002,1178222223334444
+0,,,,,---,
+0,ENRO 020,motivation 20,,workbook 20,CRS 002,null
+0,ENR 021,,,workbook 21,CRS 005,null
+0,,motivation 22,goals 22,,CRS 002,986
+0,,motivation 23,goals 23,workbook 23,---,null
+0,,,,workbook 24,CRS 001,1178222223334444
+0,ENR 025,,,,CRS 003,null
+0,ENR 001,motivation 26,goals 26,workbook 26,CRS 002,null
+0,ENR 001,motivation 26,,,CRS 002,null
