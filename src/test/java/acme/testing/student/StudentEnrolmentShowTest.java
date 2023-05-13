@@ -16,8 +16,6 @@ public class StudentEnrolmentShowTest extends TestHarness {
 	@Autowired
 	protected StudentEnrolmentTestRepository repository;
 
-	// Test data --------------------------------------------------------------
-
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/enrolment/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -49,7 +47,6 @@ public class StudentEnrolmentShowTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show an unpublished enrolment by someone who is not the principal.
 		// HINT: this test tries to show an enrolment by someone who is not the principal.
 
 		Collection<Enrolment> enrolments;

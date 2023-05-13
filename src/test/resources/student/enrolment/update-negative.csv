@@ -1,0 +1,10 @@
+recordIndex,motivation,goals,workbook,course,creditCard
+2, , , ,---,   
+2,motivation 4, , ,---,
+2,,goals 4,workbook 4,CRS 003,  
+2,motivation 4,,workbook 4,CRS 003, 
+2,motivation 4,goals 4,,CRS 003,
+2,motivation 4,goals 4,workbook 4,---,  
+2,,goals 4,workbook 4,CRS 003, 
+2,motivation 4,,,CRS 003, 
+2,motivation 4,goals 4,,---, 
