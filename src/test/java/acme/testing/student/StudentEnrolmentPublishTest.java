@@ -37,6 +37,15 @@ public class StudentEnrolmentPublishTest extends TestHarness {
 		super.clickOnSubmit("Publish");
 		super.checkNotErrorsExist();
 
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, code);
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		super.clickOnButton("Activities");
+		super.checkListingExists();
+		super.checkListingEmpty();
+
 		super.signOut();
 	}
 
