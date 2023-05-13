@@ -9,6 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -33,11 +34,14 @@ public class Activity extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstract$;
 
+	@NotNull
 	protected ActivityType		indication;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				startDate;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				endDate;
 

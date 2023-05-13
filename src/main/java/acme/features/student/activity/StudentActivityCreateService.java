@@ -37,7 +37,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 		Enrolment enrolment;
 		enrolmentId = super.getRequest().getData("masterId", int.class);
 		enrolment = this.repository.findOneEnrolmentById(enrolmentId);
-		status = enrolment != null && super.getRequest().getPrincipal().hasRole(enrolment.getStudent());
+		status = enrolment != null && super.getRequest().getPrincipal().hasRole(enrolment.getStudent()) && !enrolment.isDraftMode();
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -72,9 +72,11 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	public void validate(final Activity object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
 			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "student.activity.form.error.startDate");
-		super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
+			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
+
+		}
 	}
 
 	@Override

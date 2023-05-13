@@ -26,3 +26,6 @@ student.activity.form.button.delete = Borrar
 
 student.activity.form.error.endDate = La fecha de fin debe ser posterior a la fecha de inicio
 student.activity.form.error.startDate = La fecha de inicio debe ser anterior a la fecha de fin
+
+student.activity.form.error.startDateNull = La fecha de inicio no puede estar vacía
+student.activity.form.error.endDateNull = La fecha de fin no puede estar vacía
