@@ -56,7 +56,7 @@ public class CompanySessionPracticumShowService extends AbstractService<Company,
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "abstractText", "startDate", "endDate", "furtherInformationLink");
+		tuple = super.unbind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
 		tuple.put("masterId", object.getPracticum().getId());
 		tuple.put("draftMode", object.getPracticum().isDraftMode());
 

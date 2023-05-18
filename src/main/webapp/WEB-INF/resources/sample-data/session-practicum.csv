@@ -1,4 +1,4 @@
-key,key:practicum,title,abstract_text,start_date,end_date,further_information_link,correction
+key,key:practicum,title,abstract$,start_date,end_date,further_information_link,correction
 practicum_sessiom-01,practicum-01,Tittle,ejemplo1,2010/08/20 18:19,2020/07/20 18:29,https://www.us.es/,false
 practicum_sessiom-02,practicum-01,Tittle,ejemplo2,2019/08/20 18:37,2019/08/20 18:29,https://www.us.es/,false
 practicum_sessiom-04,practicum-01,Tittle,ejemplo23,2017/07/20 18:29,2015/09/20 18:29,https://www.us.es/,true

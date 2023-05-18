@@ -1,0 +1,11 @@
+recordIndex,code,title,abstract$,goals,estimatedTotalTime,course
+6,PTR060,Tiene 75 caractereres:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,abstract1,goal1,0,CRS 001
+7,PTR061,title2,Tiene 100 caractereres:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,goal2,0.1,CRS 002
+8,PTR062,t,abstract3,goal3,0.5,CRS 003
+9,PTR076,title17,abstract17,Tiene 100 caractereres:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,789,CRS 003
+10,PTR077,title18,a,goal18,890,CRS 004
+11,PTR078,title19,abstract19,goal19,null,CRS 002
+0,P000,title19,abstract19,goal19,null,CRS 002
+0,ES000,title19,abstract19,goal19,null,CRS 002
+12,PTR079,title20,abstract20,goal20,,CRS 003
+13,PTR080,title21,abstract21,goal21,999.99,CRS 001
