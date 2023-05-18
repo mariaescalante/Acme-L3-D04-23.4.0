@@ -1,0 +1,14 @@
+enrolmentRecordIndex,activityRecordIndex,title,abstract$,indication,startDate,endDate,link
+0,0,,resumen de prueba 1,HANDS_ON,2024/02/01 17:00,2024/02/01 17:30,http://www.youtube.com
+0,0,título de prueba 1,,THEORY,2024/02/01 17:00,2024/02/01 17:30,url random
+0,0,título de prueba 2,resumen de prueba 2,---,2024/03/15 17:00,2024/03/25 17:30,http://www.youtube.com
+0,0,título de prueba 2,resumen de prueba 2,HANDS_ON,,2024/03/15 10:20,
+0,0,título de prueba 2,resumen de prueba 2,HANDS_ON,2024/03/15 09:15,,http://www.youtube.com
+0,0,,,THEORY,2024/03/15 17:00,2024/03/25 17:30,http://www.youtube.com
+0,0,título de prueba 2,resumen de prueba 2,---,,2024/03/25 17:30,
+0,0,título de prueba 2,resumen de prueba 2,THEORY,,,http://www.youtube.com
+0,0,título de prueba 2,resumen de prueba 2,THEORY,2024/03/15 17:00,2024/03/25,http://www.youtube.com
+0,0,título de prueba 2,resumen de prueba 2,THEORY,2024/03/15,2024/03/25,http://www.youtube.com
+0,0,título de prueba 2,resumen de prueba 2,HANDS_ON,2024/03/15 17:00,2024/03/25,url sin formato
+0,0,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,resumen de prueba 2,THEORY,2024/03/15 17:00,2024/03/25,http://www.youtube.com
+0,0,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,THEORY,2024/03/15,2024/03/25,http://www.youtube.com
