@@ -8,7 +8,9 @@
 	<acme:input-textbox code="auditor.audit.form.label.conclusion" path="conclusion"/>
 	<acme:input-textarea code="auditor.audit.form.label.strongPoints" path="strongPoints"/>
 	<acme:input-textarea code="auditor.audit.form.label.weakPoints" path="weakPoints"/>
-	<acme:input-double code="auditor.audit.form.label.mark" path="mark"/>
+	<jstl:if test="${_command == 'show'}">
+		<acme:input-double code="auditor.audit.form.label.mark" path="mark" readonly="true"/>
+	</jstl:if>
 	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>
 
 

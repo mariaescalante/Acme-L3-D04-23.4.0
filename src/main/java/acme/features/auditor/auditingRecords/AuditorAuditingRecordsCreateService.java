@@ -4,8 +4,10 @@ package acme.features.auditor.auditingRecords;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.Mark;
 import acme.entities.Audit;
 import acme.entities.AuditingRecords;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
@@ -58,7 +60,9 @@ public class AuditorAuditingRecordsCreateService extends AbstractService<Auditor
 	@Override
 	public void bind(final AuditingRecords object) {
 		assert object != null;
-
+		Mark mark;
+		mark = super.getRequest().getData("mark", Mark.class);
+		object.setMark(mark);
 		super.bind(object, "subject", "assessment", "startDate", "endDate", "mark", "link");
 	}
 
@@ -96,12 +100,16 @@ public class AuditorAuditingRecordsCreateService extends AbstractService<Auditor
 		assert object != null;
 
 		Tuple tuple;
+		final SelectChoices choices;
 
-		tuple = super.unbind(object, "subject", "assessment", "startDate", "endDate", "mark", "link");
+		choices = SelectChoices.from(Mark.class, object.getMark());
+
+		tuple = super.unbind(object, "subject", "assessment", "startDate", "endDate", "link");
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("draftMode", object.getAudit().isDraftMode());
 		tuple.put("confirmation", false);
-
+		tuple.put("mark", choices.getSelected().getKey());
+		tuple.put("mark2", choices);
 		super.getResponse().setData(tuple);
 	}
 

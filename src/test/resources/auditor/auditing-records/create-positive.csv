@@ -1,0 +1,9 @@
+recordIndex, subject,assessment, startDate,endDate
+00,ABC000,conclusion 00, strongPoints 00, weakPoints00
+01,ABC001,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, strongPoints 01, weakPoints01, mark016,A002,conclusion 02, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, weakPoints02
+02,ABC003,conclusion 03, strongPoints 03, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+00,AB004,conclusion 04, strongPoints 04, weakPoints04
+01,A005,conclusion 05, strongPoints 05, weakPoints05
+05,ABC006,c, strongPoints 06, weakPoints06
+06,ABC007,conclusion 07, s, weakPoints04
+05,ABC004,conclusion 04, strongPoints 04, w

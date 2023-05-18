@@ -1,0 +1,10 @@
+recordIndex, code,conclusion, strongPoints,weakPoints, mark
+04,ABC000,conclusion 00, strongPoints 00, weakPoints00, mark00
+05,ABC001,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, strongPoints 01, weakPoints01, mark016,A002,conclusion 02, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, weakPoints02, mark02
+07,ABC003,conclusion 03, strongPoints 03, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, mark03
+09,AB004,conclusion 04, strongPoints 04, weakPoints04, mark04
+10,A005,conclusion 05, strongPoints 05, weakPoints05, mark05
+11,ABC006,c, strongPoints 06, weakPoints06, mark06
+12,ABC007,conclusion 07, s, weakPoints04, mark04
+13,ABC004,conclusion 04, strongPoints 04, w, mark04
+14,ABC004,conclusion 04, strongPoints 04, weakPoints04, m

@@ -63,7 +63,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	public void bind(final Audit object) {
 		assert object != null;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark");
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints");
 	}
 
 	@Override
@@ -96,7 +96,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 		courses = this.repository.findManyCourse();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark");
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
 
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);

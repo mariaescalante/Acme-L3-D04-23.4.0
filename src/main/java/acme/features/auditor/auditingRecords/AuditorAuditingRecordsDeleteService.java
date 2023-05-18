@@ -4,8 +4,10 @@ package acme.features.auditor.auditingRecords;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.Mark;
 import acme.entities.Audit;
 import acme.entities.AuditingRecords;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
@@ -74,9 +76,13 @@ public class AuditorAuditingRecordsDeleteService extends AbstractService<Auditor
 		assert object != null;
 
 		Tuple tuple;
+		final SelectChoices choices;
 
-		tuple = super.unbind(object, "subject", "assessment", "startDate", "endDate", "mark", "link");
+		choices = SelectChoices.from(Mark.class, object.getMark());
 
+		tuple = super.unbind(object, "subject", "assessment", "startDate", "endDate", "link");
+		tuple.put("mark", choices.getSelected().getKey());
+		tuple.put("mark2", choices);
 		super.getResponse().setData(tuple);
 	}
 
