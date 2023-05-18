@@ -10,3 +10,6 @@ enrolmentRecordIndex, title, abstract$, indication, startDate, endDate, link
 1,new title of activity 8, new abstract of activity 8,THEORY,,2023/01/01 11:00,otra url
 1,new title of activity 9, new abstract of activity 9,---,,,
 1,new title of activity 10, new abstract of activity 10,THEORY,2023/01/01 11:00,2023/01/01 10:00,http://www.acme.es
+1,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,new abstract of activity 11,HANDS_ON,2023/01/01 12:00,2023/01/01 13:00,url random
+1,new title of activity 2,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,HANDS_ON,2023/01/01 12:00,2023/01/01 13:00,http://www.acme.es
+1,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,HANDS_ON,2023/01/01 12:00,2023/01/01 13:00,http://www.acme.es
