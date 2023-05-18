@@ -1,0 +1,15 @@
+recordIndex,motivation,goals,workbook,course,creditCard
+2,new motivation 4,goals 4,workbook 4,CRS 003,
+2,motivation 4,new goals 4,workbook 4,CRS 003, 
+2,motivation 4,goals 40,new workbook 40,CRS 003, 
+2,motivation 4,goals 4,workbook 4,CRS 001,
+2,motivation 40,goals 4,workbook 40,CRS 003,1234
+2,new motivation 4,goals 4,workbook 4,CRS 002,
+2,new motivation 4,new goals 4,workbook 4,CRS 003, 
+2,motivation 4,new goals 4,new workbook 40,CRS 003, 
+2,motivation 40,goals 4,new workbook 4,CRS 002,abc123
+2,motivation 4,goals 4,workbook 4,CRS 001,abc 
+
+2,Este es un texto de 75 caracteres sssssssssssssssssssssssssssssssssssssss75,goals 4,workbook 4,CRS 002,null
+2,motivation 4,Este es un texto de 100 caracteres ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss100,workbook 4,CRS 003,null
+2,Este es un texto de 75 caracteres sssssssssssssssssssssssssssssssssssssss75,Este es un texto de 100 caracteres ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss100,workbook 4,CRS 001,null
