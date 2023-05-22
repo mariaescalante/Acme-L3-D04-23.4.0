@@ -1,21 +1,21 @@
 recordIndex,code,motivation,goals,workbook,course,creditCard
-0,,,,,,
+0,,,,,, 
 0,,motivation 14,goals 14,workbook 14,CRS 001,1178222223334444
 0,ENR 200,,goals 200,workbook 200,CRS 002,1178222223334444
 0,ENR 201,motivation 201,,workbook 201,CRS 001,1178222223334444
 0,ENR 202,motivation 202,goals 202,,CRS 002,1178222223334444
 0,ENR 203,motivation 203,goals 203,workbook 203,---,1178222223334444
 0,ENROLMENT 204,motivation 204,goals 204,workbook 204,CRS 002,1178222223334444
-0,,,,,---,
-0,ENRO 205,motivation 205,,workbook 205,CRS 002,null
-0,ENR 206,,,workbook 206,CRS 005,null
+0,,,,,---, 
+0,ENRO 205,motivation 205,,workbook 205,CRS 002, 
+0,ENR 206,,,workbook 206,CRS 005, 
 0,,motivation 207,goals 207,,CRS 002,986
 0,,motivation 208,goals 208,workbook 208,---,78291423334444
 0,,,,workbook 209,CRS 001,1178222223334444
-0,ENR 210,,,,CRS 003,null
+0,ENR 210,,,,CRS 003, 
 0,ENR 2110,,goals 211,,CRS 002,bad url
-0,ENR 212,motivation 212,,,CRS 002,null
-0,ENR 213,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,goals 213,workbook 213,CRS 002,null
+0,ENR 212,motivation 212,,,CRS 002, 
+0,ENR 213,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,goals 213,workbook 213,CRS 002, 
 0,ENR 214,motivation 214,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,workbook 214,CRS 003,02914444
-0,ENR 215,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,workbook 16,CRS 001,null
-0,ENR 001,motivation,goals,workbook,CRS 003,
+0,ENR 215,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,workbook 16,CRS 001, 
+0,ENR 001,motivation,goals,workbook,CRS 003, 
