@@ -1,5 +1,6 @@
 recordIndex,code,motivation,goals,workbook,course,creditCard
-0,null,motivation 14,goals 14,workbook 14,CRS 001,1178222223334444
+0,,,,,,
+0,,motivation 14,goals 14,workbook 14,CRS 001,1178222223334444
 0,ENR 200,,goals 200,workbook 200,CRS 002,1178222223334444
 0,ENR 201,motivation 201,,workbook 201,CRS 001,1178222223334444
 0,ENR 202,motivation 202,goals 202,,CRS 002,1178222223334444
@@ -17,3 +18,4 @@ recordIndex,code,motivation,goals,workbook,course,creditCard
 0,ENR 213,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,goals 213,workbook 213,CRS 002,null
 0,ENR 214,motivation 214,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,workbook 214,CRS 003,02914444
 0,ENR 215,Este es un texto de 76 caracteres ssssssssssssssssssssssssssssssssssssssss76,Este es un texto de 101 caracteres sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss101,workbook 16,CRS 001,null
+0,ENR 001,motivation,goals,workbook,CRS 003,
