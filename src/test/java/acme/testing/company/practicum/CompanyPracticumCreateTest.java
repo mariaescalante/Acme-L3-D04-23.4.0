@@ -28,10 +28,11 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.fillInputBoxIn("estimatedTotalTime", estimatedTotalTime);
 		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Create");
-
 		super.clickOnMenu("Company", "Practicum");
+
 		super.checkListingExists();
 		super.sortListing(0, "asc");
+
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.checkColumnHasValue(recordIndex, 2, abstract$);
@@ -45,7 +46,7 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.checkInputBoxHasValue("estimatedTotalTime", estimatedTotalTime);
 		super.checkInputBoxHasValue("course", course);
 
-		super.clickOnButton("SessionPracticums");
+		super.clickOnButton("List all session");
 		super.checkListingExists();
 		super.checkListingEmpty();
 

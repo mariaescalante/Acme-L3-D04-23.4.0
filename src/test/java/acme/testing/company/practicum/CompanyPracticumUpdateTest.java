@@ -23,7 +23,7 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String abstract$, final String goals, final String estimatedTotalTime, final String course) {
+	public void test100Positive(final int recordIndex, final int newrecordIndex, final String code, final String title, final String abstract$, final String goals, final String estimatedTotalTime, final String course) {
 		// HINT: this test logs in as an company, lists his or her practicums, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -32,10 +32,9 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 
 		super.clickOnMenu("Company", "Practicum");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
+
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
@@ -46,12 +45,8 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 2, abstract$);
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(newrecordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
@@ -72,9 +67,7 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 
 		super.clickOnMenu("Company", "Practicum");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);

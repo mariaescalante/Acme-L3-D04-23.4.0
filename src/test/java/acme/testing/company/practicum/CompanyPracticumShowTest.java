@@ -30,7 +30,6 @@ public class CompanyPracticumShowTest extends TestHarness {
 		super.signIn("company1", "company1");
 
 		super.clickOnMenu("Company", "Practicum");
-		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 
