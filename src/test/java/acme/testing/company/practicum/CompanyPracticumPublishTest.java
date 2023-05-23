@@ -31,7 +31,6 @@ public class CompanyPracticumPublishTest extends TestHarness {
 
 		super.clickOnMenu("Company", "Practicum");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
 
 		super.clickOnListingRecord(recordIndex);
@@ -44,7 +43,7 @@ public class CompanyPracticumPublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/company/practicum/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String reference) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String abstract$, final String goals, final String estimatedTotalTime, final String course) {
 		// HINT: this test attempts to publish a practicum that cannot be published, yet.
 
 		super.signIn("company1", "company1");
@@ -53,11 +52,16 @@ public class CompanyPracticumPublishTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, reference);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("abstract$", abstract$);
+		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("estimatedTotalTime", estimatedTotalTime);
+		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkErrorsExist();
 
 		super.signOut();
 	}
