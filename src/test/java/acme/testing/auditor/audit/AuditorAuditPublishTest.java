@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.Audit;
 import acme.testing.TestHarness;
+import acme.testing.auditor.audit.DONE.AuditorAuditTestRepository;
 
 public class AuditorAuditPublishTest extends TestHarness {
 

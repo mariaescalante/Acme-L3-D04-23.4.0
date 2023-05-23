@@ -1,0 +1,10 @@
+recordIndex, subject,assessment, startDate,endDate,Mark,correction, link
+01,SUB001,assessment1, 2024-02-02 10:20,2024-02-02 11:20,Aplus,, , , , ,correction1, link1
+01,S,assessment2, 2024-03-02 10:20,2024-03-02 11:20, A,correction1, link1
+02,subject2,a, 2024-04-02 12:20,2024-04-02 13:20,B,correction2, link2
+03,subject3,assessment3, 2024-05-02 16:20,2024-05-02 17:20,C,c, link3
+04,subject4,assessment4, 2024-06-02 19:50,2024-06-02 20:20,F,correction4, l
+05,subject5,assessment5, 2024-07-02 09:30,2024-07-02 08:30,Fminus,correction5, link5
+06,subject6,assessment6, 2024-08-02 07:20,2024-08-02 08:20,a,correction6, link6
+07,subject7,assessment7, 2024-09-02 10:20,2024-09-02 11:20,a,correction7, link7
+,,,,,,

@@ -1,5 +1,5 @@
 
-package acme.testing.auditor.audit;
+package acme.testing.auditor.audit.DONE;
 
 import java.util.Collection;
 
@@ -23,7 +23,7 @@ public class AuditorAuditShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/auditor/audit/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String conclusion, final String strongPoints, final String weakPoints, final String mark) {
+	public void test100Positive(final int recordIndex, final String code, final String conclusion, final String strongPoints, final String weakPoints, final String mark, final String course) {
 		// HINT: this test signs in as an auditor, lists all of the audits, click on  
 		// HINT+ one of them, and checks that the form has the expected data.
 
@@ -39,6 +39,7 @@ public class AuditorAuditShowTest extends TestHarness {
 		super.checkInputBoxHasValue("strongPoints", strongPoints);
 		super.checkInputBoxHasValue("weakPoints", weakPoints);
 		super.checkInputBoxHasValue("mark", mark);
+		super.checkInputBoxHasValue("course", course);
 
 		super.signOut();
 	}

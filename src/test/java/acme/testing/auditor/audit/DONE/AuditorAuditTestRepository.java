@@ -1,5 +1,5 @@
 
-package acme.testing.auditor.audit;
+package acme.testing.auditor.audit.DONE;
 
 import java.util.Collection;
 

@@ -1,5 +1,5 @@
 
-package acme.testing.auditor.audit;
+package acme.testing.auditor.audit.DONE;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,15 +11,14 @@ public class AuditorAuditListTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/auditor/audit/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String strongPoints, final String conclusion) {
+	public void test100Positive(final int recordIndex, final String code, final String conclusion, final String strongPoints) {
 		// HINT: this test signs in as an auditor, lists all of the audits, 
 		// HINT+ and then checks that the listing shows the expected data.
 
 		super.signIn("auditor1", "auditor1");
 
-		super.clickOnMenu("auditor", "Audit");
+		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, conclusion);
