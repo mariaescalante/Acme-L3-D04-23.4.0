@@ -19,7 +19,7 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/enrolment/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String motivation, final String goals, final String workbook, final String course, final String creditCard) {
+	public void test100Positive(final int recordIndex, final String code, final String motivation, final String goals, final String workbook, final String course, final String creditCard) {
 		// HINT: this test logs in as a student, lists his or her enrolments, selects one of them, updates it, and then checks that the update has actually been performed.
 
 		super.signIn("student1", "student1");
@@ -30,6 +30,7 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("motivation", motivation);
 		super.fillInputBoxIn("goals", goals);
 		super.fillInputBoxIn("workbook", workbook);
@@ -38,10 +39,11 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(0, "desc");
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(0);
 		super.checkFormExists();
+		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("motivation", motivation);
 		super.checkInputBoxHasValue("goals", goals);
 		super.checkInputBoxHasValue("workbook", workbook);
@@ -52,7 +54,7 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 	}
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/enrolment/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String motivation, final String goals, final String workbook, final String course, final String creditCard) {
+	public void test200Negative(final int recordIndex, final String code, final String motivation, final String goals, final String workbook, final String course, final String creditCard) {
 		// HINT: this test attempts to update an enrolment with wrong data.
 
 		super.signIn("student1", "student1");
@@ -63,6 +65,7 @@ public class StudentEnrolmentUpdateTest extends TestHarness {
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("motivation", motivation);
 		super.fillInputBoxIn("goals", goals);
 		super.fillInputBoxIn("workbook", workbook);

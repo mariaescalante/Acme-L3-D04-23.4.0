@@ -12,12 +12,9 @@ import acme.entities.Enrolment;
 import acme.testing.TestHarness;
 
 public class StudentEnrolmentPublishTest extends TestHarness {
-	// Internal data ----------------------------------------------------------
 
 	@Autowired
 	protected StudentEnrolmentTestRepository repository;
-
-	// Test methods -----------------------------------------------------------
 
 
 	@ParameterizedTest
