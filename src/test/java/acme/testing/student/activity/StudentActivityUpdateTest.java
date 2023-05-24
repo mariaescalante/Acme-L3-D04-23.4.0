@@ -18,7 +18,7 @@ public class StudentActivityUpdateTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/student/Activity/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/student/activity/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstract$, final String indication, final String startDate, final String endDate, final String link) {
 		// HINT: this test logs in as a student, lists his or her enrolments, selects one of them, updates an activity, and then checks that the update has actually been performed.
 
