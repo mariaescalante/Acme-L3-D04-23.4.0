@@ -12,7 +12,7 @@ company.session-practicum.form.label.abstract-text = Abstract:
 company.session-practicum.form.label.start-date = Start date:
 company.session-practicum.form.label.end-date = End date:
 company.session-practicum.form.label.further-information-link = Further information: (Optional)
-company.session-practicum.form.label.confirmation = Confirm exceptional practicum session
+company.session-practicum.form.label.confirmation =Confirm exceptional practicum session
 
 company.session-practicum.form.button.create = Create
 company.session-practicum.form.button.create-exceptional = Create exceptional session

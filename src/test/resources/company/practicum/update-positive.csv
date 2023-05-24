@@ -4,7 +4,7 @@ recordIndex,newrecordindex,code,title,abstract$,goals,estimatedTotalTime,course
 0,4,PRT102,title17,abstract17,Tiene 100 caractereres:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,789.00,CRS 003
 0,4,PRT103,title18,a,goal18,890.00,CRS 004
 0,4,PRT104,title19,abstract19,goal19,,CRS 002
-0,0,P000,title19,abstract19,goal19,,CRS 002
-0,0,ES000,title19,abstract19,goal19,,CRS 002
-0,4,PRT105,title20,abstract20,goal20,,CRS 003
-0,4,PRT106,title21,abstract21,goal21,999.99,CRS 001
+1,0,P000,title19,abstract19,goal19,,CRS 002
+2,0,ES000,title19,abstract19,goal19,,CRS 002
+3,4,PRT105,title20,abstract20,goal20,,CRS 003
+4,4,PRT106,title21,abstract21,goal21,999.99,CRS 001

@@ -62,6 +62,7 @@ public class CompanyPracticumPublishTest extends TestHarness {
 		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Publish");
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

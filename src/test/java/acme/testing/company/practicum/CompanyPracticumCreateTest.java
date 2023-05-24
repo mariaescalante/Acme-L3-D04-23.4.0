@@ -74,6 +74,8 @@ public class CompanyPracticumCreateTest extends TestHarness {
 
 		super.checkErrorsExist();
 
+		super.checkNotPanicExists();
+
 		super.signOut();
 	}
 

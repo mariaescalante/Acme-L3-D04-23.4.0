@@ -73,18 +73,19 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 
 		confirmation = object.getPracticum().isDraftMode() ? true : super.getRequest().getData("confirmation", boolean.class);
 		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+		if (object.getEndDate() != null && object.getStartDate() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("endDate"))
+				super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
 
-		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
+			if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+				date = CompanySessionPracticumCreateService.sumarDiasAFecha(MomentHelper.getCurrentMoment(), 7);
+				super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
+			}
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
-			date = CompanySessionPracticumCreateService.sumarDiasAFecha(MomentHelper.getCurrentMoment(), 7);
-			super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
-			date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
-			super.state(object.getEndDate().after(date) || object.getEndDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
+			if (!super.getBuffer().getErrors().hasErrors("endDate")) {
+				date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
+				super.state(object.getEndDate().after(date) || object.getEndDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
+			}
 		}
 	}
 
