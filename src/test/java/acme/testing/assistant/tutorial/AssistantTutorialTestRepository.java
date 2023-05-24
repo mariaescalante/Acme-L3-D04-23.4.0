@@ -1,5 +1,5 @@
 
-package acme.testing.assistant;
+package acme.testing.assistant.tutorial;
 
 import java.util.Collection;
 
@@ -15,6 +15,6 @@ public interface AssistantTutorialTestRepository extends AbstractRepository {
 	Collection<Tutorial> findManyTutorialsByAssistantUsername(String username);
 
 	@Query("select s from Session s where s.tutorial.assistant.userAccount.username = :username")
-	Collection<Session> findManyDutiesByEmployerUsername(String username);
+	Collection<Session> findManySessionsByAssistantUsername(String username);
 
 }
