@@ -4,7 +4,7 @@ auditor.auditing-records.list.label.period = Period
 auditor.auditing-records.list.label.correction = Correction
 
 auditor.auditing-records.list.button.create = Create
-auditor.auditing-records.list.button.create-exceptional = Create exceptional session
+auditor.auditing-records.list.button.create-exceptional = Create exceptional auditing record
 
 auditor.auditing-records.form.label.subject = Subject:
 auditor.auditing-records.form.label.assessment = Assessment:
@@ -21,8 +21,10 @@ auditor.auditing-records.form.label.startDate = Start date
 auditor.auditing-records.form.label.endDate = End date
 
 auditor.auditing-records.form.button.create = Create
-auditor.auditing-records.form.button.exceptional = Create exceptional records
+auditor.auditing-records.form.button.create-correction = Create exceptional auditing record
 auditor.auditing-records.form.button.update = Update
 auditor.auditing-records.form.button.delete = Delete
+
+
 
 
