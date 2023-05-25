@@ -24,5 +24,8 @@ student.activity.form.button.create = Create
 student.activity.form.button.delete = Delete
 student.activity.form.button.update = Update
 
-student.activity.form.error.endDate = End Date must be after end date
-student.activity.form.error.startDate = Start Date must be before end date
+student.activity.form.error.endDate = End date must be after end date
+student.activity.form.error.startDate = Start date must be before end date
+
+student.activity.form.error.startDateNull = Start date must not be null
+student.activity.form.error.endDateNull = End date must not be null

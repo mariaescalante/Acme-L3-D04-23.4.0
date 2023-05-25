@@ -58,7 +58,7 @@ public class CompanySessionPracticumUpdateService extends AbstractService<Compan
 	public void bind(final SessionPracticum object) {
 		assert object != null;
 
-		super.bind(object, "title", "abstractText", "startDate", "endDate", "furtherInformationLink");
+		super.bind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class CompanySessionPracticumUpdateService extends AbstractService<Compan
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
 			date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
-			super.state(object.getEndDate().after(date) || object.getStartDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
+			super.state(object.getEndDate().after(date) || object.getEndDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
 		}
 	}
 
@@ -92,8 +92,8 @@ public class CompanySessionPracticumUpdateService extends AbstractService<Compan
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "abstractText", "startDate", "endDate", "furtherInformationLink");
-
+		tuple = super.unbind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
+		tuple.put("draftMode", object.getPracticum().isDraftMode());
 		super.getResponse().setData(tuple);
 	}
 

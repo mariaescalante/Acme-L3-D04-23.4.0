@@ -34,12 +34,14 @@ public class SessionPracticum extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			abstractText;
+	protected String			abstract$;
 
 	@Temporal(value = TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				startDate;
 
 	@Temporal(value = TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				endDate;
 
 	@URL

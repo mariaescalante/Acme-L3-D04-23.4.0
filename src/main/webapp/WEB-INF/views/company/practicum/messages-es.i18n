@@ -19,3 +19,4 @@ company.practicum.form.button.session-practicum.list = Listar todas las sesiones
 
 company.practicum.form.error.duplicated = El codigo ya está en uso
 company.practicum.form.error.negative-estimatedTotalTime = El tiempo estimado debe ser positivo
+company.practicum.form.error.plus.or.less.10%= El tiempo total estimado no debe alejarse mas de un 10% del tiempo real
