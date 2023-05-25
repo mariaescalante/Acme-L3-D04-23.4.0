@@ -1,5 +1,5 @@
 
-package acme.testing.lecturer.course.done;
+package acme.testing.lecturer.course;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,7 +19,6 @@ public class LecturerCourseListAllTest extends TestHarness {
 
 		super.clickOnMenu("Lecturer", "Courses");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);

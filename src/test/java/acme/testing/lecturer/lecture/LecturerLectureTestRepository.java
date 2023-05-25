@@ -1,5 +1,5 @@
 
-package acme.testing.lecturer.lecture.done;
+package acme.testing.lecturer.lecture;
 
 import java.util.Collection;
 

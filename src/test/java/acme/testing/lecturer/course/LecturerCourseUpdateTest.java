@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.Course;
 import acme.testing.TestHarness;
-import acme.testing.lecturer.course.done.LecturerCourseTestRepository;
 
 public class LecturerCourseUpdateTest extends TestHarness {
 
@@ -24,7 +23,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String abstract$, final String price, final String link) {
+	public void test100Positive(final int recordIndex, final int newRecordIndex, final String code, final String title, final String abstract$, final String price, final String link) {
 		// HINT: this test logs in as an lecturer, lists his or her courses, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -33,9 +32,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 		super.clickOnMenu("Lecturer", "My courses");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
@@ -46,13 +43,12 @@ public class LecturerCourseUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 2, abstract$);
-		super.checkColumnHasValue(recordIndex, 3, price);
+		super.checkColumnHasValue(newRecordIndex, 0, code);
+		super.checkColumnHasValue(newRecordIndex, 1, title);
+		super.checkColumnHasValue(newRecordIndex, 2, abstract$);
+		super.checkColumnHasValue(newRecordIndex, 3, price);
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(newRecordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
@@ -70,11 +66,9 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 		super.signIn("lecturer1", "lecturer1");
 
-		super.clickOnMenu("Lecturer", "List my courses");
+		super.clickOnMenu("Lecturer", "My courses");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
@@ -85,6 +79,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

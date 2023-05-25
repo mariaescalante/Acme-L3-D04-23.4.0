@@ -88,8 +88,14 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		lectures = this.repository.findManyLecturesByCourseId(object.getId());
 		notPublished = this.repository.findNotPublishedLecturesByCourseId(object.getId());
 		purelyTheoretical = object.purelyTheoretical(lectures);
-		if (!super.getBuffer().getErrors().hasErrors("price"))
-			if (object.getPrice() != null)
+		if (object.getCode() != null)
+			if (!super.getBuffer().getErrors().hasErrors("code")) {
+				Course existing;
+				existing = this.repository.findOneCourseByCode(object.getCode());
+				super.state(existing == null || existing.getId() == object.getId(), "code", "lecturer.course.form.error.duplicated");
+			}
+		if (object.getPrice() != null)
+			if (!super.getBuffer().getErrors().hasErrors("price"))
 				super.state(object.getPrice().getAmount() > 0, "price", "lecturer.course.form.error.negative-price");
 		if (!super.getBuffer().getErrors().hasErrors("theoreticalOrHandsOn"))
 			super.state(!purelyTheoretical, "theoreticalOrHandsOn", "lecturer.course.form.error.purely-theoretical");

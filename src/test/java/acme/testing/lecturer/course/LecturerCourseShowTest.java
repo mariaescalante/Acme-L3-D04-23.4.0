@@ -1,5 +1,5 @@
 
-package acme.testing.lecturer.course.done;
+package acme.testing.lecturer.course;
 
 import java.util.Collection;
 
@@ -30,7 +30,6 @@ public class LecturerCourseShowTest extends TestHarness {
 		super.signIn("lecturer1", "lecturer1");
 
 		super.clickOnMenu("Lecturer", "Courses");
-		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 

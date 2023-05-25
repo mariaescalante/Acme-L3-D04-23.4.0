@@ -50,10 +50,12 @@ public class LecturerLectureDeleteService extends AbstractService<Lecturer, Lect
 		boolean status;
 		int lectureId;
 		Lecture lecture;
+		Lecturer lecturer;
 
 		lectureId = super.getRequest().getData("id", int.class);
 		lecture = this.repository.findOneLectureById(lectureId);
-		status = lecture != null && lecture.isDraftMode();
+		lecturer = lecture.getLecturer();
+		status = lecture != null && lecture.isDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -73,7 +75,8 @@ public class LecturerLectureDeleteService extends AbstractService<Lecturer, Lect
 	public void bind(final Lecture object) {
 		assert object != null;
 
-		super.bind(object, "title", "abstract$", "time", "text", "body", "theoreticalOrHandsOn", "link", "draftMode");
+		super.bind(object, "title", "abstract$", "time", "body", "theoreticalOrHandsOn", "link");
+
 	}
 
 	@Override
@@ -100,7 +103,7 @@ public class LecturerLectureDeleteService extends AbstractService<Lecturer, Lect
 
 		choices = SelectChoices.from(CourseType.class, object.getTheoreticalOrHandsOn());
 
-		tuple = super.unbind(object, "title", "abstract$", "time", "text", "body", "theoreticalOrHandsOn", "link");
+		tuple = super.unbind(object, "title", "abstract$", "time", "body", "theoreticalOrHandsOn", "link");
 		tuple.put("theoreticalOrHandsOn", choices.getSelected().getKey());
 		tuple.put("theoreticalOrHandsOn2", choices);
 		tuple.put("draftMode", object.isDraftMode());

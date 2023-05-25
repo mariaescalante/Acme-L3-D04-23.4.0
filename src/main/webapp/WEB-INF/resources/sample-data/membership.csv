@@ -1,7 +1,7 @@
 key,key:course,key:lecture,title
-membership-01,course-01,lecture-01,null
-membership-02,course-01,lecture-02,null
-membership-03,course-02,lecture-03,null
-membership-04,course-02,lecture-04,null
-membership-05,course-02,lecture-05,null
-membership-06,course-01,lecture-05,null
+membership-01,course-01,lecture-01,Title 1
+membership-02,course-01,lecture-02,Title 2
+membership-06,course-01,lecture-05,Title 3
+membership-03,course-02,lecture-03,Title 4
+membership-04,course-02,lecture-04,Title 5
+membership-05,course-02,lecture-05,Title 6

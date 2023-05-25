@@ -1,9 +1,13 @@
 lecturer.membership.form.button.create = Create
 lecturer.membership.form.button.delete = Delete
+lecturer.membership.form.label.title = Title:
 lecturer.membership.form.label.lecture = Lecture:
 lecturer.membership.form.label.course = Course:
 
 lecturer.membership.list.button.create = Create
 
+lecturer.membership.list.label.title = Title
 lecturer.membership.list.label.lecture = Lecture
 lecturer.membership.list.label.course = Course
+
+lecturer.membership.form.error.duplicated = This lecture is already associated to the course selected

@@ -79,6 +79,22 @@ public class LecturerMembershipCreateService extends AbstractService<Lecturer, M
 	@Override
 	public void validate(final Membership object) {
 		assert object != null;
+		Membership existing = null;
+
+		Collection<Membership> objects;
+		Principal principal;
+
+		principal = super.getRequest().getPrincipal();
+		objects = this.repository.findManyMembershipsByLecturerId(principal.getActiveRoleId());
+		if (object.getLecture() != null && object.getCourse() != null)
+			if (!super.getBuffer().getErrors().hasErrors("lecture")) {
+				for (final Membership m : objects)
+					if (m.getCourse() == object.getCourse() && m.getLecture() == object.getLecture()) {
+						existing = m;
+						break;
+					}
+				super.state(existing == null, "lecture", "lecturer.membership.form.error.duplicated");
+			}
 	}
 
 	@Override

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.Course;
 import acme.testing.TestHarness;
-import acme.testing.lecturer.course.done.LecturerCourseTestRepository;
 
 public class LecturerCoursePublishTest extends TestHarness {
 
@@ -32,7 +31,6 @@ public class LecturerCoursePublishTest extends TestHarness {
 
 		super.clickOnMenu("Lecturer", "My courses");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
 
 		super.clickOnListingRecord(recordIndex);
@@ -45,20 +43,24 @@ public class LecturerCoursePublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code) {
+	public void test200Negative(final int recordIndex, final String code, final String title, final String abstract$, final String price, final String link) {
 		// HINT: this test attempts to publish a course that cannot be published, yet.
 
 		super.signIn("lecturer1", "lecturer1");
 
 		super.clickOnMenu("Lecturer", "My courses");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("abstract$", abstract$);
+		super.fillInputBoxIn("price", price);
+		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}
@@ -70,7 +72,7 @@ public class LecturerCoursePublishTest extends TestHarness {
 		Collection<Course> courses;
 		String params;
 
-		courses = this.repository.findManyCoursesByLecturerUsername("lecturer1");
+		courses = this.repository.findManyCoursesByLecturerUsername("lecturer2");
 		for (final Course course : courses)
 			if (course.isDraftMode()) {
 				params = String.format("id=%d", course.getId());
@@ -84,7 +86,7 @@ public class LecturerCoursePublishTest extends TestHarness {
 				super.checkPanicExists();
 				super.signOut();
 
-				super.signIn("auditor1", "audictor1");
+				super.signIn("auditor1", "auditor1");
 				super.request("/lecturer/course/publish", params);
 				super.checkPanicExists();
 				super.signOut();
@@ -98,8 +100,8 @@ public class LecturerCoursePublishTest extends TestHarness {
 		Collection<Course> courses;
 		String params;
 
-		super.signIn("lecturer1", "lecturer1");
-		courses = this.repository.findManyCoursesByLecturerUsername("lecturer1");
+		super.signIn("lecturer2", "lecturer2");
+		courses = this.repository.findManyCoursesByLecturerUsername("lecturer2");
 		for (final Course course : courses)
 			if (!course.isDraftMode()) {
 				params = String.format("id=%d", course.getId());
@@ -116,8 +118,8 @@ public class LecturerCoursePublishTest extends TestHarness {
 		Collection<Course> courses;
 		String params;
 
-		super.signIn("lecturer2", "lecturer2");
-		courses = this.repository.findManyCoursesByLecturerUsername("lecturer1");
+		super.signIn("lecturer1", "lecturer1");
+		courses = this.repository.findManyCoursesByLecturerUsername("lecturer2");
 		for (final Course course : courses) {
 			params = String.format("id=%d", course.getId());
 			super.request("/lecturer/course/publish", params);
