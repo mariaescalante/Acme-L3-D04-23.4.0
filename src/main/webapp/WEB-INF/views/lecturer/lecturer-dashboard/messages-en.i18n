@@ -1,0 +1,10 @@
+lecturer.dashboard.form.label.totalTheoryLectures = Total theoretical lectures:
+lecturer.dashboard.form.label.totalHandsOnLectures = Total hands-on lectures:
+lecturer.dashboard.form.label.averageLectureLearningTime = Average lecture learning time:
+lecturer.dashboard.form.label.lectureLearningTimeMinimum = Lecture learning minimum time:
+lecturer.dashboard.form.label.lectureLearningTimeMaximum = Lecture learning minimum time:
+lecturer.dashboard.form.label.lectureLearningTimeDeviation = Lecture learning deviation time:
+lecturer.dashboard.form.label.averageCourseLearningTime = Average course learning time:
+lecturer.dashboard.form.label.courseLearningTimeMinimum = Course learning minimum time:
+lecturer.dashboard.form.label.courseLearningTimeMaximum = Course learning minimum time:
+lecturer.dashboard.form.label.courseLearningTimeDeviation = Course learning deviation time:
