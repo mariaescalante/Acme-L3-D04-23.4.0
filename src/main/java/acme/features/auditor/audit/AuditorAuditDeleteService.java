@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Audit;
+import acme.entities.AuditingRecords;
 import acme.entities.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -75,6 +76,10 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 	public void perform(final Audit object) {
 		assert object != null;
 
+		Collection<AuditingRecords> ar;
+
+		ar = this.repository.findAuditingRecordsByAuditId(object.getId());
+		this.repository.deleteAll(ar);
 		this.repository.delete(object);
 	}
 

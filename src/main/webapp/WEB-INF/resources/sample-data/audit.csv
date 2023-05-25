@@ -2,3 +2,4 @@ key,code,conclusion,strong-points,weak-points,draftMode,key:course,key:auditor
 audit-01,AUD001,conclusion 1,strong points 1,weak point-01,false,course-01,auditor-01
 audit-02,AUD002,conclusion 2,strong points 2,weak point02,true,course-02,auditor-02
 audit-03,AUD003,conclusion 3,strong points 3,weak point-03,true,course-01,auditor-01
+audit-04,AUD004,conclusion 4,strong points 4,weak point-04,true,course-01,auditor-01

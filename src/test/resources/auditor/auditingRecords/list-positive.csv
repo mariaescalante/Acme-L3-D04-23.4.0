@@ -1,0 +1,5 @@
+recordIndex,auditingRecordsRecordIndex,code,correction,subject,assesment
+0,0,AUD001,SUB001,assessment 1,true
+0,1,AUD001,SUB002,assessment 2,false
+1,0,AUD003,SUB003,assessment 3,true
+1,1,AUD003,SUB004,assessment 4,false

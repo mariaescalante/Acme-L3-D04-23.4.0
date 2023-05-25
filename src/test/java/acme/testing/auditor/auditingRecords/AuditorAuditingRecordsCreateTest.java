@@ -31,22 +31,23 @@ public class AuditorAuditingRecordsCreateTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(auditRecordIndex);
-		super.clickOnButton("AuditingRecords");
+		super.clickOnButton("List all auditing records");
 
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("subject", subject);
 		super.fillInputBoxIn("assessment", assessment);
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("endDate", endDate);
+		super.fillInputBoxIn("mark", mark);
+		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.checkColumnHasValue(auditingRecordsRecordIndex, 0, subject);
-		super.checkColumnHasValue(auditingRecordsRecordIndex, 1, startDate);
+		super.checkColumnHasValue(auditingRecordsRecordIndex, 1, assessment);
+		super.checkColumnHasValue(auditingRecordsRecordIndex, 2, "false");
 
 		super.clickOnListingRecord(auditingRecordsRecordIndex);
 		super.checkInputBoxHasValue("subject", subject);
@@ -68,12 +69,11 @@ public class AuditorAuditingRecordsCreateTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(auditRecordIndex);
-		super.clickOnButton("AuditingRecords");
-
+		super.clickOnButton("List all auditing records");
 		super.clickOnButton("Create");
+
 		super.fillInputBoxIn("subject", subject);
 		super.fillInputBoxIn("assessment", assessment);
 		super.fillInputBoxIn("startDate", startDate);
@@ -81,8 +81,9 @@ public class AuditorAuditingRecordsCreateTest extends TestHarness {
 		super.fillInputBoxIn("mark", mark);
 		super.fillInputBoxIn("link", link);
 
-		super.clickOnSubmit("Create");
+		super.clickOnSubmit("Create");//ES un correction
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

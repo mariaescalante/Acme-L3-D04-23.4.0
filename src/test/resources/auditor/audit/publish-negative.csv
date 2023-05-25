@@ -1,1 +1,19 @@
-1, AUD001
+recordIndex,code,conclusion,strongPoints,weakPoints,course
+2,AUD001,conclusion 00,strongPoints 00,weakPoints00,CRS 001
+2,aBC000,conclusion 00,strongPoints 00,weakPoints00,CRS 001
+2,ABC064,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,strongPoints 01,weakPoints01,CRS 001
+2,ABC065,conclusion 02,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,weakPoints02,CRS 002
+2,ABC003,conclusion 03,strongPoints 03, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,CRS 001
+2,ABC004,conclusion 04,strongPoints 04,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,CRS 001
+2,ABC0052,conclusion 05,strongPoints 05,weakPoints05,CRS 001
+2,ABCE,conclusion 06,strongPoints 06,weakPoints06,CRS 001
+2,007,conclusion 07,strongPoints 07,weakPoints07,CRS 001
+2,,conclusion 05,strongPoints 05,weakPoints05,CRS 001
+2,ABC,,strongPoints 06,weakPoints06,CRS 001
+2,007,conclusion 07, ,weakPoints07,CRS 001
+2,ABC011,conclusion 11,strongPoints 11,,CRS 001
+2,ABC012,conclusion 12,strongPoints 12, ,CRS 001
+2,ABC0E13,conclusion 13,strongPoints 13,weakPoints13 ,CRS 001 
+2,A2B014,conclusion 14,strongPoints 14,weakPoints14,CRS 001
+2,AUD008,conclusion 04,strongPoints 04,w,---
+2,,,,,---

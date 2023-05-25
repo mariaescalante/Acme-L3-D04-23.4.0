@@ -63,7 +63,7 @@ public class AuditorAuditingRecordsCreateCorrectionService extends AbstractServi
 		Mark mark;
 		mark = super.getRequest().getData("mark", Mark.class);
 		object.setMark(mark);
-		super.bind(object, "subject", "assessment", "mark", "startDate", "endDate", "link");
+		super.bind(object, "subject", "assessment", "startDate", "endDate", "link");
 	}
 
 	@Override

@@ -23,7 +23,7 @@ public class AuditorAuditingRecordsListTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/auditor/auditingRecords/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int auditRecordIndex, final String code, final int auditingRecordsRecordIndex, final String correction, final String subject, final String assesment) {
+	public void test100Positive(final int auditRecordIndex, final int auditingRecordsRecordIndex, final String code, final String subject, final String assesment, final String correction) {
 		// HINT: this test authenticates as an auditor, then lists his or her audits, 
 		// HINT+ selects one of them, and check that it has the expected auditingRecords.
 
@@ -31,17 +31,16 @@ public class AuditorAuditingRecordsListTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(auditRecordIndex, 0, code);
 		super.clickOnListingRecord(auditRecordIndex);
 		super.checkInputBoxHasValue("code", code);
-		super.clickOnButton("AuditingRecords");
+		super.clickOnButton("List all auditing records");
 
 		super.checkListingExists();
-		super.checkColumnHasValue(auditingRecordsRecordIndex, 0, correction);
-		super.checkColumnHasValue(auditingRecordsRecordIndex, 1, subject);
+		super.checkColumnHasValue(auditingRecordsRecordIndex, 0, subject);
 		super.checkColumnHasValue(auditingRecordsRecordIndex, 1, assesment);
+		super.checkColumnHasValue(auditingRecordsRecordIndex, 2, correction);
 		super.clickOnListingRecord(auditingRecordsRecordIndex);
 
 		super.signOut();

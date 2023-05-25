@@ -23,7 +23,8 @@ public class AuditorAuditingRecordsShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/auditor/auditingRecords/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int auditRecordIndex, final String reference, final int auditingRecordsRecordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark, final String link) {
+	public void test100Positive(final int auditRecordIndex, final String code, final int auditingRecordsRecordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark, final String correction,
+		final String link) {
 		// HINT: this test signs in as an auditor, lists his or her audits, selects
 		// HINT+ one of them and checks that it's as expected.
 
@@ -31,9 +32,8 @@ public class AuditorAuditingRecordsShowTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.clickOnListingRecord(auditRecordIndex);
-		super.clickOnButton("AuditingRecords");
+		super.clickOnButton("List all auditing records");
 		super.checkListingExists();
 		super.clickOnListingRecord(auditingRecordsRecordIndex);
 		super.checkFormExists();

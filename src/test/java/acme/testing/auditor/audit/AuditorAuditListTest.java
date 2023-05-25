@@ -1,5 +1,5 @@
 
-package acme.testing.auditor.audit.DONE;
+package acme.testing.auditor.audit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

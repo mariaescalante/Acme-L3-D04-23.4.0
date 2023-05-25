@@ -22,8 +22,9 @@ public class AuditorAuditingRecordsUpdateTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/auditor/auditing-records/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark) {
+	@CsvFileSource(resources = "/auditor/auditingRecords/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int auditRecordIndex, final int auditingRecordsRecordIndex, final int newAuditingRecordsRecordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark,
+		final String link) {
 		// HINT: this test logs in as an auditor, lists his or her audits, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -32,11 +33,12 @@ public class AuditorAuditingRecordsUpdateTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-
-		super.checkColumnHasValue(recordIndex, 0, subject);
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(auditRecordIndex);
+		super.clickOnButton("List all auditing records");
+		super.checkListingExists();
+		super.clickOnListingRecord(auditingRecordsRecordIndex);
 		super.checkFormExists();
+
 		super.fillInputBoxIn("subject", subject);
 		super.fillInputBoxIn("assessment", assessment);
 		super.fillInputBoxIn("startDate", startDate);
@@ -46,12 +48,10 @@ public class AuditorAuditingRecordsUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, subject);
-		super.checkColumnHasValue(recordIndex, 1, endDate);
-		super.checkColumnHasValue(recordIndex, 2, startDate);
+		super.checkColumnHasValue(newAuditingRecordsRecordIndex, 0, subject);
+		super.checkColumnHasValue(newAuditingRecordsRecordIndex, 1, assessment);
 
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(newAuditingRecordsRecordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("subject", subject);
 		super.checkInputBoxHasValue("assessment", assessment);
@@ -63,18 +63,19 @@ public class AuditorAuditingRecordsUpdateTest extends TestHarness {
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/auditor/audit/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark) {
+	@CsvFileSource(resources = "/auditor/auditingRecords/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int auditRecordIndex, final int auditingRecordsRecordIndex, final String subject, final String assessment, final String startDate, final String endDate, final String mark) {
 		// HINT: this test attempts to update a audit with wrong data.
 
 		super.signIn("auditor1", "auditor1");
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-
-		super.checkColumnHasValue(recordIndex, 0, subject);
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(auditRecordIndex);
+		super.clickOnButton("List all auditing records");
+		super.checkListingExists();
+		super.clickOnListingRecord(auditingRecordsRecordIndex);
+		super.checkFormExists();
 		super.checkFormExists();
 		super.fillInputBoxIn("subject", subject);
 		super.fillInputBoxIn("assessment", assessment);
@@ -85,6 +86,7 @@ public class AuditorAuditingRecordsUpdateTest extends TestHarness {
 		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

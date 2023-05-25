@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.Audit;
 import acme.testing.TestHarness;
-import acme.testing.auditor.audit.DONE.AuditorAuditTestRepository;
 
 public class AuditorAuditPublishTest extends TestHarness {
 
@@ -32,7 +31,6 @@ public class AuditorAuditPublishTest extends TestHarness {
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
 
 		super.clickOnListingRecord(recordIndex);
@@ -45,20 +43,24 @@ public class AuditorAuditPublishTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/auditor/audit/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code) {
+	public void test200Negative(final int recordIndex, final String code, final String conclusion, final String strongPoints, final String weakPoints, final String course) {
 		// HINT: this test attempts to publish a audit that cannot be published, yet.
 
 		super.signIn("auditor1", "auditor1");
 
 		super.clickOnMenu("Auditor", "Audit");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
+		super.fillInputBoxIn("code", code);
+		super.fillInputBoxIn("conclusion", conclusion);
+		super.fillInputBoxIn("strongPoints", strongPoints);
+		super.fillInputBoxIn("weakPoints", weakPoints);
+		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}
