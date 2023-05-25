@@ -19,7 +19,7 @@ public class StudentActivityShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/student/activity/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int enrolmentRecordIndex, final String reference, final int activityRecordIndex, final String title, final String abstract$, final String indication, final String startDate, final String endDate, final String link) {
+	public void test100Positive(final int enrolmentRecordIndex, final int activityRecordIndex, final String title, final String abstract$, final String indication, final String startDate, final String endDate, final String link) {
 		// HINT: this test signs in as an student, lists his or her enrolments, list its activities and checks that it's as expected.
 
 		super.signIn("student1", "student1");
@@ -54,45 +54,43 @@ public class StudentActivityShowTest extends TestHarness {
 		Collection<Activity> activities;
 		String param;
 
-		super.signIn("student1", "student1");
-		activities = this.repository.findManyActivitiesByStudentUsername("student2");
-		for (final Activity activity : activities)
-			if (!activity.getEnrolment().isDraftMode()) {
-				param = String.format("id=%d", activity.getEnrolment().getId());
+		activities = this.repository.findManyActivitiesByStudentUsername("student1");
+		for (final Activity activity : activities) {
+			param = String.format("id=%d", activity.getEnrolment().getId());
 
-				super.checkLinkExists("Sign in");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
+			super.checkLinkExists("Sign in");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
 
-				super.signIn("administrator", "administrator");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("administrator", "administrator");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("student2", "student2");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("student2", "student2");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("auditor1", "auditor1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("auditor1", "auditor1");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("assistant1", "assistant1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("assistant1", "assistant1");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("company1", "company1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
+			super.signIn("company1", "company1");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
 
-				super.signIn("lecturer1", "lecturer1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-			}
+			super.signIn("lecturer1", "lecturer1");
+			super.request("/student/activity/show", param);
+			super.checkPanicExists();
+			super.signOut();
+		}
 	}
 }
