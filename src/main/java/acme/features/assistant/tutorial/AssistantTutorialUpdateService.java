@@ -76,6 +76,13 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 	public void validate(final Tutorial object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Tutorial existing;
+
+			existing = this.repository.findOneTutorialByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "assistant.tutorial.form.error.duplicated");
+		}
+
 	}
 
 	@Override

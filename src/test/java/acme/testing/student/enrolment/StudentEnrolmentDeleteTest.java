@@ -34,10 +34,8 @@ public class StudentEnrolmentDeleteTest extends TestHarness {
 		super.signOut();
 	}
 
-	@ParameterizedTest
-	@CsvFileSource(resources = "/student/enrolment/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String motivation, final String goals, final String workbook, final String course, final String creditCard) {
-
+	@Test
+	public void test200Negative() {
 	}
 
 	@Test

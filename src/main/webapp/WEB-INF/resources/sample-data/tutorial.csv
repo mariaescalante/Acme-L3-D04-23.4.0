@@ -2,3 +2,4 @@ key,code,title,abstract$,goal,draftMode,key:course,key:assistant
 tutorial-01,TUT 001,Tutorial 01,Resumen tutorial 1,Aprender a hablar,false,course-01,assistant-01
 tutorial-02,TUT 002,Tutorial 02,Resumen tutorial 2,Aprender a comer,false,course-02,assistant-02
 tutorial-03,TUT 003,Tutorial 03,Resumen tutorial 3,Aprender a caminar,true,course-01,assistant-01
+tutorial-04,TUT 004,Tutorial 04,Resumen tutorial 4,Aprender a montar en bici,true,course-04,assistant-01

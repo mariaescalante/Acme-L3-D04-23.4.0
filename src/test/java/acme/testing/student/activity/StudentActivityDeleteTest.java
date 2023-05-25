@@ -55,83 +55,35 @@ public class StudentActivityDeleteTest extends TestHarness {
 			param = String.format("id=%d", activity.getEnrolment().getId());
 
 			super.signIn("administrator", "administrator");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 
 			super.signIn("student2", "student2");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 
 			super.signIn("auditor1", "auditor1");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 
 			super.signIn("assistant1", "assistant1");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 
 			super.signIn("company1", "company1");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 
 			super.signIn("lecturer1", "lecturer1");
-			super.request("/student/activity/show", param);
+			super.request("/student/activity/delete", param);
 			super.checkPanicExists();
 			super.signOut();
 		}
 
-	}
-
-	@Test
-	public void test301Hacking() {
-
-		Collection<Activity> activities;
-		String param;
-
-		super.signIn("student1", "student1");
-		activities = this.repository.findManyActivitiesByStudentUsername("student2");
-		for (final Activity activity : activities)
-			if (activity.getEnrolment().isDraftMode()) {
-				param = String.format("id=%d", activity.getEnrolment().getId());
-
-				super.checkLinkExists("Sign in");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-
-				super.signIn("administrator", "administrator");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-
-				super.signIn("student2", "student2");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-
-				super.signIn("auditor1", "auditor1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-
-				super.signIn("assistant1", "assistant1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-
-				super.signIn("company1", "company1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-
-				super.signIn("lecturer1", "lecturer1");
-				super.request("/student/activity/show", param);
-				super.checkPanicExists();
-				super.signOut();
-			}
 	}
 }

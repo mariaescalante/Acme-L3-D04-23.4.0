@@ -1,6 +1,6 @@
 key,title,abstract$,indication,startTime,endTime,link,key:tutorial
-session-01,Sesion 1,Resumen sesion 1,THEORY,2022/01/01 12:32,2022/01/01 13:40,null,tutorial-01
-session-02,Sesion 2,Resumen sesion 2,HANDS_ON,2022/01/02 17:30,2022/01/02 18:00,null,tutorial-03
-session-03,Sesion 3,Resumen sesion 3,THEORY,2022/01/03 14:00,2022/01/03 15:30,null,tutorial-01
-session-04,Sesion 4,Resumen sesion 4,HANDS_ON,2022/01/04 17:00,2022/01/04 18:15,null,tutorial-03
-session-05,Sesion 5,Resumen sesion 5,THEORY,2022/01/05 10:30,2022/01/05 11:45,null,tutorial-03
+session-01,Session 01,Resumen sesion 01,THEORY,2023/01/01 12:32,2023/01/01 13:40,null,tutorial-01
+session-02,Session 02,Resumen sesion 02,HANDS_ON,2023/01/02 17:30,2023/01/02 18:00,null,tutorial-03
+session-03,Session 03,Resumen sesion 03,THEORY,2023/01/03 14:00,2023/01/03 15:30,null,tutorial-01
+session-04,Session 04,Resumen sesion 04,HANDS_ON,2023/01/04 17:00,2023/01/04 18:15,null,tutorial-03
+session-05,Session 05,Resumen sesion 05,THEORY,2023/01/05 10:30,2023/01/05 11:45,null,tutorial-03
