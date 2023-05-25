@@ -1,6 +1,8 @@
 
 package acme.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -56,5 +58,17 @@ public class Practicum extends AbstractEntity {
 	protected Course			course;
 
 	protected boolean			draftMode;
+
+
+	public Double totalTime(final Collection<SessionPracticum> t) {
+		double res = 0.0;
+		double n = 0;
+		for (final SessionPracticum p : t) {
+			n = p.getEndDate().toInstant().getEpochSecond() - p.getStartDate().toInstant().getEpochSecond();
+			res += n / 3600;
+		}
+		return res;
+
+	}
 
 }
