@@ -45,7 +45,7 @@
     
     
     
-    <wb-module deploy-name="Acme-L3-D04-23.4.0-23.4.0">
+    <wb-module deploy-name="Acme-L3-D04-23.4.1-23.4.1">
                                                                                                                                                                                                                                                                                                                                                                                         
         
         
@@ -263,11 +263,18 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+                                                                
+        
+        
+        
+        
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/acme-framework"/>
                                 
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/acme-framework"/>
                                                                                                                                                                                                                                                                                                                                                                                 
         
         
@@ -314,9 +321,7 @@
         
         
         <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
-                        
-        
-        <property name="context-root" value="Acme-L3-D04-23.4.0"/>
+        <property name="context-root" value="Acme-L3-D04-23.4.1"/>
                                                                                                                                                                                                                                                                                                                                                                                     
     
     

@@ -70,16 +70,19 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Practicum existing;
-
-			existing = this.repository.findOnePracticumByCode(object.getCode());
-			super.state(existing == null || existing.equals(object), "code", "company.practicum.form.error.duplicated");
+		final Double totalTime = object.totalTime(this.repository.findPracticumSessionsByPracticumId(object.getId()));
+		if (object.getCode() != null)
+			if (!super.getBuffer().getErrors().hasErrors("code")) {
+				Practicum existing;
+				existing = this.repository.findOnePracticumByCode(object.getCode());
+				super.state(existing == null || existing.getId() == object.getId(), "code", "company.practicum.form.error.duplicated");
+			}
+		if (object.getEstimatedTotalTime() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("estimatedTotalTime"))
+				super.state(object.getEstimatedTotalTime() >= 0, "estimatedTotalTime", "company.practicum.form.error.negative-estimatedTotalTime");
+			if (!super.getBuffer().getErrors().hasErrors("estimatedTotalTime"))
+				super.state(object.getEstimatedTotalTime() >= 0.9 * totalTime && object.getEstimatedTotalTime() <= 1.1 * totalTime, "estimatedTotalTime", "company.practicum.form.error.plus.or.less.10%");
 		}
-
-		if (!super.getBuffer().getErrors().hasErrors("estimatedTotalTime"))
-			super.state(object.getEstimatedTotalTime() > 0, "estimatedTotalTime", "company.practicum.form.error.negative-estimatedTotalTime");
 	}
 
 	@Override

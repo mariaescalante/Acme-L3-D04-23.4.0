@@ -18,11 +18,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.Bulletin;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-public class AuthenticatedBulletinController extends AbstractController<Any, Bulletin> {
+public class AuthenticatedBulletinController extends AbstractController<Authenticated, Bulletin> {
 
 	// Internal state ---------------------------------------------------------
 

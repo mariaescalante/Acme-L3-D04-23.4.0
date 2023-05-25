@@ -72,10 +72,14 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 
 		if (!super.getBuffer().getErrors().hasErrors("creditCard")) {
 			final boolean ValidCreditCardLength = object.getCreditCard().length() == 16;
-
 			final boolean ValidCreditCardDigits = object.getCreditCard().chars().allMatch((caracter) -> Character.isDigit(caracter));
-
 			super.state(ValidCreditCardDigits && ValidCreditCardLength, "*", "student.enrolment.form.error.bad-credit-card");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Enrolment existing;
+			existing = this.repository.findOneEnrolmentByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "student.enrolment.form.error.duplicated");
 		}
 	}
 

@@ -1,0 +1,3 @@
+enrolmentRecordIndex,activityRecordIndex,title,abstract$,indication,startDate,endDate,link
+0,0,Activity 1,Abstract 1,THEORY,2022/01/01 17:30,2022/01/01 19:00,http://www.ev.us.es
+0,1,Activity 2,Abstract 2,HANDS_ON,2022/01/03 16:00,2022/01/03 18:00,http://www.ev.us.es

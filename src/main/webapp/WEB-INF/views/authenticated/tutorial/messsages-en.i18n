@@ -1,12 +1,12 @@
-any.tutorial.list.label.title = Title
-any.tutorial.list.label.goal = Goal
-any.tutorial.list.label.totalTime = Total Time
+authenticated.tutorial.list.label.title = Title
+authenticated.tutorial.list.label.goal = Goal
+authenticated.tutorial.list.label.totalTime = Total Time
 
-any.tutorial.form.label.code = Code
-any.tutorial.form.label.title = Title
-any.tutorial.form.label.abstract = Abstract
-any.tutorial.form.label.goal = Goal
-any.tutorial.form.label.totalTime = Total Time
-any.tutorial.form.label.course = Course
-any.tutorial.form.label.assistantSupervisor = Assistant supervisor
-any.tutorial.form.label.assistantResume = Assistant resume
+authenticated.tutorial.form.label.code = Code
+authenticated.tutorial.form.label.title = Title
+authenticated.tutorial.form.label.abstract = Abstract
+authenticated.tutorial.form.label.goal = Goal
+authenticated.tutorial.form.label.totalTime = Total Time
+authenticated.tutorial.form.label.course = Course
+authenticated.tutorial.form.label.assistantSupervisor = Assistant supervisor
+authenticated.tutorial.form.label.assistantResume = Assistant resume

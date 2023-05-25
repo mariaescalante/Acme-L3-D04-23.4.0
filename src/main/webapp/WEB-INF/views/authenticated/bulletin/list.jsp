@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="any.bulletin.list.label.instantiationMoment" path="instantiationMoment" width="30%"/>
-	<acme:list-column code="any.bulletin.list.label.title" path="title" width="30%"/>
-	<acme:list-column code="any.bulletin.list.label.message" path="message" width="40%"/>	
+	<acme:list-column code="authenticated.bulletin.list.label.instantiationMoment" path="instantiationMoment" width="30%"/>
+	<acme:list-column code="authenticated.bulletin.list.label.title" path="title" width="30%"/>
+	<acme:list-column code="authenticated.bulletin.list.label.message" path="message" width="40%"/>	
 </acme:list>	

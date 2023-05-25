@@ -16,13 +16,26 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>
-	<acme:input-textarea code="student.enrolment.form.label.motivation" path="motivation"/>
-	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
-	<acme:input-textbox code="student.enrolment.form.label.workbook" path="workbook"/>
-	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
-	<acme:input-textbox code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
-	<acme:input-textbox code="student.enrolment.form.label.creditCard" path="creditCard"/>	
+	<jstl:choose>	 
+		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish')}">
+			<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>
+			<acme:input-textarea code="student.enrolment.form.label.motivation" path="motivation"/>
+			<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
+			<acme:input-textbox code="student.enrolment.form.label.workbook" path="workbook"/>
+			<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
+			<acme:input-textbox code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
+			<acme:input-textbox code="student.enrolment.form.label.creditCard" path="creditCard"/>			
+		</jstl:when>	
+		<jstl:when test="${_command == 'create'}">
+			<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>
+			<acme:input-textarea code="student.enrolment.form.label.motivation" path="motivation"/>
+			<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
+			<acme:input-textbox code="student.enrolment.form.label.workbook" path="workbook"/>
+			<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
+			<acme:input-textbox code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
+			<acme:input-textbox code="student.enrolment.form.label.creditCard" path="creditCard"/>
+		</jstl:when>		
+	</jstl:choose>	
 
 	<jstl:choose>	 
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == false}">

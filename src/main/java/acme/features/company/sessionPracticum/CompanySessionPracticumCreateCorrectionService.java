@@ -61,7 +61,7 @@ public class CompanySessionPracticumCreateCorrectionService extends AbstractServ
 	public void bind(final SessionPracticum object) {
 		assert object != null;
 
-		super.bind(object, "title", "abstractText", "startDate", "endDate", "furtherInformationLink");
+		super.bind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
 	}
 
 	@Override
@@ -74,17 +74,20 @@ public class CompanySessionPracticumCreateCorrectionService extends AbstractServ
 		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
+			if (object.getEndDate() != null && object.getStartDate() != null)
+				super.state(object.getStartDate().before(object.getEndDate()), "endDate", "company.practicum.form.error.start-before-end");
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
-			date = CompanySessionPracticumCreateService.sumarDiasAFecha(MomentHelper.getCurrentMoment(), 7);
-			super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("startDate"))
+			if (object.getEndDate() != null && object.getStartDate() != null) {
+				date = CompanySessionPracticumCreateService.sumarDiasAFecha(MomentHelper.getCurrentMoment(), 7);
+				super.state(object.getStartDate().after(date) || object.getStartDate().equals(date), "startDate", "company.practicum.form.error.least-one-week-ahead");
+			}
 
-		if (!super.getBuffer().getErrors().hasErrors("endDate")) {
-			date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
-			super.state(object.getEndDate().after(date) || object.getStartDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			if (object.getEndDate() != null && object.getStartDate() != null) {
+				date = CompanySessionPracticumCreateService.sumarDiasAFecha(object.getStartDate(), 7);
+				super.state(object.getEndDate().after(date) || object.getEndDate().equals(date), "endDate", "company.practicum.form.error.least-one-week-long");
+			}
 	}
 
 	@Override
@@ -100,7 +103,7 @@ public class CompanySessionPracticumCreateCorrectionService extends AbstractServ
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "abstractText", "startDate", "endDate", "furtherInformationLink");
+		tuple = super.unbind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
 		tuple.put("draftMode", object.getPracticum().isDraftMode());
 		tuple.put("confirmation", false);

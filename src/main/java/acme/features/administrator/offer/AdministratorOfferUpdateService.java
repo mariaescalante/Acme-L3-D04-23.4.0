@@ -56,37 +56,40 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 	public void validate(final Offer object) {
 		assert object != null;
 
-		//El momento de instanciacion debe ser minimo un dia anterior a la fecha de inicio de la oferta
-		final LocalDateTime date1 = LocalDateTime.ofInstant(object.getInstantiationMoment().toInstant(), ZoneId.systemDefault());
-		final LocalDateTime date2 = LocalDateTime.ofInstant(object.getStartDate().toInstant(), ZoneId.systemDefault());
+		if (object.getInstantiationMoment() != null && object.getStartDate() != null && object.getEndDate() != null) {
+			//El momento de instanciacion debe ser minimo un dia anterior a la fecha de inicio de la oferta
+			final LocalDateTime date1 = LocalDateTime.ofInstant(object.getInstantiationMoment().toInstant(), ZoneId.systemDefault());
+			final LocalDateTime date2 = LocalDateTime.ofInstant(object.getStartDate().toInstant(), ZoneId.systemDefault());
 
-		final int numeroDeDias2 = 1;
-		final int convertidorDiasMinutos2 = numeroDeDias2 * 24 * 60;
-		final long minutesBetween2 = ChronoUnit.MINUTES.between(date1, date2);
+			final int numeroDeDias2 = 1;
+			final int convertidorDiasMinutos2 = numeroDeDias2 * 24 * 60;
+			final long minutesBetween2 = ChronoUnit.MINUTES.between(date1, date2);
 
-		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate")) {
-			super.state(minutesBetween2 >= convertidorDiasMinutos2, "instantiationMoment", "administrator.offer.form.error.instantiationMoment");
-			super.state(minutesBetween2 >= convertidorDiasMinutos2, "startDate", "administrator.offer.form.error.startInstantiation");
-		}
+			if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate")) {
+				super.state(minutesBetween2 >= convertidorDiasMinutos2, "instantiationMoment", "administrator.offer.form.error.instantiationMoment");
+				super.state(minutesBetween2 >= convertidorDiasMinutos2, "startDate", "administrator.offer.form.error.startInstantiation");
+			}
 
-		//La fecha de inicio debe ser anterior a la fecha de fin
-		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
-			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "administrator.offer.form.error.startDate");
-			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "administrator.offer.form.error.endDate");
-		}
+			//La fecha de inicio debe ser anterior a la fecha de fin
+			if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
+				super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "administrator.offer.form.error.startDate");
+				super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "administrator.offer.form.error.endDate");
+			}
 
-		//La oferta debe durar al menos una semana
-		final LocalDateTime date3 = LocalDateTime.ofInstant(object.getStartDate().toInstant(), ZoneId.systemDefault());
-		final LocalDateTime date4 = LocalDateTime.ofInstant(object.getEndDate().toInstant(), ZoneId.systemDefault());
+			//La oferta debe durar al menos una semana
+			final LocalDateTime date3 = LocalDateTime.ofInstant(object.getStartDate().toInstant(), ZoneId.systemDefault());
+			final LocalDateTime date4 = LocalDateTime.ofInstant(object.getEndDate().toInstant(), ZoneId.systemDefault());
 
-		final int numeroDeDias1 = 7;
-		final int convertidorDiasMinutos1 = numeroDeDias1 * 24 * 60;
-		final long minutesBetween1 = ChronoUnit.MINUTES.between(date3, date4);
+			final int numeroDeDias1 = 7;
+			final int convertidorDiasMinutos1 = numeroDeDias1 * 24 * 60;
+			final long minutesBetween1 = ChronoUnit.MINUTES.between(date3, date4);
 
-		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
-			super.state(minutesBetween1 >= convertidorDiasMinutos1, "endDate", "administrator.offer.form.error.oneWeek");
-			super.state(minutesBetween1 >= convertidorDiasMinutos1, "startDate", "administrator.offer.form.error.oneWeek");
-		}
+			if (!super.getBuffer().getErrors().hasErrors("instantiationMoment") && !super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate")) {
+				super.state(minutesBetween1 >= convertidorDiasMinutos1, "endDate", "administrator.offer.form.error.oneWeek");
+				super.state(minutesBetween1 >= convertidorDiasMinutos1, "startDate", "administrator.offer.form.error.oneWeek");
+			}
+		} else
+			super.state(true, "endDate", "administrator.offer.form.error.endDate");
 	}
 
 	@Override

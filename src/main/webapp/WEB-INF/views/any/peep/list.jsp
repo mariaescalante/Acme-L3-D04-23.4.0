@@ -9,4 +9,4 @@
 	<acme:list-column code="any.peep.list.nickname" path="nickname" width="20%"/>
 </acme:list>
 
-<acme:button code="any.peep.button.publish" action="/any/peep/create"/>	
+<acme:button code="any.peep.button.create" action="/any/peep/create"/>	

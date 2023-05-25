@@ -62,23 +62,30 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Override
 	public void bind(final Practicum object) {
 		assert object != null;
+		int courseId;
+		Course course;
 
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
 		super.bind(object, "code", "title", "abstract$", "goals", "estimatedTotalTime");
+		object.setCourse(course);
+
 	}
 
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Practicum existing;
+		if (object.getCode() != null)
+			if (!super.getBuffer().getErrors().hasErrors("code")) {
+				Practicum existing;
 
-			existing = this.repository.findOnePracticumByCode(object.getCode());
-			super.state(existing.getId() == object.getId(), "code", "company.practicum.form.error.duplicated");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("EstimatedTotalTime"))
-			super.state(object.getEstimatedTotalTime() > 0, "estimatedTotalTime", "company.practicum.form.error.negative-estimatedTotalTime");
+				existing = this.repository.findOnePracticumByCode(object.getCode());
+				super.state(existing == null || existing.getId() == object.getId(), "code", "company.practicum.form.error.duplicated");
+			}
+		if (object.getEstimatedTotalTime() != null)
+			if (!super.getBuffer().getErrors().hasErrors("estimatedTotalTime"))
+				super.state(object.getEstimatedTotalTime() >= 0, "estimatedTotalTime", "company.practicum.form.error.negative-estimatedTotalTime");
 	}
 
 	@Override
