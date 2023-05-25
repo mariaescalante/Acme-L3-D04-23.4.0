@@ -93,7 +93,7 @@ public class CompanySessionPracticumUpdateService extends AbstractService<Compan
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "abstract$", "startDate", "endDate", "furtherInformationLink");
-
+		tuple.put("draftMode", object.getPracticum().isDraftMode());
 		super.getResponse().setData(tuple);
 	}
 
