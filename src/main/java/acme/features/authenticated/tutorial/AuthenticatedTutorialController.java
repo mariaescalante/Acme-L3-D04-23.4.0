@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.Tutorial;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-public class AuthenticatedTutorialController extends AbstractController<Any, Tutorial> {
+public class AuthenticatedTutorialController extends AbstractController<Authenticated, Tutorial> {
 
 	@Autowired
 	protected AuthenticatedTutorialListService	listService;
