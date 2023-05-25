@@ -5,7 +5,7 @@ lecturer.course.list.label.price = Price
 
 lecturer.course.list.button.create = Create
 
-lecturer.course.form.label.code = Reference:
+lecturer.course.form.label.code = Code:
 lecturer.course.form.label.title = Title:
 lecturer.course.form.label.abstract$ = Abstract:
 lecturer.course.form.label.theoreticalOrHandsOn = Course type:

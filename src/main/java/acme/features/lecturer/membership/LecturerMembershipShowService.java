@@ -1,16 +1,11 @@
 
 package acme.features.lecturer.membership;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Course;
-import acme.entities.Lecture;
 import acme.entities.Membership;
-import acme.framework.components.accounts.Principal;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -64,23 +59,10 @@ public class LecturerMembershipShowService extends AbstractService<Lecturer, Mem
 	@Override
 	public void unbind(final Membership object) {
 		assert object != null;
-		Principal principal;
 		final Tuple tuple;
-		Collection<Course> courses;
-		final SelectChoices choices;
-		Collection<Lecture> lectures;
-		final SelectChoices choices2;
-
-		principal = super.getRequest().getPrincipal();
-		courses = this.repository.findManyCoursesByLecturerId(principal.getActiveRoleId());
-		choices = SelectChoices.from(courses, "code", object.getCourse());
-		lectures = this.repository.findManyLecturesByLecturerId(principal.getActiveRoleId());
-		choices2 = SelectChoices.from(lectures, "title", object.getLecture());
-		tuple = super.unbind(object, "lecture", "course");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
-		tuple.put("lecture", choices2.getSelected().getKey());
-		tuple.put("lectures", choices2);
+		tuple = super.unbind(object, "title");
+		tuple.put("course", object.getCourse().getCode());
+		tuple.put("lecture", object.getLecture().getTitle());
 
 		super.getResponse().setData(tuple);
 	}

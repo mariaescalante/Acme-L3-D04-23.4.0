@@ -1,0 +1,25 @@
+lectureRecordIndex,title,abstract$,time,body,link,theoreticalOrHandsOn
+0,,a,1,a,,HANDSON
+0, ,a,1,a,,HANDSON
+0,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,a,1,a,,HANDSON
+0,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,a,1,a,,HANDSON
+0,a,,1,a,,HANDSON
+0,a, ,1,a,,HANDSON
+0,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,1,a,,HANDSON
+0,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,1,a,,HANDSON
+0,a,a,0,a,,HANDSON
+0,a,a,-100,a,,HANDSON
+0,a,a,-1,a,,HANDSON
+0,a,a,a,a,,HANDSON
+0,a,a,0.50,a,,HANDSON
+0,a,a,1.0,a,,HANDSON
+0,a,a,1,,,HANDSON
+0,a,a,1, ,,HANDSON
+0,a,a,1,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,HANDSON
+0,a,a,1,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,HANDSON
+0,a,a,1,a,adios,HANDSON
+0,a,a,1,a,asda://example.com,HANDSON
+0,a,a,1,a,http//example.com,HANDSON
+0,a,a,1,a,,---
+0,,,,,,---
+0,,,,,,THEORETICAL
