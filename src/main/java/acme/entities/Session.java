@@ -34,6 +34,7 @@ public class Session extends AbstractEntity {
 	@Length(max = 100)
 	protected String			abstract$;
 
+	@NotNull
 	protected SessionType		indication;
 
 	@NotNull
