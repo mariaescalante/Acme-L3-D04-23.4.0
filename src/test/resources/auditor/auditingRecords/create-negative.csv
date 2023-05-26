@@ -1,0 +1,17 @@
+auditRecordIndex,auditingRecordsRecordIndex,subject,assessment,startDate,endDate,mark,link
+1,0,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,assessment8,2024/10/02 10:20,2024/10/02 11:20,A,https://www.amazon.com
+1,0,,,,,---,
+1,0,SUB001,assessment1,2023/02/02 10:20,2023/02/02 10:19,A,https://www.example.com
+1,0,S,assessment2,2024/04/02 10:20,2024/03/02 11:20,Aplus,https://www.openai.com
+1,0,subject2,a,2024/04/03 12:20,2024/04/02 13:20,B,https://www.google.com
+1,0,subject3,assessment3,2024/05/02 16:21,2024/05/02 17:20,C,https://www.youtube.com
+1,0,subject4,assessment4,2022/08/02 19:50,2022/08/02 20:50,F,https://www.facebook.com
+1,0,subject5,assessment5,2024/13/02 09:30,2024/13/02 10:30,Fminus,
+1,0,subject6,assessment6,2024/08/32 07:20,2024/08/32 08:20,C,https://www.instagram.com
+1,0,subject9,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,2024/11/02 10:20,2024/11/02 11:20,B,https://www.reddit.com
+1,0,,assessment2,2024/03/02 10:20,2024/03/02 11:20,Aplus,https://www.openai.com
+1,0,subject2,,2024/04/02 12:20,2024/04/02 13:20,B,https://www.google.com
+1,0,subject3,assessment3,,2024/05/02 17:20,C,https://www.youtube.com
+1,0,subject4,assessment4,2024/06/02 19:50,,F,https://www.facebook.com
+1,6,subject4,assessment4,2024/06/02,2024/06/02 20:50,F,https://www.facebook.com
+1,7,subject5,assessment5,2024/07/02 09:30,10:30,Fminus,

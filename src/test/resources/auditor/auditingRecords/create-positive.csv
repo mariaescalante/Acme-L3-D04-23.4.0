@@ -1,0 +1,11 @@
+auditRecordIndex,auditingRecordsRecordIndex,subject,assessment,startDate,endDate,mark,link
+1,0,SUB001,assessment1,2019/02/02 10:20,2019/02/02 11:20,A,https://www.example.com
+1,0,S,assessment2,2019/03/02 10:20,2019/03/02 11:20,Aplus,https://www.openai.com
+1,4,subject2,a,2019/04/02 12:20,2019/04/02 13:20,B,https://www.google.com
+1,5,subject3,assessment3,2019/05/02 16:20,2019/05/02 17:20,C,https://www.youtube.com
+1,6,subject4,assessment4,2019/06/02 19:50,2019/06/02 20:50,F,https://www.facebook.com
+1,7,subject5,assessment5,2019/07/02 09:30,2019/07/02 10:30,Fminus,
+1,8,subject6,assessment6,2019/08/02 07:20,2019/08/02 08:20,C,https://www.instagram.com
+1,9,subject7,assessment7,2019/09/02 10:20,2019/09/02 11:20,B,https://www.linkedin.com
+1,0,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,assessment8,2019/10/02 10:20,2019/10/02 11:20,A,https://www.amazon.com
+1,11,subject9,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,2019/11/02 10:20,2019/11/02 11:20,B,https://www.reddit.com

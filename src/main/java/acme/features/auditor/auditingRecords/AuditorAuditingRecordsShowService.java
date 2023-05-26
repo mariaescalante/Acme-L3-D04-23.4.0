@@ -4,8 +4,10 @@ package acme.features.auditor.auditingRecords;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.Mark;
 import acme.entities.Audit;
 import acme.entities.AuditingRecords;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
@@ -53,10 +55,14 @@ public class AuditorAuditingRecordsShowService extends AbstractService<Auditor, 
 	@Override
 	public void unbind(final AuditingRecords object) {
 		assert object != null;
-
+		SelectChoices choices;
 		Tuple tuple;
 
+		choices = SelectChoices.from(Mark.class, object.getMark());
+
 		tuple = super.unbind(object, "subject", "assessment", "mark", "startDate", "endDate", "link");
+		tuple.put("mark", choices.getSelected().getKey());
+		tuple.put("mark2", choices);
 		tuple.put("masterId", object.getAudit().getId());
 		tuple.put("draftMode", object.getAudit().isDraftMode());
 		final Double period = object.period();

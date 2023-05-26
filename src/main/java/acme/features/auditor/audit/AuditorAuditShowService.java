@@ -43,7 +43,7 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 		masterId = super.getRequest().getData("id", int.class);
 		audit = this.repository.findOneAuditById(masterId);
 		auditor = audit == null ? null : audit.getAuditor();
-		status = super.getRequest().getPrincipal().hasRole(auditor) || audit != null && !audit.isDraftMode();
+		status = super.getRequest().getPrincipal().hasRole(auditor);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -70,8 +70,8 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 		courses = this.repository.findManyCourse();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark");
-
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
+		tuple.put("mark", object.getMark(this.repository.findAuditingRecordsByAuditId(object.getId())));
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		tuple.put("draftMode", object.isDraftMode());

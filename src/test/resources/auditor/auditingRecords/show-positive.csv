@@ -1,0 +1,5 @@
+auditRecordIndex,code,auditingRecordsRecordIndex,subject,assessment,start-date,end-date,mark,correction,link
+0,AUD001,0,SUB001,assessment 1,2020/11/10 10:30,2020/12/11 10:30,C,true,
+0,AUD001,1,SUB002,assessment 2,2020/11/11 10:30,2020/12/12 10:30,F,false,
+1,AUD003,0,SUB003,assessment 3,2020/11/12 10:30,2020/12/13 10:30,C,true,
+1,AUD003,1,SUB004,assessment 4,2020/11/13 10:30,2020/12/14 10:30,F,false,

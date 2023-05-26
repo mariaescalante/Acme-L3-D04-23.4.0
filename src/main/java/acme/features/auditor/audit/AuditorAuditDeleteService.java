@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Audit;
+import acme.entities.AuditingRecords;
 import acme.entities.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -63,7 +64,7 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 	public void bind(final Audit object) {
 		assert object != null;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark");
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints");
 	}
 
 	@Override
@@ -75,6 +76,10 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 	public void perform(final Audit object) {
 		assert object != null;
 
+		Collection<AuditingRecords> ar;
+
+		ar = this.repository.findAuditingRecordsByAuditId(object.getId());
+		this.repository.deleteAll(ar);
 		this.repository.delete(object);
 	}
 
@@ -89,7 +94,7 @@ public class AuditorAuditDeleteService extends AbstractService<Auditor, Audit> {
 		courses = this.repository.findManyCourse();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark");
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints");
 
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);

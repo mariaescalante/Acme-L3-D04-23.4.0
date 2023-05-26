@@ -4,7 +4,7 @@ auditor.audit.list.label.strongPoints = Puntos Fuertes
 
 auditor.audit.list.button.create = Crear
 
-auditor.audit.form.label.code = Referencia:
+auditor.audit.form.label.code = Codigo:
 auditor.audit.form.label.conclusion = Conclusion:
 auditor.audit.form.label.strongPoints = Puntos Fuertes:
 auditor.audit.form.label.weakPoints =  Puntos debiles:
