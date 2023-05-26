@@ -1,0 +1,6 @@
+lectureRecordIndex,title,abstract$,time,body,theoreticalOrHandsOn,link
+0,Title 1,Abstract 1.,1,Body 1.,THEORETICAL,http://www.example.com
+1,Title 2,Abstract 2.,2,Body 2.,HANDSON,http://www.example.com
+2,Title 3,Abstract 3.,3,Body 3.,THEORETICAL,http://www.example.com
+3,Title 4,Abstract 4.,4,Body 4.,THEORETICAL,http://www.example.com
+4,Title 5,Abstract 5.,5,Body 5.,THEORETICAL,http://www.example.com

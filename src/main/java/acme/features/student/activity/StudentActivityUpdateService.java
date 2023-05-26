@@ -65,9 +65,12 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	public void validate(final Activity object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("startDate") && !super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "student.activity.form.error.startDate");
-		super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
+		if (!super.getBuffer().getErrors().hasErrors("startDate") && object.getStartDate() != null)
+			if (object.getEndDate() != null && object.getStartDate() != null)
+				super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "startDate", "student.activity.form.error.startDate");
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			if (object.getEndDate() != null && object.getStartDate() != null)
+				super.state(MomentHelper.isBefore(object.getStartDate(), object.getEndDate()), "endDate", "student.activity.form.error.endDate");
 	}
 
 	@Override

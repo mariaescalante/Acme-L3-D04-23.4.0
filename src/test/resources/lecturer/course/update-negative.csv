@@ -1,0 +1,24 @@
+recordIndex,code,title,abstract$,price,link
+0,CRS 003,a,a,EUR 1,
+0,CRS999,a,a,EUR 1,
+0,CRSS 999,a,a,EUR 1,
+0,CRS 99,a,a,EUR 1,
+0,CRS 9999,a,a,EUR 1,
+0,CRS 987,,a,EUR 1,
+0,CRS 987, ,a,EUR 1,
+0,CRS 987,"La vida es corta, aprovecha cada instante para ser feliz y perseguir tus sueños.",a,EUR 1,
+0,CRS 987,"El sol se oculta en el horizonte mientras las estrellas comienzan a iluminar la noche estrellada.",a,EUR 1,
+0,CRS 987,a,,,
+0,CRS 987,a, ,,
+0,CRS 987,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,,
+0,CRS 987,a,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,,
+0,CRS 987,a,a,EUR -100,
+0,CRS 987,a,a,USD 000.00,
+0,CRS 987,a,a,a,
+0,CRS 987,a,a,aaa a,
+0,CRS 987,a,a,USD aaa,
+0,CRS 987,a,a,EUR 1,adios
+0,CRS 987,a,a,EUR 1,asda://example.com
+0,CRS 987,a,a,EUR 1,http//example.com
+0,,,,,
+0, , , , , 

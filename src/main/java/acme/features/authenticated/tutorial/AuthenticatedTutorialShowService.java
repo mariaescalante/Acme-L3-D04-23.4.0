@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import acme.entities.Course;
 import acme.entities.Session;
 import acme.entities.Tutorial;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AuthenticatedTutorialShowService extends AbstractService<Any, Tutorial> {
+public class AuthenticatedTutorialShowService extends AbstractService<Authenticated, Tutorial> {
 
 	// Internal state ---------------------------------------------------------
 

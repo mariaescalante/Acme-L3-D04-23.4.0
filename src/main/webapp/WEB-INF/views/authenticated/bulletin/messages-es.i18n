@@ -1,10 +1,10 @@
-any.bulletin.list.label.instantiationMoment = Momento de instantacion
-any.bulletin.list.label.title = Titulo
-any.bulletin.list.label.message = Mensaje
+authenticated.bulletin.list.label.instantiationMoment = Momento de instantacion
+authenticated.bulletin.list.label.title = Titulo
+authenticated.bulletin.list.label.message = Mensaje
 
 
-any.bulletin.form.label.instantiationMoment = Momento de instantacion:
-any.bulletin.form.label.title = Titulo:
+authenticated.bulletin.form.label.instantiationMoment = Momento de instantacion:
+authenticated.bulletin.form.label.title = Titulo:
 any.bulletin.form.label.message = Mensaje:
-any.bulletin.form.label.flag = Flag:
-any.bulletin.form.label.url = Url:
+authenticated.bulletin.form.label.flag = Flag:
+authenticated.bulletin.form.label.url = Url:

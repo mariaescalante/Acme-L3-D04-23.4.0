@@ -1,0 +1,10 @@
+lecturer.dashboard.form.label.totalTheoryLectures = Conferencias teoricas totales:
+lecturer.dashboard.form.label.totalHandsOnLectures = Conferencias practicas totales:
+lecturer.dashboard.form.label.averageLectureLearningTime = Tiempo de estudio medio por conferencia:
+lecturer.dashboard.form.label.lectureLearningTimeMinimum = Tiempo de estudio minimo por conferencia:
+lecturer.dashboard.form.label.lectureLearningTimeMaximum = Tiempo de estudio maximo por conferencia:
+lecturer.dashboard.form.label.lectureLearningTimeDeviation = Desviacion en el tiempo de estudio por conferencia:
+lecturer.dashboard.form.label.averageCourseLearningTime = Tiempo de estudio medio por curso:
+lecturer.dashboard.form.label.courseLearningTimeMinimum = Tiempo de estudio medio por curso:
+lecturer.dashboard.form.label.courseLearningTimeMaximum = Tiempo de estudio medio por curso:
+lecturer.dashboard.form.label.courseLearningTimeDeviation = Desviacion en el tiempo de estudio por curso:

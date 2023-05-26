@@ -1,0 +1,11 @@
+recordIndex,newRecordIndex,code,title,abstract$,price,link
+0,3,CRS 900,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,Abstract 100,EUR 0.01,
+3,3,CRS 901,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,USD 999.99,http://exameple.com
+3,3,CRS 902,Title 102,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,GBP 123.45,
+3,3,CRS 903,a 103,a,,
+3,0,CRS 000,Title 104,Abstract 104,,
+0,3,CRS 905,Title 105,Abstract 105,,
+3,0,CR 906,Title 106,Abstract 106,,
+0,0,C 907,Title 107,Abstract 107,,
+0,0,AAA 999,Title 108,Abstract 108,,
+0,3,CRS 923,Title 110,Abstract 110,,

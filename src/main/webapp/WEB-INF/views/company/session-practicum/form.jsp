@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:input-textbox code="company.session-practicum.form.label.title" path="title"/>
-	<acme:input-textbox code="company.session-practicum.form.label.abstract-text" path="abstractText"/>
+	<acme:input-textbox code="company.session-practicum.form.label.abstract-text" path="abstract$"/>
 	<acme:input-moment code="company.session-practicum.form.label.start-date" path="startDate"/>
 	<acme:input-moment code="company.session-practicum.form.label.end-date" path="endDate"/>
 	<acme:input-url code="company.session-practicum.form.label.further-information-link" path="furtherInformationLink"/>
