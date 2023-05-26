@@ -71,11 +71,11 @@ public class AuditorAuditingRecordsUpdateService extends AbstractService<Auditor
 
 		if (!super.getBuffer().getErrors().hasErrors("startDate"))
 			if (object.getStartDate() != null && object.getEndDate() != null)
-				super.state(object.getStartDate().after(MomentHelper.getCurrentMoment()), "startDate", "auditor.audit.form.error.start-before-moment");
+				super.state(object.getStartDate().before(MomentHelper.getCurrentMoment()), "startDate", "auditor.audit.form.error.start-before-moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			if (object.getStartDate() != null && object.getEndDate() != null)
-				super.state(object.getEndDate().after(MomentHelper.getCurrentMoment()), "endDate", "auditor.audit.form.error.end-before-moment");
+				super.state(object.getEndDate().before(MomentHelper.getCurrentMoment()), "endDate", "auditor.audit.form.error.end-before-moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			if (object.getStartDate() != null && object.getEndDate() != null)
